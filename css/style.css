@@ -6479,3 +6479,14 @@ fieldset.features-export-component .component-select .form-type-checkbox input[t
 div.features-export-list .form-type-checkbox input[type=checkbox] {
   margin-top: 0;
 }
+.spotbox {
+  background: white;
+}
+.spotbox img {
+  width: 100%;
+  height: auto;
+}
+.view-os2web-news-page .media-ustream-video iframe {
+  width: 100%;
+  height: auto;
+}
