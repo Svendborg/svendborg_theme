@@ -1,7 +1,7 @@
 name = Svendborg Theme
-description = Subtheme of Bootstrap, uses the LESS Bootstrap framework source files and must be compiled (not for beginners).
+description = Subtheme of OS2web theme (a subtheme of Bootstrap), uses the LESS Bootstrap framework source files and must be compiled (not for beginners).
 core = 7.x
-base theme = bootstrap
+base theme = os2web_bootstrap_theme
 php = 5.3.0
 
 
