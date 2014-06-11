@@ -1,7 +1,10 @@
 svendborg_theme
 ===============
 
-Sub theme to Svendborg.dk from Bootstrap
+Sub theme to Svendborg.dk from Bootstrap.
+
+This subtheme uses the other subtheme os2web_bootstrap_theme as parent which is
+a Bootstrap child theme.
 
 Install
 =======
