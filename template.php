@@ -31,6 +31,7 @@ function svendborg_theme_preprocess_node(&$variables) {
  * Implements hook_preprocess_region().
  */
 function svendborg_theme_preprocess_region(&$variables) {
+  $node = NULL;
   if (isset($variables['page']['node']) && !empty($variables['page']['node']->nid)) {
     $node = $variables['page']['node'];
   }
