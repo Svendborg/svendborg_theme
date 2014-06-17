@@ -1,0 +1,31 @@
+
+
+// Pretty Buttons
+// Borrrowed from : https://gist.github.com/claviska/6117193
+.pretty-buttons(@color, @background, @text-shadow: none) {
+
+  color: @color;
+  #gradient > .vertical(lighten(@background, 5%), darken(@background, 5%), 0%, 100%);
+  text-shadow: @text-shadow;
+  border: none;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    #gradient > .vertical(darken(@background, 0), darken(@background, 10%), 0%, 100%);
+    color: @color;
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: @background;
+    }
+  }
+}
