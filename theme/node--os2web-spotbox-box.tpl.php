@@ -7,14 +7,14 @@
       <a href="<?php print $spotbox_url ?>">
     <?php endif; ?>
 
-    <?php if(!empty($content['field_os2web_spotbox_text'])) : ?>
-      <h3><?php print render($content['field_os2web_spotbox_text']); ?></h3>
-    <?php endif; ?>
-
     <?php if(!empty($content['field_os2web_spotbox_big_image'])) : ?>
       <?php print render($content['field_os2web_spotbox_big_image']); ?>
     <?php endif; ?>
     <?php print render($content['field_os2web_spotbox_video']); ?>
+
+    <?php if(!empty($content['field_os2web_spotbox_text'])) : ?>
+      <h3><?php print render($content['field_os2web_spotbox_text']); ?></h3>
+    <?php endif; ?>
 
     <?php if(!empty($spotbox_url)) : ?>
       </a>
