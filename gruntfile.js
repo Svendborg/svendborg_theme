@@ -22,7 +22,8 @@ module.exports = function(grunt) {
           yuicompress: false
         },
         files: {
-          "./css/style.css": "./less/style.less"
+          "./css/style.css": "./less/style.less",
+          "./css/ie.css": "./less/ie.less"
         }
       },
     },

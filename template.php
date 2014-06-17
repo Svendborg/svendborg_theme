@@ -62,3 +62,13 @@ function svendborg_theme_preprocess_page($variables) {
     ),
   ), 'google_font_svendborg_theme');
 }
+
+function svendborg_theme_preprocess_html(&$variables) {
+  // Add conditional stylesheets for IE
+  drupal_add_css(path_to_theme() . '/css/ie.css', array(
+    'group' => CSS_THEME,
+    'browsers' => array('IE' => 'lte IE 8', '!IE' => FALSE),
+    'preprocess' => FALSE,
+    'weight' => 115
+  ));
+}
