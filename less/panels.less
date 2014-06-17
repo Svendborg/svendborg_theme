@@ -1,0 +1,70 @@
+// Styles modifing the panels.
+
+// Use default Bootstrap 3 panel classes.
+// If you want to simulate the heading of an panel in your own element use the
+// classes .like-panel and which type of panel with .like-panel-primary.
+
+.panel {
+  border: none;
+  & > .panel-heading {
+    color: white;
+    border: none;
+    padding: 14px 19px;
+
+    h3 {
+      text-transform: none;
+      font-size: 23px;
+      font-weight: normal;
+    }
+  }
+
+  &.with-arrow > .panel-body {
+    position: relative;
+    padding-top:
+    &:before {
+      // Add an arrow to all panels bodies.
+      background: url(../images/panel-arrow-blue.png);
+      position: absolute;
+      top: 0;
+      left: 50%;
+
+      height: 16px;
+      width: 32px;
+    }
+  }
+}
+
+.panel-default > .panel-heading,
+.like-panel.like-panel-default {
+  #gradient > .vertical(lighten(@panel-default-heading-bg, 5%), darken(@panel-default-heading-bg, 5%), 0%, 100%);
+}
+
+.panel-primary > .panel-heading,
+.like-panel.like-panel-primary {
+  #gradient > .vertical(lighten(@panel-primary-heading-bg, 5%), darken(@panel-primary-heading-bg, 5%), 0%, 100%);
+}
+
+.panel-success > .panel-heading,
+.like-panel.like-panel-success {
+  #gradient > .vertical(lighten(@panel-success-heading-bg, 5%), darken(@panel-success-heading-bg, 5%), 0%, 100%);
+}
+
+.panel-info > .panel-heading,
+.like-panel.like-panel-info {
+  #gradient > .vertical(lighten(@panel-info-heading-bg, 5%), darken(@panel-info-heading-bg, 5%), 0%, 100%);
+}
+
+.panel-warning > .panel-heading,
+.like-panel.like-panel-warning {
+  #gradient > .vertical(lighten(@panel-warning-heading-bg, 5%), darken(@panel-warning-heading-bg, 5%), 0%, 100%);
+}
+
+.panel-danger > .panel-heading,
+.like-panel.like-panel-danger {
+  #gradient > .vertical(lighten(@panel-danger-heading-bg, 5%), darken(@panel-danger-heading-bg, 5%), 0%, 100%);
+}
+
+.like-panel {
+  &:extend(.panel > .panel-heading);
+  &:extend(.panel);
+}
