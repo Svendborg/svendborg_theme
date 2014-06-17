@@ -84,7 +84,7 @@
           </div>
         </div>
         <div class="col-md-12 col-sm-12 col-xs-12 footer-address">
-          <span>Ramsherred 5 5700 Svendborg  Telefon 62 23 30 00</span>
+          <span>Ramsherred 5 ∙ 5700 Svendborg ∙ Telefon 62 23 30 00 ∙ </span>
           <a href="mailto:svendborg@svendborg.dk" target="_top">Send en mail</a>
         </div>
 
