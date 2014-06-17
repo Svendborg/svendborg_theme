@@ -2,14 +2,34 @@
   background: white;
 }
 
-.spotbox {
+.spotbox,
+.node-os2web-spotbox-box {
   .spotbox();
   // Default size:
   img {
     width: 100%;
     height: auto;
-
+    position: relative;
+  }
     // TODO Arrow on the bottom of the image.
+  .field-name-field-os2web-spotbox-big-image .field-item {
+    position: relative;
+    &:before {
+      // Add an arrow to all panels bodies.
+
+      content: " ";
+      display: table;
+      z-index: 40;
+
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+
+      margin-left: -@spotbox-arrow-width / 2;
+
+      .sprite(@spotbox-arrow);
+
+    }
   }
   // Use col-xx classes decide size of spotbox:
   &.col-md-4 {

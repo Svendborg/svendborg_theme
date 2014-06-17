@@ -6844,12 +6844,33 @@ fieldset[disabled] .btn-inverse.active {
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff9f0f0', endColorstr='#ffebcccc', GradientType=0);
 }
-.spotbox {
+.spotbox,
+.node-os2web-spotbox-box {
   background: white;
 }
-.spotbox img {
+.spotbox img,
+.node-os2web-spotbox-box img {
   width: 100%;
   height: auto;
+  position: relative;
+}
+.spotbox .field-name-field-os2web-spotbox-big-image .field-item,
+.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-item {
+  position: relative;
+}
+.spotbox .field-name-field-os2web-spotbox-big-image .field-item:before,
+.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-item:before {
+  content: " ";
+  display: table;
+  z-index: 40;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -49px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -99px;
+  width: 98px;
+  height: 39px;
 }
 .view-os2web-news-page .media-ustream-video iframe {
   width: 100%;
