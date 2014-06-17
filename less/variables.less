@@ -13,18 +13,18 @@
 @gray-light:             #dedede;
 @gray-lighter:           lighten(#000, 93.5%); // #eee
 
-@brand-primary:         #428bca;
-@brand-success:         #5cb85c;
-@brand-info:            #5bc0de;
-@brand-warning:         #f0ad4e;
-@brand-danger:          #d9534f;
-
 @brand-darkblue:        #005191;
 @brand-lightblue:       #0089cd;
 @brand-darkgreen:       #589000;
 @brand-lightgreen:      #85c500;
 @brand-blacknblue:      #30353c;
 @brand-warmgray:        #dfded7;
+
+@brand-primary:         @brand-darkgreen;
+@brand-success:         #5cb85c;
+@brand-info:            #5bc0de;
+@brand-warning:         #f0ad4e;
+@brand-danger:          #d9534f;
 
 //== Scaffolding
 //
@@ -144,8 +144,8 @@
 @btn-font-weight:                normal;
 
 @btn-default-color:              #fff;
-@btn-default-bg:                 @brand-lightgreen;
-@btn-default-border:             @brand-lightgreen;
+@btn-default-bg:                 @brand-darkblue;
+@btn-default-border:             @brand-darkblue;
 
 @btn-primary-color:              #fff;
 @btn-primary-bg:                 @brand-primary;

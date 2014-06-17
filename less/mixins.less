@@ -2,18 +2,17 @@
 
 // Pretty Buttons
 // Borrrowed from : https://gist.github.com/claviska/6117193
-.pretty-buttons(@color, @background, @text-shadow: none) {
+.pretty-buttons(@color, @background-from, @background-to) {
 
   color: @color;
-  #gradient > .vertical(lighten(@background, 5%), darken(@background, 5%), 0%, 100%);
-  text-shadow: @text-shadow;
+  #gradient > .vertical(@background-from, @background-to, 0%, 100%);
   border: none;
 
   &:hover,
   &:focus,
   &:active,
   &.active {
-    #gradient > .vertical(darken(@background, 0), darken(@background, 10%), 0%, 100%);
+    #gradient > .vertical(@background-to, @background-from, 0%, 100%);
     color: @color;
   }
 
@@ -25,7 +24,7 @@
     &:focus,
     &:active,
     &.active {
-      background-color: @background;
+      background-color: @background-to;
     }
   }
 }
