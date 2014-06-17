@@ -6909,3 +6909,99 @@ div.panel-pane div.node.node-os2web-spotbox-box .field-name-field-os2web-spotbox
   width: 100%;
   height: auto;
 }
+.footer-bg-image img {
+  width: 100%;
+}
+#footer-menu {
+  background-image: url('../images/footer_menu_bg.png');
+  background-repeat: repeat-x;
+  background-size: 100px 100%;
+  height: 100%;
+}
+.footer-menu {
+  background-image: url('../images/footer_menu_level2.png');
+  background-repeat: repeat-x;
+  background-size: 100px 100%;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  height: 100%;
+}
+h2.menu-footer {
+  padding-top: 80px;
+}
+h2.menu-footer a {
+  color: #fff;
+  font-size: 24px;
+  text-transform: none;
+  padding-top: 80px;
+  background-repeat: no-repeat;
+}
+h2.menu-footer a:hover {
+  text-decoration: none;
+}
+h2.menu-footer a.Borger {
+  background-image: url('../images/footer_borger.png');
+}
+h2.menu-footer a.Erhverv {
+  background-image: url('../images/footer_erhverv.png');
+}
+h2.menu-footer a.Politik {
+  background-image: url('../images/footer_politik.png');
+}
+h2.menu-footer a.Kommunen {
+  background-image: url('../images/footer_kommune.png');
+}
+.footer-indholsdmenu .nav > li > a {
+  color: #DEDEDE;
+  padding: 0;
+}
+.footer-indholsdmenu .nav > li > a:hover {
+  text-decoration: underline;
+  background: none;
+}
+#footer-contacts {
+  margin: 25px 0 50px 0;
+}
+#footer-contacts .social-icons {
+  margin: 35px 0 15px 0;
+}
+#footer-contacts .footer-address {
+  margin-top: 50px;
+}
+#footer-contacts .footer-address span {
+  margin-left: 70px;
+  font-size: 14px;
+}
+#footer-contacts .footer-address a {
+  font-size: 14px;
+}
+@media all and (max-width: 1200px) and (min-width: 970px) {
+  #footer-contacts .container {
+    padding-right: 0px;
+  }
+}
+@media all and (max-width: 1200px) and (min-width: 970px) {
+  .social-icons {
+    padding-right: 0px;
+  }
+}
+.social-icons a {
+  background-repeat: no-repeat;
+  font-size: 0;
+  padding: 20px 1px 20px 40px;
+}
+.social-icons a.footer_fb {
+  background-image: url('../images/footer_fb.png');
+}
+.social-icons a.footer_twitter {
+  background-image: url('../images/footer_twitter.png');
+}
+.social-icons a.footer_googleplus {
+  background-image: url('../images/footer_googleP.png');
+}
+.social-icons a.footer_linkedin {
+  background-image: url('../images/footer_linkedin.png');
+}
+.social-icons a.footer_flickr {
+  background-image: url('../images/footer_flickr.png');
+}
