@@ -9,8 +9,10 @@ a Bootstrap child theme.
 Requirements
 ============
 
-- [Cairo](http://cairographics.org/download/)
-- sudo npm install -g node-gyp
+- ``sudo apt-get install cairo`` OS X [Cairo](http://cairographics.org/download/)
+OR
+- ``sudo apt-get install libcairo2-dev`` Linux
+- ``sudo npm install -g node-gyp``
 
 Install
 =======
