@@ -6787,6 +6787,8 @@ fieldset[disabled] .btn-inverse.active {
   padding-top: 36px;
 }
 .panel.with-arrow > .panel-body:before {
+  content: " ";
+  display: table;
   position: absolute;
   top: 0;
   left: 50%;
@@ -6845,21 +6847,24 @@ fieldset[disabled] .btn-inverse.active {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff9f0f0', endColorstr='#ffebcccc', GradientType=0);
 }
 .spotbox,
-.node-os2web-spotbox-box {
+div.panel-pane div.node.node-os2web-spotbox-box {
   background: white;
+  border-radius: 6px;
+  padding: 5px;
+  margin-bottom: 30px;
 }
 .spotbox img,
-.node-os2web-spotbox-box img {
+div.panel-pane div.node.node-os2web-spotbox-box img {
   width: 100%;
   height: auto;
   position: relative;
 }
 .spotbox .field-name-field-os2web-spotbox-big-image .field-item,
-.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-item {
+div.panel-pane div.node.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-item {
   position: relative;
 }
 .spotbox .field-name-field-os2web-spotbox-big-image .field-item:before,
-.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-item:before {
+div.panel-pane div.node.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-item:before {
   content: " ";
   display: table;
   z-index: 40;
