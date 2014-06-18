@@ -1,3 +1,9 @@
+// .breadcrumb,
+// .region-sidebar-first .block-menu-block {
+//   li + a {
+//   }
+// }
+
 .breadcrumb {
   margin-bottom: 0;
   li {
@@ -5,9 +11,17 @@
     border-radius: 4px;
     padding:4px;
     margin-bottom: 2px;
-    #gradient > .vertical(@gray-light, @gray, 0%, 100%);
 
+    #gradient > .vertical(@gray-lighter, @gray, 0%, 100%);
+
+    font-size: 15px;
     text-transform: uppercase;
+    padding: 5px 10px;
+    font-weight: bold;
+
+    a {
+      padding: 0;
+    }
 
     &:before {
       display: none;
@@ -17,6 +31,9 @@
       .sprite(@nav-arrow-left-green);
       display: block;
       float: left;
+      margin-top: 4px;
+      margin-right: 7px;
+      margin-left: -1px;
     }
 
     &.first i {
@@ -46,7 +63,7 @@
 
     // Top green arrow.
     position: relative;
-    padding-top: @panel-arrow-green-height + 3px;
+    padding-top: 7px;
     &:before {
 
       content: " ";
@@ -63,12 +80,13 @@
   }
 
   li {
-    @li-padding-left: 20px;
+    @li-padding-left: 26px;
 
     border-bottom: 1px solid @gray;
 
     a{
-      padding-left: @li-padding-left;
+      padding: 7px 5px 11px @li-padding-left;
+      font-size: 15px;
     }
 
     &.collapsed a{
@@ -84,8 +102,8 @@
         top: 50%;
         left: 0;
 
-        margin-top: -@nav-arrow-right-blue-height / 2;
-        margin-left: @li-padding-left / 2 - @nav-arrow-right-blue-width / 2;
+        margin-top: -8px;
+        margin-left: 11px;
 
         .sprite(@nav-arrow-right-blue);
       }
