@@ -21,33 +21,42 @@ module.exports = function(grunt) {
           paths: ["./less"],
           yuicompress: false
         },
-      files: {
-        "./css/style.css": "./less/style.less"
+        files: {
+          "./css/style.css": "./less/style.less"
+        }
+      },
+    },
+    sprite: {
+      all: {
+        src: 'images/sprites/*.png',
+        destImg: 'images/sprites.png',
+        destCSS: 'less/sprites.less',
+        cssFormat: 'less'
+      }
+    },
+    // running `grunt watch` will watch for changes
+    watch: {
+      options: {
+        livereload: LIVERELOAD_PORT
+      },
+      // Watch less files and run "less" on changes
+      less: {
+        files: "./less/*.less",
+        tasks: ["less"]
+      },
+      // Watch template files, only used to reload page on template changes
+      template: {
+        files: "./**/*.tpl"
       }
     }
-  },
-  // running `grunt watch` will watch for changes
-  watch: {
-    options: {
-      livereload: LIVERELOAD_PORT
-    },
-    // Watch less files and run "less" on changes
-    less: {
-      files: "./less/*.less",
-      tasks: ["less"]
-    },
-    // Watch template files, only used to reload page on template changes
-    template: {
-      files: "./**/*.tpl"
-    }
-  }
-});
+  });
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-spritesmith');
 
   grunt.registerTask('default', ['watch']);
-  grunt.registerTask('build', ['less']);
+  grunt.registerTask('build', ['less', 'sprite']);
   grunt.registerTask('server', [
       'connect',
       'watch'
