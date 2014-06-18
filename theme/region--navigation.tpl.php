@@ -72,7 +72,7 @@
       <?php endif; ?>
     </div>
     <?php if ($page['primary_nav'] || $page['secondary_nav'] || $content): ?>
-    <div class="col-md-9 col-sm-8 col-xs-12 navbar-collapse navbar-default header_main_menu">
+    <div class="col-md-9 col-sm-8 col-xs-12 navbar-collapse collapse navbar-default header_main_menu">
     <div class="row">
       <nav role="navigation">
         <div class="col-md-9 col-sm-8 col-xs-12">
