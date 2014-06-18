@@ -27,7 +27,7 @@
  */
 ?>
   <footer class="region region_footer lcontainer-fluid">
-    <div class="lcontainer-fluidclearfix"  id="footer-menu">
+    <div class="lcontainer-fluid clearfix"  id="footer-menu">
       <div class="container footer-menu">
       <?php
         $tree = menu_tree_all_data('menu-indholdsmenu', $link = NULL, $max_depth = 3);
