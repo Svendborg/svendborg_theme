@@ -29,7 +29,6 @@
   <div<?php print $attributes; ?>>
     <?php if ($content_attributes): ?><div<?php print $content_attributes; ?>><?php endif; ?>
     <?php print render($page['page']['highlighted']); ?>
-    <?php print render($page['breadcrumb']); ?>
     <a id="main-content"></a>
     <?php print render($page['title_prefix']); ?>
 
