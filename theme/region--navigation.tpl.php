@@ -49,7 +49,7 @@
     ?>
   </div>
   </div>
-  <header class="region region-navigation header_fixed"<?php //print $attributes; ?>>
+  <header class="region region-navigation header_fixed container"<?php //print $attributes; ?>>
 
     <?php if ($content_attributes): ?><div class="container header_fixed_inner navbar-default"<?php //print $content_attributes; ?>><?php endif; ?>
 
@@ -73,7 +73,7 @@
     </div>
     <?php if ($page['primary_nav'] || $page['secondary_nav'] || $content): ?>
     <div class="col-md-9 col-sm-8 col-xs-12 navbar-collapse collapse navbar-default header_main_menu">
-    <div class="row">
+
       <nav role="navigation">
         <div class="col-md-9 col-sm-8 col-xs-12">
         <?php print render($page['primary_nav']); ?>
@@ -84,7 +84,7 @@
         </div>
       </nav>
     </div>
-    </div>
+
     <?php endif; ?>
 
     <?php if ($content_attributes): ?></div><?php endif; ?>
