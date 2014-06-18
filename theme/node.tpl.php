@@ -82,14 +82,6 @@
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <?php if ((!$page && !empty($title)) || !empty($title_prefix) || !empty($title_suffix) || $display_submitted): ?>
   <header>
-    <?php if ($type == 'os2web_base_news') : ?>
-      <?php print render($content['field_os2web_base_field_image']); ?>
-    <?php else : ?>
-      <?php print render($content['field_os2web_base_field_lead_img']); ?>
-    <?php endif; ?>
-    <time pubdate="pubdate">
-      <?php print $date; ?>
-    </time>
     <?php print render($title_prefix); ?>
     <?php if (!$page && !empty($title)): ?>
     <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
@@ -103,12 +95,28 @@
     <?php endif; ?>
   </header>
   <?php endif; ?>
+  <?php if($page) : ?>
+    <?php if ($type == 'os2web_base_news') : ?>
+      <?php print render($content['field_os2web_base_field_lead_img']); ?>
+    <?php else : ?>
+      <?php print render($content['field_os2web_base_field_image']); ?>
+    <?php endif; ?>
+    <?php print render($title_prefix); ?>
+    <?php if (!empty($title)): ?>
+    <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+    <?php endif; ?>
+    <?php print render($title_suffix); ?>
+    <time pubdate="pubdate">
+      <?php print $date; ?>
+    </time>
+  <?php endif; ?>
   <?php
     // Hide comments, tags, and links now so that we can render them later.
     hide($content['comments']);
     hide($content['links']);
     hide($content['field_tags']);
     hide($content['field_os2web_base_field_image']);
+    hide($content['field_os2web_base_field_lead_img']);
     print render($content);
   ?>
   <?php if (!empty($content['field_tags']) || !empty($content['links'])): ?>
