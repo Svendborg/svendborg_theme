@@ -6576,11 +6576,6 @@ h2.menu-footer a.Kommunen {
     padding-right: 0px;
   }
 }
-@media all and (max-width: 1200px) and (min-width: 970px) {
-  .social-icons {
-    padding-right: 0px;
-  }
-}
 .social-icons a {
   background-repeat: no-repeat;
   font-size: 0;

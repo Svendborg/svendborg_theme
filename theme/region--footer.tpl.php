@@ -54,11 +54,9 @@
     <div class="lcontainer-fluid clearfix" id="footer-contacts">
       <div class="container">
         <div class="col-md-3 col-xs-12 col-sm-6 col-md-push-9 col-sm-push-6 social-icons">
-          <a href="https://www.facebook.com/Svendborg" title="Svendborg Kommune Facebook" class="footer_fb">facebook</a>
-          <a href="https://www.facebook.com/Svendborg" title="Svendborg Kommune twitter" class="footer_twitter">twitter</a>
-          <a href="https://www.facebook.com/Svendborg" title="Svendborg Kommune GooglePlus" class="footer_googleplus">googleplus</a>
-          <a href="https://www.facebook.com/Svendborg" title="Svendborg Kommune Linkedin" class="footer_linkedin">linkedin</a>
-          <a href="https://www.facebook.com/Svendborg" title="Svendborg Kommune Flickr" class="footer_flickr">flickr</a>
+          <a href="https://www.facebook.com/Svendborg" title="Svendborg Kommune Facebook" class="footer_fb" target="_blank">facebook</a>
+          <a href="http://www.linkedin.com/company/svendborg-kommune" title="Svendborg Kommune Linkedin" class="footer_linkedin" target="_blank">linkedin</a>
+          <a href="http://www.youtube.com/user/wwwsvendborgdk" title="Svendborg Kommune Youtube" class="footer_flickr" target="_blank">youtube</a>
         </div>
         <div class="col-md-9 col-sm-6 col-xs-12 col-md-pull-3 col-sm-pull-6">
           <div class='footer-logo'>
