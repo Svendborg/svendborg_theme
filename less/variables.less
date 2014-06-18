@@ -13,12 +13,15 @@
 @gray-light:             #dedede;
 @gray-lighter:           lighten(#000, 93.5%); // #eee
 
-@brand-darkblue:        #005191;
-@brand-lightblue:       #0089cd;
-@brand-darkgreen:       #589000;
-@brand-lightgreen:      #85c500;
-@brand-blacknblue:      #30353c;
-@brand-warmgray:        #dfded7;
+@brand-darkblue:        #005191; // 1
+@brand-lightblue:       #0089cd; // 2
+@brand-darkgreen:       #589000; // 3
+@brand-lightgreen:      #85c500; // 4
+@brand-blacknblue:      #30353c; // 5
+@brand-warmgray:        #dfded7; // 6
+
+@gradient-dark:         #194254; // 7
+@gradient-light:        #496e7e; // 8
 
 @brand-primary:         @brand-darkgreen;
 @brand-success:         #5cb85c;
@@ -36,9 +39,9 @@
 @text-color:            @brand-blacknblue;
 
 //** Global textual link color.
-@link-color:            @brand-blacknblue;
+@link-color:            @brand-lightblue;
 //** Link hover color set via `darken()` function.
-@link-hover-color:      darken(@link-color, 15%);
+@link-hover-color:      @brand-darkblue;
 
 
 //== Typography
