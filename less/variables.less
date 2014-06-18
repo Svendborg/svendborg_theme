@@ -13,18 +13,18 @@
 @gray-light:             #dedede;
 @gray-lighter:           lighten(#000, 93.5%); // #eee
 
-@brand-primary:         #428bca;
-@brand-success:         #5cb85c;
-@brand-info:            #5bc0de;
-@brand-warning:         #f0ad4e;
-@brand-danger:          #d9534f;
-
 @brand-darkblue:        #005191;
 @brand-lightblue:       #0089cd;
 @brand-darkgreen:       #589000;
 @brand-lightgreen:      #85c500;
 @brand-blacknblue:      #30353c;
 @brand-warmgray:        #dfded7;
+
+@brand-primary:         @brand-darkgreen;
+@brand-success:         #5cb85c;
+@brand-info:            #5bc0de;
+@brand-warning:         #f0ad4e;
+@brand-danger:          #d9534f;
 
 //== Scaffolding
 //
@@ -36,7 +36,7 @@
 @text-color:            @brand-blacknblue;
 
 //** Global textual link color.
-@link-color:            @brand-primary;
+@link-color:            @brand-blacknblue;
 //** Link hover color set via `darken()` function.
 @link-hover-color:      darken(@link-color, 15%);
 
@@ -45,7 +45,7 @@
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-@font-family-sans-serif:  Verdana, Arial, Helvetica, sans-serif;
+@font-family-sans-serif:  'Open Sans', Geneva, Verdana, sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -57,8 +57,8 @@
 
 @font-size-h1:            30px;
 @font-size-h2:            20px;
-@font-size-h3:            17.5px;
-@font-size-h4:            15px; // BOLD
+@font-size-h3:            17.5px; // BOLD
+@font-size-h4:            17.5px;
 @font-size-h5:            15px;
 @font-size-h6:            11.5px; // BOLD
 
@@ -68,7 +68,7 @@
 @line-height-computed:    floor((@font-size-base * @line-height-base)); // ~20px
 
 //** By default, this inherits from the `<body>`.
-@headings-font-family:    inherit;
+@headings-font-family:    'Titillium Web', Geneva, Verdana, sans-serif;
 @headings-font-weight:    100;
 @headings-line-height:    1.1;
 @headings-color:          inherit;
@@ -143,9 +143,9 @@
 
 @btn-font-weight:                normal;
 
-@btn-default-color:              #333;
-@btn-default-bg:                 #fff;
-@btn-default-border:             #ccc;
+@btn-default-color:              #fff;
+@btn-default-bg:                 @brand-darkblue;
+@btn-default-border:             @brand-darkblue;
 
 @btn-primary-color:              #fff;
 @btn-primary-bg:                 @brand-primary;

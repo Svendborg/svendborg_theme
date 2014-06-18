@@ -1,0 +1,186 @@
+/*
+LESS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: @icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+@icon-home: x y offset_x offset_y width height total_width total_height image_path;
+*/
+@cittaslow-side-x: 0px;
+@cittaslow-side-y: 271px;
+@cittaslow-side-offset-x: 0px;
+@cittaslow-side-offset-y: -271px;
+@cittaslow-side-width: 51px;
+@cittaslow-side-height: 140px;
+@cittaslow-side-total-width: 51px;
+@cittaslow-side-total-height: 411px;
+@cittaslow-side-image: '../images/sprites.png';
+@cittaslow-side: 0px 271px 0px -271px 51px 140px 51px 411px '../images/sprites.png';
+@download-icon-x: 0px;
+@download-icon-y: 114px;
+@download-icon-offset-x: 0px;
+@download-icon-offset-y: -114px;
+@download-icon-width: 26px;
+@download-icon-height: 26px;
+@download-icon-total-width: 51px;
+@download-icon-total-height: 411px;
+@download-icon-image: '../images/sprites.png';
+@download-icon: 0px 114px 0px -114px 26px 26px 51px 411px '../images/sprites.png';
+@feedback-side-x: 0px;
+@feedback-side-y: 174px;
+@feedback-side-offset-x: 0px;
+@feedback-side-offset-y: -174px;
+@feedback-side-width: 29px;
+@feedback-side-height: 97px;
+@feedback-side-total-width: 51px;
+@feedback-side-total-height: 411px;
+@feedback-side-image: '../images/sprites.png';
+@feedback-side: 0px 174px 0px -174px 29px 97px 51px 411px '../images/sprites.png';
+@logo-x: 0px;
+@logo-y: 140px;
+@logo-offset-x: 0px;
+@logo-offset-y: -140px;
+@logo-width: 22px;
+@logo-height: 34px;
+@logo-total-width: 51px;
+@logo-total-height: 411px;
+@logo-image: '../images/sprites.png';
+@logo: 0px 140px 0px -140px 22px 34px 51px 411px '../images/sprites.png';
+@nav-arrow-down-green-x: 0px;
+@nav-arrow-down-green-y: 31px;
+@nav-arrow-down-green-offset-x: 0px;
+@nav-arrow-down-green-offset-y: -31px;
+@nav-arrow-down-green-width: 18px;
+@nav-arrow-down-green-height: 11px;
+@nav-arrow-down-green-total-width: 51px;
+@nav-arrow-down-green-total-height: 411px;
+@nav-arrow-down-green-image: '../images/sprites.png';
+@nav-arrow-down-green: 0px 31px 0px -31px 18px 11px 51px 411px '../images/sprites.png';
+@nav-arrow-left-green-x: 0px;
+@nav-arrow-left-green-y: 55px;
+@nav-arrow-left-green-offset-x: 0px;
+@nav-arrow-left-green-offset-y: -55px;
+@nav-arrow-left-green-width: 8px;
+@nav-arrow-left-green-height: 13px;
+@nav-arrow-left-green-total-width: 51px;
+@nav-arrow-left-green-total-height: 411px;
+@nav-arrow-left-green-image: '../images/sprites.png';
+@nav-arrow-left-green: 0px 55px 0px -55px 8px 13px 51px 411px '../images/sprites.png';
+@nav-arrow-left-white-x: 0px;
+@nav-arrow-left-white-y: 68px;
+@nav-arrow-left-white-offset-x: 0px;
+@nav-arrow-left-white-offset-y: -68px;
+@nav-arrow-left-white-width: 8px;
+@nav-arrow-left-white-height: 13px;
+@nav-arrow-left-white-total-width: 51px;
+@nav-arrow-left-white-total-height: 411px;
+@nav-arrow-left-white-image: '../images/sprites.png';
+@nav-arrow-left-white: 0px 68px 0px -68px 8px 13px 51px 411px '../images/sprites.png';
+@nav-arrow-right-blue-x: 0px;
+@nav-arrow-right-blue-y: 42px;
+@nav-arrow-right-blue-offset-x: 0px;
+@nav-arrow-right-blue-offset-y: -42px;
+@nav-arrow-right-blue-width: 8px;
+@nav-arrow-right-blue-height: 13px;
+@nav-arrow-right-blue-total-width: 51px;
+@nav-arrow-right-blue-total-height: 411px;
+@nav-arrow-right-blue-image: '../images/sprites.png';
+@nav-arrow-right-blue: 0px 42px 0px -42px 8px 13px 51px 411px '../images/sprites.png';
+@node-created-at-icon-x: 0px;
+@node-created-at-icon-y: 21px;
+@node-created-at-icon-offset-x: 0px;
+@node-created-at-icon-offset-y: -21px;
+@node-created-at-icon-width: 12px;
+@node-created-at-icon-height: 10px;
+@node-created-at-icon-total-width: 51px;
+@node-created-at-icon-total-height: 411px;
+@node-created-at-icon-image: '../images/sprites.png';
+@node-created-at-icon: 0px 21px 0px -21px 12px 10px 51px 411px '../images/sprites.png';
+@panel-arrow-blue-x: 0px;
+@panel-arrow-blue-y: 14px;
+@panel-arrow-blue-offset-x: 0px;
+@panel-arrow-blue-offset-y: -14px;
+@panel-arrow-blue-width: 14px;
+@panel-arrow-blue-height: 7px;
+@panel-arrow-blue-total-width: 51px;
+@panel-arrow-blue-total-height: 411px;
+@panel-arrow-blue-image: '../images/sprites.png';
+@panel-arrow-blue: 0px 14px 0px -14px 14px 7px 51px 411px '../images/sprites.png';
+@panel-arrow-darkblue-x: 0px;
+@panel-arrow-darkblue-y: 7px;
+@panel-arrow-darkblue-offset-x: 0px;
+@panel-arrow-darkblue-offset-y: -7px;
+@panel-arrow-darkblue-width: 14px;
+@panel-arrow-darkblue-height: 7px;
+@panel-arrow-darkblue-total-width: 51px;
+@panel-arrow-darkblue-total-height: 411px;
+@panel-arrow-darkblue-image: '../images/sprites.png';
+@panel-arrow-darkblue: 0px 7px 0px -7px 14px 7px 51px 411px '../images/sprites.png';
+@panel-arrow-green-big-x: 0px;
+@panel-arrow-green-big-y: 81px;
+@panel-arrow-green-big-offset-x: 0px;
+@panel-arrow-green-big-offset-y: -81px;
+@panel-arrow-green-big-width: 31px;
+@panel-arrow-green-big-height: 16px;
+@panel-arrow-green-big-total-width: 51px;
+@panel-arrow-green-big-total-height: 411px;
+@panel-arrow-green-big-image: '../images/sprites.png';
+@panel-arrow-green-big: 0px 81px 0px -81px 31px 16px 51px 411px '../images/sprites.png';
+@panel-arrow-green-x: 0px;
+@panel-arrow-green-y: 0px;
+@panel-arrow-green-offset-x: 0px;
+@panel-arrow-green-offset-y: 0px;
+@panel-arrow-green-width: 14px;
+@panel-arrow-green-height: 7px;
+@panel-arrow-green-total-width: 51px;
+@panel-arrow-green-total-height: 411px;
+@panel-arrow-green-image: '../images/sprites.png';
+@panel-arrow-green: 0px 0px 0px 0px 14px 7px 51px 411px '../images/sprites.png';
+@spotbox-arrow-x: 0px;
+@spotbox-arrow-y: 97px;
+@spotbox-arrow-offset-x: 0px;
+@spotbox-arrow-offset-y: -97px;
+@spotbox-arrow-width: 35px;
+@spotbox-arrow-height: 17px;
+@spotbox-arrow-total-width: 51px;
+@spotbox-arrow-total-height: 411px;
+@spotbox-arrow-image: '../images/sprites.png';
+@spotbox-arrow: 0px 97px 0px -97px 35px 17px 51px 411px '../images/sprites.png';
+
+/*
+The provided classes are intended to be used with the array-like variables
+
+.icon-home {
+  .sprite-width(@icon-home);
+}
+.icon-email {
+  .sprite(@icon-email);
+}
+*/
+.sprite-width(@sprite) {
+  width: ~`"@{sprite}".split(', ')[4]`;
+}
+
+.sprite-height(@sprite) {
+  height: ~`"@{sprite}".split(', ')[5]`;
+}
+
+.sprite-position(@sprite) {
+  @sprite-offset-x: ~`"@{sprite}".split(', ')[2]`;
+  @sprite-offset-y: ~`"@{sprite}".split(', ')[3]`;
+  background-position: @sprite-offset-x  @sprite-offset-y;
+}
+
+.sprite-image(@sprite) {
+  @sprite-image: ~`"@{sprite}".split(', ')[8].slice(1, -2)`;
+  background-image: url(@sprite-image);
+}
+
+.sprite(@sprite) {
+  .sprite-image(@sprite);
+  .sprite-position(@sprite);
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}

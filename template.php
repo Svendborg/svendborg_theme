@@ -46,3 +46,29 @@ function svendborg_theme_preprocess_region(&$variables) {
     }
   }
 }
+
+/**
+ * Implements template_preprocess_page().
+ */
+function svendborg_theme_preprocess_page($variables) {
+
+  // Add out fonts from Google Fonts API.
+  drupal_add_html_head(array(
+    '#tag' => 'link',
+    '#attributes' => array(
+      'href' => 'http://fonts.googleapis.com/css?family=Titillium+Web:400,700|Open+Sans:400,700',
+      'rel' => 'stylesheet',
+      'type' => 'text/css',
+    ),
+  ), 'google_font_svendborg_theme');
+}
+
+function svendborg_theme_preprocess_html(&$variables) {
+  // Add conditional stylesheets for IE
+  drupal_add_css(path_to_theme() . '/css/ie.css', array(
+    'group' => CSS_THEME,
+    'browsers' => array('IE' => 'lte IE 8', '!IE' => FALSE),
+    'preprocess' => FALSE,
+    'weight' => 115
+  ));
+}
