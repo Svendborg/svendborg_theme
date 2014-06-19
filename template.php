@@ -30,6 +30,17 @@ function svendborg_theme_preprocess_page(&$variables) {
       $variables['page']['sidebar_first'] = array();
     }
   }
+  if ($node && is_array($node->field_os2web_base_field_selfserv['und'])) {
+    $selfservicelinks = array();
+    foreach ($node->field_os2web_base_field_selfserv['und'] as $key => $link) {
+      $selfservicelink = node_load($link['nid']);
+      $selfservicelinks[] = array(
+        'nid' => $selfservicelink->nid,
+        'title' => $selfservicelink->title,
+      );
+    }
+    $variables['page']['selfservicelinks'] = $selfservicelinks;
+  }
 
   // Add out fonts from Google Fonts API.
   drupal_add_html_head(array(
