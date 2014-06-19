@@ -40,6 +40,9 @@
     &.first i {
       display: none;
     }
+    &.first.last i {
+      display: initial;
+    }
 
     &.last {
       margin-bottom: 0;
@@ -47,6 +50,9 @@
       #gradient > .vertical(@brand-lightgreen, @brand-darkgreen, 0%, 100%);
       i {
         .sprite(@nav-arrow-left-white);
+      }
+      a {
+        color: white;
       }
     }
   }
@@ -76,21 +82,22 @@
     display: none;
   }
 
+  @li-padding-left: 26px;
+
   ul {
     padding: 0;
     border-radius: 0 0 4px 4px;
     background: white;
 
     ul {
-      padding-left: 10px;
       li a {
+        padding-left: @li-padding-left + 10px;
         font-size: 12px;
       }
     }
   }
 
   li {
-    @li-padding-left: 26px;
 
     border-bottom: 1px solid @brand-warmgray;
 
