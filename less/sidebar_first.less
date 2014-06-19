@@ -53,6 +53,25 @@
 }
 
 .region-sidebar-first .block-menu-block {
+  // Top green arrow.
+  position: relative;
+  padding-top: 7px;
+  border-radius: 0 0 4px 4px;
+  background: white;
+  &:before {
+
+    content: " ";
+    display: table;
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    margin-left: -@panel-arrow-green-width / 2;
+
+    .sprite(@panel-arrow-green);
+  }
+
   .block-title {
     display: none;
   }
@@ -62,21 +81,11 @@
     border-radius: 0 0 4px 4px;
     background: white;
 
-    // Top green arrow.
-    position: relative;
-    padding-top: 7px;
-    &:before {
-
-      content: " ";
-      display: table;
-
-      position: absolute;
-      top: 0;
-      left: 50%;
-
-      margin-left: -@panel-arrow-green-width / 2;
-
-      .sprite(@panel-arrow-green);
+    ul {
+      padding-left: 10px;
+      li a {
+        font-size: 12px;
+      }
     }
   }
 
@@ -90,7 +99,7 @@
       font-size: 15px;
     }
 
-    &.collapsed a{
+    &.active > a{
       font-weight: bold;
 
       position: relative;
