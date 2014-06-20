@@ -97,6 +97,16 @@
       <?php if ($page['sidebar_second']): ?>
         <?php print render($page['sidebar_second']); ?>
       <?php endif; ?>
+    </div>
+  </div>
+  <?php if ($page['content_bottom']): ?>
+  <div class="row">
+    <div class="container">
+      <?php /* region--content_bottom.tpl.php */ ?>
+        <?php dpm($page['content_bottom']); print render($page['content_bottom']); ?>
+    </div>
+  </div>
+  <?php endif; ?>
 
     </div>
   </div>
