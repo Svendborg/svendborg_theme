@@ -96,29 +96,33 @@
   </header>
   <?php endif; ?>
   <?php if($page) : ?>
+  <header>
     <?php if ($type == 'os2web_base_news') : ?>
       <?php print render($content['field_os2web_base_field_lead_img']); ?>
     <?php else : ?>
       <?php print render($content['field_os2web_base_field_image']); ?>
     <?php endif; ?>
+    <time pubdate="pubdate">
+      <i></i><?php print $date; ?>
+    </time>
     <?php print render($title_prefix); ?>
     <?php if (!empty($title)): ?>
     <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
     <?php endif; ?>
     <?php print render($title_suffix); ?>
-    <time pubdate="pubdate">
-      <?php print $date; ?>
-    </time>
+  </header>
   <?php endif; ?>
-  <?php
-    // Hide comments, tags, and links now so that we can render them later.
-    hide($content['comments']);
-    hide($content['links']);
-    hide($content['field_tags']);
-    hide($content['field_os2web_base_field_image']);
-    hide($content['field_os2web_base_field_lead_img']);
-    print render($content);
-  ?>
+  <div class="wrap">
+    <?php
+      // Hide comments, tags, and links now so that we can render them later.
+      hide($content['comments']);
+      hide($content['links']);
+      hide($content['field_tags']);
+      hide($content['field_os2web_base_field_image']);
+      hide($content['field_os2web_base_field_lead_img']);
+      print render($content);
+    ?>
+  </div>
   <?php if (!empty($content['field_tags']) || !empty($content['links'])): ?>
   <footer>
     <?php print render($content['field_tags']); ?>

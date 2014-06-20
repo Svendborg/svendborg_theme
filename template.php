@@ -4,53 +4,92 @@
  * template.php
  */
 
-
-/**
- * Implements hook_preprocess_node().
- */
-function svendborg_theme_preprocess_node(&$variables) {
-  /*
-   * If page shouldn't have a right sidebar, this is check by a checkbox on
-   * node/term. Remove it from the render array.
-   */
-/**
- * THIS IS ONLY AN EXAMPLE!!!
-  $node = $variables['node'];
-
-  // Make the field variables available with the appropriate language.
-  field_attach_preprocess('node', $node, $variables['content'], $variables);
-
-  if (!$variables['has_right_column_field']) {
-    $variables['classes_array'][] = 'without-right-sidebar';
-  }
-*/
-}
-
-
-/**
- * Implements hook_preprocess_region().
- */
-function svendborg_theme_preprocess_region(&$variables) {
-  $node = NULL;
-  if (isset($variables['page']['node']) && !empty($variables['page']['node']->nid)) {
-    $node = $variables['page']['node'];
-  }
-
-  // Region Sidebar Second.
-  if ($variables['region'] === 'sidebar_second') {
-
-    // Show related links in sidebar checkbox on node.
-    if ($node && $node->field_os2web_base_field_hidlinks['und'][0]['value'] == '0') {
-      // Show related links in reqion. Add them to the render array somehow.
-      // $variables['elements']['related_links'] = render(elements);
-    }
-  }
-}
-
 /**
  * Implements template_preprocess_page().
  */
-function svendborg_theme_preprocess_page($variables) {
+function svendborg_theme_preprocess_page(&$variables) {
+  $node = NULL;
+  if (isset($variables['node']) && !empty($variables['node']->nid)) {
+    $node = $variables['node'];
+  }
+
+  // If node has hidden the sidebar, set content to null and return.
+  if ($node &&
+      isset($node->field_svendborg_hide_sidebar['und'][0]['value']) &&
+      $node->field_svendborg_hide_sidebar['und'][0]['value'] == '1') {
+
+    $variables['page']['sidebar_second'] = array();
+  }
+
+  // If the current item is NOT in indholdsmenu, clean the sidebar_first array.
+  // Dont show sidebar on nodes if they are not in menu.
+  if ($node) {
+    $menu_trail = menu_get_active_trail();
+    $active = end($menu_trail);
+    if ($active['menu_name'] !== 'menu-indholdsmenu') {
+      $variables['page']['sidebar_first'] = array();
+    }
+  }
+
+  // Get all the nodes selvbetjeningslinks and give them to the template.
+  if ($node && is_array($node->field_os2web_base_field_selfserv['und'])) {
+    $selfservicelinks = array();
+    foreach ($node->field_os2web_base_field_selfserv['und'] as $key => $link) {
+      $selfservicelink = node_load($link['nid']);
+      $selfservicelinks[] = array(
+        'nid' => $selfservicelink->nid,
+        'title' => $selfservicelink->title,
+      );
+    }
+    $variables['page']['selfservicelinks'] = $selfservicelinks;
+  }
+
+  // Get all related links to this node.
+  // 1. Get all unique related links from the node.
+  $related_links = array();
+  if ($node && is_array($node->field_os2web_base_field_related['und'])) {
+    foreach ($node->field_os2web_base_field_related['und'] as $link) {
+      $link_node = node_load($link['nid']);
+      $related_links[$link->nid] = array(
+        'nid' => $link->nid,
+        'title' => $link_node->title,
+      );
+    }
+  }
+  // 2. Get all related links related to the KLE number on the node. Only get
+  // these if the checkbox "Skjul relaterede links" isn't checked.
+  if ($node &&
+      (!isset($node->field_os2web_base_field_hidlinks['und'][0]['value']) ||
+      $node->field_os2web_base_field_hidlinks['und'][0]['value'] == '0') &&
+      is_array($node->field_os2web_base_field_kle_ref['und'])) {
+
+    foreach ($node->field_os2web_base_field_kle_ref['und'] as $key => $kle) {
+      // Get all nodes which have the same KLE number as this node.
+      $query = new EntityFieldQuery();
+      $result = $query->entityCondition('entity_type', 'node')
+        ->propertyCondition('status', 1)
+        ->propertyCondition('nid', $node->nid, '!=')
+        ->fieldCondition('field_os2web_base_field_kle_ref', 'tid', $kle['tid'])
+        ->propertyOrderBy('title', 'ASC')
+        ->execute();
+      if (isset($result['node'])) {
+        foreach ($result['node'] as $link) {
+          if (isset($related_links[$link->nid])) {
+            continue;
+          }
+          $link_node = node_load($link->nid);
+          $related_links[$link->nid] = array(
+            'nid' => $link->nid,
+            'title' => $link_node->title,
+            'class' => 'kle-link',
+          );
+
+        }
+      }
+    }
+  }
+  // Provide the related links to the templates.
+  $variables['page']['related_links'] = $related_links;
 
   // Add out fonts from Google Fonts API.
   drupal_add_html_head(array(
@@ -110,4 +149,34 @@ function svendborg_theme_breadcrumb($variables) {
     $crumbs .= '</ul>';
     return $crumbs;
   }
+}
+
+/**
+ * Overrides theme_menu_link().
+ *
+ * Overrides Bootstrap version. Enables to show active trails childrens.
+ */
+function svendborg_theme_menu_link(array $variables) {
+  $element = $variables['element'];
+  $sub_menu = '';
+  if ($element['#below']) {
+    // Prevent dropdown functions from being added to management menu so it
+    // does not affect the navbar module.
+    if (($element['#original_link']['menu_name'] == 'management') && (module_exists('navbar'))) {
+      $sub_menu = drupal_render($element['#below']);
+    }
+    elseif ($element['#original_link']['in_active_trail']) {
+      $sub_menu = drupal_render($element['#below']);
+    }
+    else {
+      $element['#attributes']['class'][] = 'has-children';
+    }
+  }
+  // On primary navigation menu, class 'active' is not set on active menu item.
+  // @see https://drupal.org/node/1896674
+  if (($element['#href'] == $_GET['q'] || ($element['#href'] == '<front>' && drupal_is_front_page())) && (empty($element['#localized_options']['language']))) {
+    $element['#attributes']['class'][] = 'active';
+  }
+  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+  return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
 }

@@ -40,6 +40,9 @@
     &.first i {
       display: none;
     }
+    &.first.last i {
+      display: initial;
+    }
 
     &.last {
       margin-bottom: 0;
@@ -48,49 +51,72 @@
       i {
         .sprite(@nav-arrow-left-white);
       }
+      a {
+        color: white;
+      }
     }
   }
 }
 
 .region-sidebar-first .block-menu-block {
+  // Top green arrow.
+  position: relative;
+  padding-top: 7px;
+  border-radius: 0 0 4px 4px;
+  background: white;
+  &:before {
+
+    content: " ";
+    display: table;
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    margin-left: -@panel-arrow-green-width / 2;
+
+    .sprite(@panel-arrow-green);
+  }
+
   .block-title {
     display: none;
   }
+
+  @li-padding-left: 26px;
 
   ul {
     padding: 0;
     border-radius: 0 0 4px 4px;
     background: white;
 
-    // Top green arrow.
-    position: relative;
-    padding-top: 7px;
-    &:before {
-
-      content: " ";
-      display: table;
-
-      position: absolute;
-      top: 0;
-      left: 50%;
-
-      margin-left: -@panel-arrow-green-width / 2;
-
-      .sprite(@panel-arrow-green);
+    // Second level menus.
+    ul {
+      li {
+        border-bottom: 0;
+        a {
+          padding: 0 5px 5px @li-padding-left;
+          font-size: 12px;
+        }
+        &.last a {
+          padding-bottom: 11px;
+        }
+      }
     }
   }
 
   li {
-    @li-padding-left: 26px;
 
     border-bottom: 1px solid @brand-warmgray;
 
     a{
       padding: 7px 5px 11px @li-padding-left;
       font-size: 15px;
+      &:hover {
+        text-decoration: underline;
+      }
     }
 
-    &.collapsed a{
+    &.active > a{
       font-weight: bold;
 
       position: relative;
