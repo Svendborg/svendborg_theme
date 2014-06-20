@@ -39,10 +39,12 @@ function svendborg_theme_preprocess_page(&$variables) {
     $selfservicelinks = array();
     foreach ($links as $link) {
       $selfservicelink = node_load($link['nid']);
-      $selfservicelinks[$link['nid']] = array(
-        'nid' => $selfservicelink->nid,
-        'title' => $selfservicelink->title,
-      );
+      if ($selfservicelink) {
+        $selfservicelinks[$link['nid']] = array(
+          'nid' => $selfservicelink->nid,
+          'title' => $selfservicelink->title,
+        );
+      }
     }
     $variables['page']['selfservicelinks'] = $selfservicelinks;
   }
@@ -53,10 +55,12 @@ function svendborg_theme_preprocess_page(&$variables) {
   if ($node && $links = field_get_items('node', $node, 'field_os2web_base_field_related')) {
     foreach ($links as $link) {
       $link_node = node_load($link['nid']);
-      $related_links[$link['nid']] = array(
-        'nid' => $link->nid,
-        'title' => $link_node->title,
-      );
+      if ($link_node) {
+        $related_links[$link['nid']] = array(
+          'nid' => $link->nid,
+          'title' => $link_node->title,
+        );
+      }
     }
   }
   // 2. Get all related links related to the KLE number on the node. Only get
@@ -81,11 +85,13 @@ function svendborg_theme_preprocess_page(&$variables) {
             continue;
           }
           $link_node = node_load($link->nid);
-          $related_links[$link->nid] = array(
-            'nid' => $link->nid,
-            'title' => $link_node->title,
-            'class' => 'kle-link',
-          );
+          if ($link_node) {
+            $related_links[$link->nid] = array(
+              'nid' => $link->nid,
+              'title' => $link_node->title,
+              'class' => 'kle-link',
+            );
+          }
 
         }
       }
