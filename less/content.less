@@ -6,3 +6,117 @@
 
   #gradient > .vertical-three-colors(#fff, rgba(223, 222, 215, 0.9), 250px, rgba(223, 222, 215, 0.9));
 }
+
+.page-node-edit .region-content {
+  background-color: #FFF;
+}
+
+// Default show for a node with 3 columns.
+.page-node {
+  h1.page-header {
+    display: none;
+  }
+  article {
+    background: white;
+    border-radius: 0 0 4px 4px;
+
+    header h2 a{
+      color: @text-color;
+      text-transform: initial;
+    }
+
+    .wrap,
+    header time,
+    header h2 {
+      padding: 15px;
+    }
+
+    header time {
+      text-align: right;
+      display: block;
+
+      i {
+        display: inline-block;
+        zoom: 1;
+        *display: inline;
+        margin-right: 5px;
+        .sprite(@node-created-at-icon);
+      }
+    }
+
+    .field-name-field-os2web-base-field-image {
+      .field-slideshow {
+        margin: 0 auto;
+        .field-slideshow-caption {
+          display: none;
+        }
+      }
+      img{
+        border-radius: 4px 4px 0 0;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .field-name-field-os2web-base-field-summary .field-item {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+  }
+  .nav-tabs {
+    margin-bottom: 0;
+  }
+
+  .field-name-field-os2web-base-field-media {
+    .field-label {
+      &:extend(h4);
+      text-transform: none;
+    }
+    .field-item {
+      border-top: 1px solid @brand-warmgray;
+      padding: 5px 0;
+
+      .file-icon {
+        // This overrides the file-icon and replaces it with an download icon.
+        .sprite(@download-icon);
+        padding-left: @download-icon-width;
+      }
+
+      a {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+// Overrides for the node display.
+.page-node {
+  .region-content.col-sm-9,
+  .region-content.col-md-9,
+  .region-content.col-sm-12,
+  .region-content.col-md-12 {
+
+    article {
+      .wrap,
+      header {
+        width: 75%;
+        margin: 0 auto;
+      }
+
+      .field-name-field-os2web-base-field-image {
+        padding: 15px;
+      }
+    }
+  }
+
+  .region-content.col-sm-12,
+  .region-content.col-md-12 {
+
+    article {
+      .wrap,
+      header {
+        width: 68%;
+      }
+    }
+  }
+}
