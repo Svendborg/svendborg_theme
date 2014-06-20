@@ -49,9 +49,10 @@ function svendborg_theme_preprocess_page(&$variables) {
   $related_links = array();
   if ($node && is_array($node->field_os2web_base_field_related['und'])) {
     foreach ($node->field_os2web_base_field_related['und'] as $key => $link) {
+      $link_node = node_load($link['nid']);
       $related_links[] = array(
         'nid' => $link['nid'],
-        'title' => $link['node']->title,
+        'title' => $link_node->title,
       );
     }
   }
