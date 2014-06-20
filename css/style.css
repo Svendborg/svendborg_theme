@@ -7219,6 +7219,10 @@ div.panel-pane div.node.node-os2web-spotbox-box .field-name-field-os2web-spotbox
 .page-node-add h1.page-header {
   display: block;
 }
+.page-node-edit .form-control,
+.page-node-add .form-control {
+  color: black;
+}
 .page-node h1.page-header {
   display: none;
 }
