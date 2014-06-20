@@ -16,11 +16,11 @@ function svendborg_theme_preprocess_page(&$variables) {
   $sidebar_first_hidden = FALSE;
 
   // If node has hidden the sidebar, set content to null and return.
-  if ($node &&
-      isset($node->field_svendborg_hide_sidebar['und'][0]['value']) &&
-      $node->field_svendborg_hide_sidebar['und'][0]['value'] == '1') {
-    $variables['page']['sidebar_second'] = array();
-    $sidebar_second_hidden = TRUE;
+  if ($node && $hide_sidebar_field = field_get_items('node', $node, 'field_svendborg_hide_sidebar')) {
+    if ($hide_sidebar_field[0]['value'] == '1') {
+      $variables['page']['sidebar_second'] = array();
+      $sidebar_second_hidden = TRUE;
+    }
   }
 
   // If the current item is NOT in indholdsmenu, clean the sidebar_first array.
@@ -35,9 +35,9 @@ function svendborg_theme_preprocess_page(&$variables) {
   }
 
   // Get all the nodes selvbetjeningslinks and give them to the template.
-  if ($node && is_array($node->field_os2web_base_field_selfserv['und'])) {
+  if ($node && $links = field_get_items('node', $node, 'field_os2web_base_field_selfserv')) {
     $selfservicelinks = array();
-    foreach ($node->field_os2web_base_field_selfserv['und'] as $key => $link) {
+    foreach ($links as $link) {
       $selfservicelink = node_load($link['nid']);
       $selfservicelinks[$link['nid']] = array(
         'nid' => $selfservicelink->nid,
@@ -50,8 +50,8 @@ function svendborg_theme_preprocess_page(&$variables) {
   // Get all related links to this node.
   // 1. Get all unique related links from the node.
   $related_links = array();
-  if ($node && is_array($node->field_os2web_base_field_related['und'])) {
-    foreach ($node->field_os2web_base_field_related['und'] as $link) {
+  if ($node && $links = field_get_items('node', $node, 'field_os2web_base_field_related')) {
+    foreach ($links as $link) {
       $link_node = node_load($link['nid']);
       $related_links[$link['nid']] = array(
         'nid' => $link->nid,
@@ -64,9 +64,9 @@ function svendborg_theme_preprocess_page(&$variables) {
   if ($node &&
       (!isset($node->field_os2web_base_field_hidlinks['und'][0]['value']) ||
       $node->field_os2web_base_field_hidlinks['und'][0]['value'] == '0') &&
-      is_array($node->field_os2web_base_field_kle_ref['und'])) {
+      $kle_items = field_get_items('node', $node, 'field_os2web_base_field_kle_ref')) {
 
-    foreach ($node->field_os2web_base_field_kle_ref['und'] as $key => $kle) {
+    foreach ($kle_items as $kle) {
       // Get all nodes which have the same KLE number as this node.
       $query = new EntityFieldQuery();
       $result = $query->entityCondition('entity_type', 'node')
