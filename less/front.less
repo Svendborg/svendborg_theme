@@ -1,0 +1,117 @@
+.front-buttons {
+  @media all and (min-width:769px) {
+    margin-top:  150px;
+    margin-bottom:  70px;
+  }
+}
+.front-indholsdmenu {
+  text-align: center;
+  padding: 0;
+  a {
+    color:  #fff;
+    text-transform: uppercase;
+    &:hover {
+      text-decoration: none;
+    }
+
+    &.Kommunen {
+      .sprite(@front-kommune);
+
+      font-size: 14px;
+      padding: 90px 30px 25px 29px;;
+    }
+    &.Borger {
+      .sprite(@front-borger);
+      padding: 120px 55px 29px 55px;
+    }
+    &.Erhverv {
+      .sprite(@front-erhverv);
+      padding: 120px 50px 29px 50px;
+    }
+    &.Politik {
+      .sprite(@front-politik);
+      font-size: 14px;
+      padding: 90px 45px 23px 45px;
+    }
+  }
+  h2 {
+    @media all and (max-width:768px) {
+      color:  #fff;
+      text-transform: uppercase;
+      &.Kommunen {
+        padding: 90px 30px 25px 29px;;
+      }
+      &.Borger {
+        padding: 120px 55px 28px 55px;
+      }
+      &.Erhverv {
+
+        padding: 120px 50px 28px 50px;
+      }
+      &.Politik {
+        font-size: 14px;
+        padding: 90px 45px 23px 45px;
+      }
+    }
+  }
+
+}
+.frontpage-search-box {
+  input {
+    height: 58px;
+  }
+  button {
+    height: 58px;
+    width: 70px;
+  }
+  span.glyphicon-search {
+    font-size: 35px;
+  }
+}
+#frontpage-carousel-large {
+  background-color: #fff;
+  border-radius: 5px 5px;
+  padding: 10px 10px;
+  img {
+    max-width: 100%;
+  }
+  ol {
+    right: 0;
+    text-align: right;
+    bottom: 5px;
+    margin-left: 0;
+    width: 100%;
+    left: 0;
+  }
+  ol li {
+    height: 15px;
+    width: 15px;
+    border: 3px solid #e4e3e0;
+    &.active {
+      background-color: #7ebb00;
+    }
+  }
+  .title {
+    font-size: 30px;
+  }
+}
+.frontpage-seperator {
+  height: 45px;
+}
+#frontpage-carousel-large {
+  .carousel-title {
+    margin-top:  20px;
+    a.btn {
+      margin: 20px 0;
+      padding: 5px 15px;
+      font-size: 14px;
+    }
+  }
+}
+.front .main-container {
+  min-height: 700px;
+}
+.row-no-padding {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
