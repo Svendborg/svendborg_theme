@@ -33,15 +33,17 @@
         $tree = menu_tree_all_data('menu-indholdsmenu', $link = NULL, $max_depth = 3);
 
         foreach ($tree as $key => $menu_item) {
-          print "<div class='menu-". $menu_item['link']['mlid']. " footer-indholsdmenu col-xs-12 col-sm-6 col-md-3'>";
-          if($menu_item['link']['has_children']) {
-            print "<h2 class='menu-footer " . $menu_item['link']['link_title']. "'>
+          if (!$menu_item['link']['hidden']) {
+            print "<div class='menu-". $menu_item['link']['mlid']. " footer-indholsdmenu col-xs-12 col-sm-6 col-md-3'>";
+print "<h2 class='menu-footer " . $menu_item['link']['link_title']. "'>
             <a title='" . $menu_item['link']['link_title'] . "' href='". $menu_item['link']['link_path'] ."' class='" . $menu_item['link']['link_title']. "'>" . $menu_item['link']['link_title'] . "</a></h2>";
-          
-            $tree_display =menu_tree_output($menu_item['below']);
-            print render($tree_display);
+            if($menu_item['link']['has_children'] && !$menu_item['link']['hidden']) {
+
+              $tree_display =menu_tree_output($menu_item['below']);
+              print render($tree_display);
+            }
+            print "</div>";
           }
-          print "</div>";
         }
 
       ?>
