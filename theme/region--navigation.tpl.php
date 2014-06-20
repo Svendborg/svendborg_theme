@@ -51,7 +51,7 @@
   </div>
   <header class="region region-navigation header_fixed container"<?php //print $attributes; ?>>
 
-    <?php if ($content_attributes): ?><div class="container header_fixed_inner navbar-default"<?php //print $content_attributes; ?>><?php endif; ?>
+    <?php if ($content_attributes): ?><div class="header_fixed_inner navbar-default"<?php //print $content_attributes; ?>><?php endif; ?>
 
     <div class="navbar-header col-md-3 col-sm-4 col-xs-12">
       <?php if ($page['logo']): ?>
