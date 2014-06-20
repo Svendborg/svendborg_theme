@@ -12,13 +12,15 @@ function svendborg_theme_preprocess_page(&$variables) {
   if (isset($variables['node']) && !empty($variables['node']->nid)) {
     $node = $variables['node'];
   }
+  $sidebar_second_hidden = FALSE;
+  $sidebar_first_hidden = FALSE;
 
   // If node has hidden the sidebar, set content to null and return.
   if ($node &&
       isset($node->field_svendborg_hide_sidebar['und'][0]['value']) &&
       $node->field_svendborg_hide_sidebar['und'][0]['value'] == '1') {
-
     $variables['page']['sidebar_second'] = array();
+    $sidebar_second_hidden = TRUE;
   }
 
   // If the current item is NOT in indholdsmenu, clean the sidebar_first array.
@@ -28,6 +30,7 @@ function svendborg_theme_preprocess_page(&$variables) {
     $active = end($menu_trail);
     if ($active['menu_name'] !== 'menu-indholdsmenu') {
       $variables['page']['sidebar_first'] = array();
+      $sidebar_first_hidden = TRUE;
     }
   }
 
@@ -36,7 +39,7 @@ function svendborg_theme_preprocess_page(&$variables) {
     $selfservicelinks = array();
     foreach ($node->field_os2web_base_field_selfserv['und'] as $key => $link) {
       $selfservicelink = node_load($link['nid']);
-      $selfservicelinks[] = array(
+      $selfservicelinks[$link['nid']] = array(
         'nid' => $selfservicelink->nid,
         'title' => $selfservicelink->title,
       );
@@ -50,7 +53,7 @@ function svendborg_theme_preprocess_page(&$variables) {
   if ($node && is_array($node->field_os2web_base_field_related['und'])) {
     foreach ($node->field_os2web_base_field_related['und'] as $link) {
       $link_node = node_load($link['nid']);
-      $related_links[$link->nid] = array(
+      $related_links[$link['nid']] = array(
         'nid' => $link->nid,
         'title' => $link_node->title,
       );
@@ -90,7 +93,17 @@ function svendborg_theme_preprocess_page(&$variables) {
   }
   // Provide the related links to the templates.
   $variables['page']['related_links'] = $related_links;
+  if (!$sidebar_second_hidden  && empty($variables['page']['sidebar_second']) && (!empty($variables['page']['related_links']) || !empty($variables['page']['selfservicelinks']))) {
+    $variables['page']['sidebar_second'] = array(
+      'dummy_content' => array(
+        '#markup' => ' ',
+      ),
+      '#theme_wrappers' => array('region'),
+      '#region' => 'sidebar_second',
+    );
 
+    // drupal_add_region_content('sidebar_second', 'dummy_content');
+  }
   // Add out fonts from Google Fonts API.
   drupal_add_html_head(array(
     '#tag' => 'link',

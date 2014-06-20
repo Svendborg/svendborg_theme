@@ -7216,24 +7216,31 @@ div.panel-pane div.node.node-os2web-spotbox-box .field-name-field-os2web-spotbox
 .page-node h1.page-header {
   display: none;
 }
-.page-node article {
+.page-node article,
+.page-node div.node {
   background: white;
   border-radius: 0 0 4px 4px;
 }
-.page-node article header h2 a {
+.page-node article header h2 a,
+.page-node div.node header h2 a {
   color: #30353c;
   text-transform: initial;
 }
 .page-node article .wrap,
+.page-node div.node .wrap,
 .page-node article header time,
-.page-node article header h2 {
+.page-node div.node header time,
+.page-node article header h2,
+.page-node div.node header h2 {
   padding: 15px;
 }
-.page-node article header time {
+.page-node article header time,
+.page-node div.node header time {
   text-align: right;
   display: block;
 }
-.page-node article header time i {
+.page-node article header time i,
+.page-node div.node header time i {
   display: inline-block;
   zoom: 1;
   *display: inline;
@@ -7243,18 +7250,22 @@ div.panel-pane div.node.node-os2web-spotbox-box .field-name-field-os2web-spotbox
   width: 12px;
   height: 10px;
 }
-.page-node article .field-name-field-os2web-base-field-image .field-slideshow {
+.page-node article .field-name-field-os2web-base-field-image .field-slideshow,
+.page-node div.node .field-name-field-os2web-base-field-image .field-slideshow {
   margin: 0 auto;
 }
-.page-node article .field-name-field-os2web-base-field-image .field-slideshow .field-slideshow-caption {
+.page-node article .field-name-field-os2web-base-field-image .field-slideshow .field-slideshow-caption,
+.page-node div.node .field-name-field-os2web-base-field-image .field-slideshow .field-slideshow-caption {
   display: none;
 }
-.page-node article .field-name-field-os2web-base-field-image img {
+.page-node article .field-name-field-os2web-base-field-image img,
+.page-node div.node .field-name-field-os2web-base-field-image img {
   border-radius: 4px 4px 0 0;
   width: 100%;
   height: auto;
 }
-.page-node article .field-name-field-os2web-base-field-summary .field-item {
+.page-node article .field-name-field-os2web-base-field-summary .field-item,
+.page-node div.node .field-name-field-os2web-base-field-summary .field-item {
   font-size: 1.2em;
   margin-bottom: 20px;
 }
