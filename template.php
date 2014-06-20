@@ -99,6 +99,9 @@ function svendborg_theme_preprocess_page(&$variables) {
   }
   // Provide the related links to the templates.
   $variables['page']['related_links'] = $related_links;
+
+  // Hack to force the sidebar_second to be rendered if we have anything to put
+  // in it.
   if (!$sidebar_second_hidden  && empty($variables['page']['sidebar_second']) && (!empty($variables['page']['related_links']) || !empty($variables['page']['selfservicelinks']))) {
     $variables['page']['sidebar_second'] = array(
       'dummy_content' => array(
@@ -107,9 +110,34 @@ function svendborg_theme_preprocess_page(&$variables) {
       '#theme_wrappers' => array('region'),
       '#region' => 'sidebar_second',
     );
-
-    // drupal_add_region_content('sidebar_second', 'dummy_content');
   }
+
+  // Spotbox handling. Find all spotboxes for this node, and add them to
+  // page_bottom.
+
+  if ($node && $spotboxes = field_get_items('node', $node, 'field_os2web_base_field_spotbox')) {
+    dpm($spotboxes);
+    $spotbox_nids = array();
+    foreach ($spotboxes as $spotbox) {
+      $spotbox_nids[$spotbox['nid']] = $spotbox['nid'];
+    }
+    $spotbox_array = os2web_spotbox_render_spotboxes($spotbox_nids, NULL, NULL, NULL, 'svendborg_spotbox');
+
+    foreach ($spotbox_array['node'] as &$spotbox) {
+      $spotbox['#prefix'] = '<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">';
+      $spotbox['#suffix'] = '</div>';
+    }
+
+    $variables['page']['content_bottom'] = array(
+      'os2web_spotbox' => array(
+        '#markup' => drupal_render($spotbox_array),
+      ),
+      '#theme_wrappers' => array('region'),
+      '#region' => 'content_bottom',
+    );
+  }
+
+
   // Add out fonts from Google Fonts API.
   drupal_add_html_head(array(
     '#tag' => 'link',

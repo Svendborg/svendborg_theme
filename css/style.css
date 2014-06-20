@@ -6913,30 +6913,35 @@ fieldset[disabled] .btn-inverse.active {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff9f0f0', endColorstr='#ffebcccc', GradientType=0);
 }
 .spotbox,
-div.panel-pane div.node.node-os2web-spotbox-box {
+div.panel-pane div.node.node-os2web-spotbox-box,
+div.node-os2web-spotbox-box {
   background: white;
   border-radius: 4px;
   padding: 8px;
   margin-bottom: 30px;
 }
 .spotbox img,
-div.panel-pane div.node.node-os2web-spotbox-box img {
+div.panel-pane div.node.node-os2web-spotbox-box img,
+div.node-os2web-spotbox-box img {
   width: 100%;
   height: auto;
   position: relative;
 }
 .spotbox h3,
-div.panel-pane div.node.node-os2web-spotbox-box h3 {
+div.panel-pane div.node.node-os2web-spotbox-box h3,
+div.node-os2web-spotbox-box h3 {
   text-align: center;
   font-weight: normal;
   text-transform: none;
 }
 .spotbox .field-name-field-os2web-spotbox-big-image .field-item,
-div.panel-pane div.node.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-item {
+div.panel-pane div.node.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-item,
+div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-item {
   position: relative;
 }
 .spotbox .field-name-field-os2web-spotbox-big-image .field-item:before,
-div.panel-pane div.node.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-item:before {
+div.panel-pane div.node.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-item:before,
+div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-item:before {
   content: " ";
   display: table;
   z-index: 40;
@@ -7227,30 +7232,37 @@ div.panel-pane div.node.node-os2web-spotbox-box .field-name-field-os2web-spotbox
   display: none;
 }
 .page-node article,
-.page-node div.node {
+.page-node div.node-os2web-borger-dk-article,
+.page-node div.node-os2web-base-news {
   background: white;
   border-radius: 0 0 4px 4px;
 }
 .page-node article header h2 a,
-.page-node div.node header h2 a {
+.page-node div.node-os2web-borger-dk-article header h2 a,
+.page-node div.node-os2web-base-news header h2 a {
   color: #30353c;
   text-transform: initial;
 }
 .page-node article .wrap,
-.page-node div.node .wrap,
+.page-node div.node-os2web-borger-dk-article .wrap,
+.page-node div.node-os2web-base-news .wrap,
 .page-node article header time,
-.page-node div.node header time,
+.page-node div.node-os2web-borger-dk-article header time,
+.page-node div.node-os2web-base-news header time,
 .page-node article header h2,
-.page-node div.node header h2 {
+.page-node div.node-os2web-borger-dk-article header h2,
+.page-node div.node-os2web-base-news header h2 {
   padding: 15px;
 }
 .page-node article header time,
-.page-node div.node header time {
+.page-node div.node-os2web-borger-dk-article header time,
+.page-node div.node-os2web-base-news header time {
   text-align: right;
   display: block;
 }
 .page-node article header time i,
-.page-node div.node header time i {
+.page-node div.node-os2web-borger-dk-article header time i,
+.page-node div.node-os2web-base-news header time i {
   display: inline-block;
   zoom: 1;
   *display: inline;
@@ -7261,21 +7273,25 @@ div.panel-pane div.node.node-os2web-spotbox-box .field-name-field-os2web-spotbox
   height: 10px;
 }
 .page-node article .field-name-field-os2web-base-field-image .field-slideshow,
-.page-node div.node .field-name-field-os2web-base-field-image .field-slideshow {
+.page-node div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image .field-slideshow,
+.page-node div.node-os2web-base-news .field-name-field-os2web-base-field-image .field-slideshow {
   margin: 0 auto;
 }
 .page-node article .field-name-field-os2web-base-field-image .field-slideshow .field-slideshow-caption,
-.page-node div.node .field-name-field-os2web-base-field-image .field-slideshow .field-slideshow-caption {
+.page-node div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image .field-slideshow .field-slideshow-caption,
+.page-node div.node-os2web-base-news .field-name-field-os2web-base-field-image .field-slideshow .field-slideshow-caption {
   display: none;
 }
 .page-node article .field-name-field-os2web-base-field-image img,
-.page-node div.node .field-name-field-os2web-base-field-image img {
+.page-node div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image img,
+.page-node div.node-os2web-base-news .field-name-field-os2web-base-field-image img {
   border-radius: 4px 4px 0 0;
   width: 100%;
   height: auto;
 }
 .page-node article .field-name-field-os2web-base-field-summary .field-item,
-.page-node div.node .field-name-field-os2web-base-field-summary .field-item {
+.page-node div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-summary .field-item,
+.page-node div.node-os2web-base-news .field-name-field-os2web-base-field-summary .field-item {
   font-size: 1.2em;
   margin-bottom: 20px;
 }
