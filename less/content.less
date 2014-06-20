@@ -7,8 +7,15 @@
   #gradient > .vertical-three-colors(#fff, rgba(223, 222, 215, 0.9), 250px, rgba(223, 222, 215, 0.9));
 }
 
-.page-node-edit .region-content {
-  background-color: #FFF;
+.page-node-edit,
+.page-node-add {
+  .region-content section {
+    background-color: #FFF;
+    padding: 10px;
+  }
+  h1.page-header {
+    display: block;
+  }
 }
 
 // Default show for a node with 3 columns.

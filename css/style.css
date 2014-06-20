@@ -7210,8 +7210,14 @@ div.panel-pane div.node.node-os2web-spotbox-box .field-name-field-os2web-spotbox
   background-repeat: no-repeat;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#e6dfded7', GradientType=0);
 }
-.page-node-edit .region-content {
+.page-node-edit .region-content section,
+.page-node-add .region-content section {
   background-color: #FFF;
+  padding: 10px;
+}
+.page-node-edit h1.page-header,
+.page-node-add h1.page-header {
+  display: block;
 }
 .page-node h1.page-header {
   display: none;
