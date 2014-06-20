@@ -30,6 +30,8 @@ function svendborg_theme_preprocess_page(&$variables) {
       $variables['page']['sidebar_first'] = array();
     }
   }
+
+  // Get all the nodes selvbetjeningslinks and give them to the template.
   if ($node && is_array($node->field_os2web_base_field_selfserv['und'])) {
     $selfservicelinks = array();
     foreach ($node->field_os2web_base_field_selfserv['und'] as $key => $link) {
@@ -41,6 +43,46 @@ function svendborg_theme_preprocess_page(&$variables) {
     }
     $variables['page']['selfservicelinks'] = $selfservicelinks;
   }
+
+  // Get all related links to this node.
+  // 1. Get all unique related links from the node.
+  $related_links = array();
+  if ($node && is_array($node->field_os2web_base_field_related['und'])) {
+    foreach ($node->field_os2web_base_field_related['und'] as $key => $link) {
+      $related_links[] = array(
+        'nid' => $link['nid'],
+        'title' => $link['node']->title,
+      );
+    }
+  }
+  // 2. Get all related links related to the KLE number on the node. Only get
+  // these if the checkbox "Skjul relaterede links" isn't checked.
+  if ($node &&
+      (!isset($node->field_os2web_base_field_hidlinks['und'][0]['value']) ||
+      $node->field_os2web_base_field_hidlinks['und'][0]['value'] == '0') &&
+      is_array($node->field_os2web_base_field_kle_ref['und'])) {
+
+    foreach ($node->field_os2web_base_field_kle_ref['und'] as $key => $kle) {
+      // Get all nodes which have the same KLE number as this node.
+      $query = new EntityFieldQuery();
+      $result = $query->entityCondition('entity_type', 'node')
+        ->propertyCondition('status', 1)
+        ->propertyCondition('nid', $node->nid, '!=')
+        ->fieldCondition('field_os2web_base_field_kle_ref', 'tid', $kle['tid'])
+        ->execute();
+      if (isset($result['node'])) {
+        foreach ($result['node'] as $nid => $link) {
+          $link_node = node_load($link->nid);
+          $related_links[] = array(
+            'nid' => $nid,
+            'title' => $link_node->title,
+          );
+        }
+      }
+    }
+  }
+  // Provide the related links to the templates.
+  $variables['page']['related_links'] = $related_links;
 
   // Add out fonts from Google Fonts API.
   drupal_add_html_head(array(

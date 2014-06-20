@@ -45,6 +45,22 @@
         </div>
       </div>
     <?php endif; ?>
+    <?php if(!empty($page['page']['related_links'])) : ?>
+      <div class="panel panel-primary with-arrow">
+        <div class="panel-heading">
+          <h3 class="panel-title"><?php print t('Relaterede sider'); ?></h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+          <?php foreach ($page['page']['related_links'] as $link) : ?>
+            <li>
+              <a href="<?php print drupal_get_path_alias('node/' . $link['nid']); ?>"><?php print $link['title']; ?></a>
+            </li>
+          <?php endforeach; ?>
+         </ul>
+        </div>
+      </div>
+    <?php endif; ?>
     <?php if ($content_attributes): ?><div<?php print $content_attributes; ?>><?php endif; ?>
     <?php print $content; ?>
     <?php if ($content_attributes): ?></div><?php endif; ?>
