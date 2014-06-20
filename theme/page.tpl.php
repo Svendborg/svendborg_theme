@@ -103,7 +103,7 @@
   <div class="row">
     <div class="container">
       <?php /* region--content_bottom.tpl.php */ ?>
-        <?php dpm($page['content_bottom']); print render($page['content_bottom']); ?>
+        <?php print render($page['content_bottom']); ?>
     </div>
   </div>
   <?php endif; ?>
