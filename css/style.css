@@ -7101,7 +7101,7 @@ div.panel-pane div.node.node-os2web-spotbox-box .field-name-field-os2web-spotbox
 }
 .breadcrumb li i {
   background-image: url(../images/sprites.png);
-  background-position: 0px -55px;
+  background-position: 0px -42px;
   width: 8px;
   height: 13px;
   display: block;
@@ -7192,7 +7192,7 @@ div.panel-pane div.node.node-os2web-spotbox-box .field-name-field-os2web-spotbox
   margin-top: -8px;
   margin-left: 11px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -42px;
+  background-position: 0px -55px;
   width: 8px;
   height: 13px;
 }
@@ -7463,6 +7463,8 @@ h2.menu-footer a.Kommunen {
 }
 .frontpage-search-box input {
   height: 58px;
+  font-size: 24px;
+  color: #333;
 }
 .frontpage-search-box button {
   height: 58px;
