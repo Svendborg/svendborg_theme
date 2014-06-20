@@ -114,9 +114,8 @@ function svendborg_theme_preprocess_page(&$variables) {
 
   // Spotbox handling. Find all spotboxes for this node, and add them to
   // page_bottom.
-
   if ($node && $spotboxes = field_get_items('node', $node, 'field_os2web_base_field_spotbox')) {
-    dpm($spotboxes);
+
     $spotbox_nids = array();
     foreach ($spotboxes as $spotbox) {
       $spotbox_nids[$spotbox['nid']] = $spotbox['nid'];
@@ -136,7 +135,6 @@ function svendborg_theme_preprocess_page(&$variables) {
       '#region' => 'content_bottom',
     );
   }
-
 
   // Add out fonts from Google Fonts API.
   drupal_add_html_head(array(
