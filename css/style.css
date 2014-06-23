@@ -1686,7 +1686,7 @@ output {
 .form-control {
   display: block;
   width: 100%;
-  height: 15em;
+  height: 2em;
   padding: 6px 12px;
   font-size: 1.125em;
   line-height: 1.42857143;
@@ -1732,7 +1732,7 @@ input[type="search"] {
   -webkit-appearance: none;
 }
 input[type="date"] {
-  line-height: 15em;
+  line-height: 2em;
 }
 .form-group {
   margin-bottom: 15px;
@@ -1824,16 +1824,16 @@ select[multiple].input-lg {
   position: relative;
 }
 .has-feedback .form-control {
-  padding-right: 18.75em;
+  padding-right: 2.5em;
 }
 .has-feedback .form-control-feedback {
   position: absolute;
   top: 6em;
   right: 0;
   display: block;
-  width: 15em;
-  height: 15em;
-  line-height: 15em;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
   text-align: center;
 }
 .has-success .help-block,
@@ -3851,8 +3851,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
-  margin-top: 17.5px;
-  margin-bottom: 17.5px;
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 @media (min-width: 768px) {
   .navbar-form .form-group {
@@ -3920,8 +3920,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-bottom-left-radius: 0;
 }
 .navbar-btn {
-  margin-top: 17.5px;
-  margin-bottom: 17.5px;
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 .navbar-btn.btn-sm {
   margin-top: 18.5px;
@@ -7076,6 +7076,9 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-it
   border-left: none;
   border-top-right-radius: 4px;
   background-color: #fff;
+}
+.header_fixed .input-group-btn .btn {
+  padding: 10px;
 }
 .breadcrumb a,
 .region-sidebar-first .block-menu-block a {

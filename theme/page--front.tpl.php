@@ -133,7 +133,8 @@
       //print render($page['content']);
       // Search-box
       print "<div class='frontpage-search-box col-md-push-3 col-md-6 col-sm-push-3 col-sm-6 col-xs-12'>";
-      print drupal_render(drupal_get_form('search_form'));
+      $search_from = drupal_get_form('search_form');
+      print drupal_render($search_from);
 
       print "</div>";
 
