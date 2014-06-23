@@ -6805,6 +6805,7 @@ fieldset[disabled] .btn-inverse.active {
 .panel,
 .like-panel {
   border: none;
+  box-shadow: none;
 }
 .panel > .panel-heading,
 .like-panel {
@@ -7325,6 +7326,7 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-it
 }
 .page-node .field-name-field-os2web-base-field-media .field-item a {
   margin-left: 10px;
+  color: #30353c;
 }
 .page-node .region-content.col-sm-9 article .wrap,
 .page-node .region-content.col-md-9 article .wrap,
