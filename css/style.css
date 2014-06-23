@@ -7468,6 +7468,7 @@ h2.menu-footer a.Kommunen {
   width: 182px;
   height: 180px;
   padding: 120px 55px 29px 55px;
+  font-size: 20px;
 }
 .front-indholsdmenu a.Erhverv {
   background-image: url(../images/sprites.png);
@@ -7475,6 +7476,7 @@ h2.menu-footer a.Kommunen {
   width: 182px;
   height: 180px;
   padding: 120px 50px 29px 50px;
+  font-size: 20px;
 }
 .front-indholsdmenu a.Politik {
   background-image: url(../images/sprites.png);
