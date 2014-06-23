@@ -103,7 +103,7 @@
       <?php print render($content['field_os2web_base_field_image']); ?>
     <?php endif; ?>
     <time pubdate="pubdate">
-      <i></i><?php print $date; ?>
+      <i></i><?php print format_date($created, 'custom', 'j. F'); ?>
     </time>
     <?php print render($title_prefix); ?>
     <?php if (!empty($title)): ?>
