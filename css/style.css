@@ -7241,6 +7241,11 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-it
   background: white;
   border-radius: 0 0 4px 4px;
 }
+.page-node article p,
+.page-node div.node-os2web-borger-dk-article p,
+.page-node div.node-os2web-base-news p {
+  line-height: 1.6em;
+}
 .page-node article header h2 a,
 .page-node div.node-os2web-borger-dk-article header h2 a,
 .page-node div.node-os2web-base-news header h2 a {
@@ -7252,9 +7257,6 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-it
 .page-node article .wrap,
 .page-node div.node-os2web-borger-dk-article .wrap,
 .page-node div.node-os2web-base-news .wrap,
-.page-node article header time,
-.page-node div.node-os2web-borger-dk-article header time,
-.page-node div.node-os2web-base-news header time,
 .page-node article header h2,
 .page-node div.node-os2web-borger-dk-article header h2,
 .page-node div.node-os2web-base-news header h2 {
@@ -7263,6 +7265,7 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-it
 .page-node article header time,
 .page-node div.node-os2web-borger-dk-article header time,
 .page-node div.node-os2web-base-news header time {
+  padding: 15px 30px;
   text-align: right;
   display: block;
 }
@@ -7337,7 +7340,7 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-it
 .page-node .region-content.col-md-9 article .field-name-field-os2web-base-field-image,
 .page-node .region-content.col-sm-12 article .field-name-field-os2web-base-field-image,
 .page-node .region-content.col-md-12 article .field-name-field-os2web-base-field-image {
-  padding: 15px;
+  padding: 0 15px;
 }
 .page-node .region-content.col-sm-9 article .wrap,
 .page-node .region-content.col-md-9 article .wrap,
