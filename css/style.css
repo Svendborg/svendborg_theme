@@ -7331,7 +7331,6 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-it
 .page-node .region-content.col-md-9 article header,
 .page-node .region-content.col-sm-12 article header,
 .page-node .region-content.col-md-12 article header {
-  width: 75%;
   margin: 0 auto;
 }
 .page-node .region-content.col-sm-9 article .field-name-field-os2web-base-field-image,
@@ -7340,11 +7339,17 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-it
 .page-node .region-content.col-md-12 article .field-name-field-os2web-base-field-image {
   padding: 15px;
 }
+.page-node .region-content.col-sm-9 article .wrap,
+.page-node .region-content.col-md-9 article .wrap,
+.page-node .region-content.col-sm-9 article header,
+.page-node .region-content.col-md-9 article header {
+  width: 86%;
+}
 .page-node .region-content.col-sm-12 article .wrap,
 .page-node .region-content.col-md-12 article .wrap,
 .page-node .region-content.col-sm-12 article header,
 .page-node .region-content.col-md-12 article header {
-  width: 68%;
+  width: 74%;
 }
 footer {
   background: white;
