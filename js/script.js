@@ -1,6 +1,6 @@
 /* Svendborg theme script
 */
-+function ($) {
+( function ($) {
   $(document).ready(function(){
     $(window).bind('scroll', function() {
         var navHeight = $( window ).height();
@@ -19,4 +19,11 @@
     });
   });
 
-}(jQuery);
+})( jQuery );
+
+/**
+ * Re-collapse the feedback form after every successful form submission.
+ */
+Drupal.behaviors.feedbackFormSubmit = {
+  attach: function (context) {}
+};
