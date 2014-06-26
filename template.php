@@ -123,7 +123,6 @@ function svendborg_theme_preprocess_page(&$variables) {
     $spotbox_array = os2web_spotbox_render_spotboxes($spotbox_nids, NULL, NULL, NULL, 'svendborg_spotbox');
 
     foreach ($spotbox_array['node'] as &$spotbox) {
-      dpm($spotbox);
       if (is_array($spotbox)) {
         $spotbox['#prefix'] = '<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">';
         $spotbox['#suffix'] = '</div>';
