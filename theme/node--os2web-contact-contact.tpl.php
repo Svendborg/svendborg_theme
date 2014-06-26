@@ -95,8 +95,9 @@
           hide($content['comments']);
           hide($content['links']);
           hide($content['field_tags']);
+          hide($content['print_links']);
+          hide($content['field_os2web_contact_field_dept']);
 
-          print render($content['field_os2web_contact_field_dept']);
           print render($content);
         ?>
       </div>
