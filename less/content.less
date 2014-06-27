@@ -33,6 +33,18 @@
     background: white;
     border-radius: 0 0 4px 4px;
 
+    // This is a serious hack to force anchors below the fixed header.
+    // See http://css-tricks.com/hash-tag-links-padding/
+    a, h1, h2, h3, h4, h5, h6 {
+      &[id]:before {
+        display: block;
+        content: " ";
+        margin-top: -100px;
+        height: 100px;
+        visibility: hidden;
+      }
+    }
+
     p {
       line-height: 1.6em;
     }
