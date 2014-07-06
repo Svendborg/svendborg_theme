@@ -181,10 +181,11 @@
 
         // If you want to access the image, use the URI instead of the filename !
         //$public_filename = file_create_url( $image["uri"] );
-        $style = 'svendborg_frontpage_news_large'; 
+        $style = 'os2demo_indhold'; 
         $public_filename = image_style_url($style, $image["uri"]);
         // Either output the IMG tag directly,
         print '<div class="row-no-padding col-md-8 col-sm-8 col-xs-12">';
+
         print $html = '<img title = "'.$image["title"].'" src="'.$public_filename.'""/>';
         print "</div>";
         print
@@ -271,7 +272,7 @@
 
             // If you want to access the image, use the URI instead of the filename !
             //$public_filename = file_create_url( $image["uri"] );
-            $style = 'svendborg_frontpage_news_small';
+            $style = 'os2demo_indhold';
             $public_filename = image_style_url($style, $image["uri"]);
             // Either output the IMG tag directly,
             print '<div class="front-s-news-item front-s-news-item-'.$i.' col-md-4 col-sm-4 col-xs-12">';
