@@ -7325,9 +7325,13 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-it
 .page-node article .field-name-field-os2web-base-field-image img,
 .page-node div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image img,
 .page-node div.node-os2web-base-news .field-name-field-os2web-base-field-image img {
-  border-radius: 4px 4px 0 0;
   width: 100%;
   height: auto;
+}
+body.two-sidebars.page-node article .field-name-field-os2web-base-field-image img,
+body.two-sidebars.page-node div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image img,
+body.two-sidebars.page-node div.node-os2web-base-news .field-name-field-os2web-base-field-image img {
+  border-radius: 4px 4px 0 0;
 }
 .page-node article .field-name-field-os2web-base-field-summary .field-item,
 .page-node div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-summary .field-item,
