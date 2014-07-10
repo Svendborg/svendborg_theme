@@ -1,7 +1,7 @@
 .front-buttons {
   @media all and (min-width:769px) {
-    margin-top:  150px;
-    margin-bottom:  70px;
+    margin-top:  20px;
+    margin-bottom:  40px;
   }
 }
 .front-indholsdmenu {
@@ -10,6 +10,8 @@
   a {
     color:  #fff;
     text-transform: uppercase;
+    display: block;
+    margin: 0 auto;
     &:hover {
       text-decoration: none;
     }
@@ -18,7 +20,8 @@
       .sprite(@front-kommune);
 
       font-size: 14px;
-      padding: 90px 30px 25px 29px;;
+      padding: 90px 30px 25px 29px;
+      margin-top: 50px; 
     }
     &.Borger {
       .sprite(@front-borger);
@@ -34,31 +37,24 @@
       .sprite(@front-politik);
       font-size: 14px;
       padding: 90px 45px 23px 45px;
+      margin-top: 50px;
     }
   }
   h2 {
     @media all and (max-width:768px) {
       color:  #fff;
       text-transform: uppercase;
-      &.Kommunen {
-        padding: 90px 30px 25px 29px;;
+      &.Kommunen a {
+        margin-top: 0;
       }
-      &.Borger {
-        padding: 120px 55px 28px 55px;
-      }
-      &.Erhverv {
-
-        padding: 120px 50px 28px 50px;
-      }
-      &.Politik {
-        font-size: 14px;
-        padding: 90px 45px 23px 45px;
+      &.Politik a {
+        margin-top: 0;
       }
     }
   }
 
 }
-.frontpage-search-box {
+.front-search-box {
   input {
     height: 58px;
     font-size: 24px;
@@ -72,10 +68,18 @@
     font-size: 35px;
   }
 }
-#frontpage-carousel-large {
+#front-carousel-large {
   background-color: #fff;
   border-radius: 5px 5px;
   padding: 10px 10px;
+  .carousel-title {
+    margin-top:  20px;
+    a.btn {
+      margin: 20px 0;
+      padding: 5px 15px;
+      font-size: 14px;
+    }
+  }
   img {
     max-width: 100%;
   }
@@ -88,9 +92,10 @@
     left: 0;
   }
   ol li {
-    height: 15px;
-    width: 15px;
+    height: 18px;
+    width: 18px;
     border: 3px solid #e4e3e0;
+    margin: 1px;
     &.active {
       background-color: #7ebb00;
     }
@@ -99,23 +104,126 @@
     font-size: 30px;
   }
 }
-.frontpage-seperator {
+.front-seperator {
+  clear: both;
   height: 45px;
 }
-#frontpage-carousel-large {
-  .carousel-title {
-    margin-top:  20px;
-    a.btn {
-      margin: 20px 0;
-      padding: 5px 15px;
-      font-size: 14px;
+#front-carousel-small {
+  ol {
+    bottom:  -35px;
+    li {
+      height: 18px;
+      width: 18px;
+      border: 3px solid #e4e3e0;
+      margin: 1px;
+      &.active {
+        background-color: #7ebb00;
+      }
     }
   }
+
 }
 .front .main-container {
   min-height: 700px;
+  border: none;
+}
+.front-main-container-wrapper {
+  position: relative;
+}
+.front-main-container-shadow {
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  height: 45px;
+  width: 100%;
+  z-index: 300
 }
 .row-no-padding {
   padding-left: 0 !important;
   padding-right: 0 !important;
+}
+
+.front-s-news {
+  background-image: url('../images/front_s_news_bg.png');
+  .front-s-news-inner{
+    padding-top: 25px;
+    background-image: url('../images/front_s_news_container.png');
+    background-repeat: round;
+    .front-s-news-item {
+      padding: 10px 10px;
+      background-color: #fff;
+      border-radius: 5px 5px;
+      margin-bottom: 10px;
+      .front-s-news-item-img {
+        position: relative;
+        &:before {
+          content: " ";
+          display: table;
+          z-index: 40;
+
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+
+          margin-left: -@spotbox-arrow-width / 2;
+
+          .sprite(@spotbox-arrow);
+
+        }
+      }
+      @media all and (min-width:600px) {
+        width: 32.66%;
+        margin-right: 1%;
+        img {
+          max-width: 100%;
+        }
+      }
+      img {
+        width: 100%;
+      }
+      .front-s-news-item-text {
+        position: relative;
+        text-align: center;
+        min-height: 80px;
+        .bubble {
+          position: absolute;
+          top: 5px;
+          width: 100%;
+          min-height: 80px;
+          display: table;
+          span {
+            display: table-cell; 
+            vertical-align: middle; 
+            text-align: center;
+            font-size: 20px;
+            a {
+              color: #30353c;
+              text-decoration: none;
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+    }
+    .front-s-news-item-2 {
+      margin-right: 0;
+    }
+  }
+}
+.front-news-bottom {
+  background-color: #fff;
+  .front-news-bottom-inner {
+    text-align: center;
+    margin: 20px 0;
+    span {
+      font-size: 26px;
+      font-weight: bold;
+      a {
+        font-size: 14px;
+        padding: 7px 30px;
+      }
+    }
+  }
 }

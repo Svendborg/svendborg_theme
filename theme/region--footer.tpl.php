@@ -34,9 +34,10 @@
 
         foreach ($tree as $key => $menu_item) {
           if (!$menu_item['link']['hidden']) {
+            $path = $alias = drupal_get_path_alias($menu_item['link']['link_path']);
             print "<div class='menu-". $menu_item['link']['mlid']. " footer-indholsdmenu col-xs-12 col-sm-6 col-md-3'>";
 print "<h2 class='menu-footer " . $menu_item['link']['link_title']. "'>
-            <a title='" . $menu_item['link']['link_title'] . "' href='". $menu_item['link']['link_path'] ."' class='" . $menu_item['link']['link_title']. "'>" . $menu_item['link']['link_title'] . "</a></h2>";
+            <a title='" . $menu_item['link']['link_title'] . "' href='/". $path ."' class='" . $menu_item['link']['link_title']. "'>" . $menu_item['link']['link_title'] . "</a></h2>";
             if($menu_item['link']['has_children'] && !$menu_item['link']['hidden']) {
 
               $tree_display =menu_tree_output($menu_item['below']);
@@ -62,7 +63,7 @@ print "<h2 class='menu-footer " . $menu_item['link']['link_title']. "'>
         </div>
         <div class="col-md-9 col-sm-6 col-xs-12 col-md-pull-3 col-sm-pull-6">
           <div class='footer-logo'>
-            <img id="footer-logo" src="/profiles/os2web/themes/svendborg_theme/images/footer_logo.png" title="<?php print $page['site_name'] ?>" />
+            <img id="footer-logo" src="/<?php print drupal_get_path('theme','svendborg_theme'); ?>/images/footer_logo.png" title="<?php print $page['site_name'] ?>" />
                       
           </div>
         </div>
@@ -75,6 +76,6 @@ print "<h2 class='menu-footer " . $menu_item['link']['link_title']. "'>
     </div>
     <!-- footer bg-image -->
     <div class="lcontainer-fluid clearfix footer-bg-image">
-      <img class="" src="/profiles/os2web/themes/svendborg_theme/images/footer_bottom_bg.png" />
+      <img class="" src="/<?php print drupal_get_path('theme','svendborg_theme'); ?>/images/footer_bottom_bg.png" />
     </div>
   </footer>
