@@ -173,6 +173,13 @@ function svendborg_theme_preprocess_html(&$variables) {
  */
 function svendborg_theme_breadcrumb($variables) {
   $breadcrumbs = $variables['breadcrumb'];
+
+  // After disabling the Crumbs module, some taxonomies where dublicated in the
+  // active trail, and then have dubs in breadcrumb.
+  if (arg(0) == 'taxonomy' && arg(1) == 'term' && is_numeric(arg(2))) {
+    array_pop($breadcrumbs);
+  }
+
   if (!empty($breadcrumbs)) {
     // Provide a navigational heading to give context for breadcrumb links to
     // screen-reader users. Make the heading invisible with .element-invisible.
@@ -200,15 +207,6 @@ function svendborg_theme_breadcrumb($variables) {
     $crumbs .= '</ul>';
     return $crumbs;
   }
-}
-
-/**
- * Implements hook_menu_breadcrumb_alter().
- */
-function svendborg_theme_menu_breadcrumb_alter(&$active_trail, $item) {
-  // After disabling the Crumbs module, some taxonomies where dublicated in the
-  // active trail, and then have dubs in breadcrumb.
-  $active_trail = array_unique($active_trail);
 }
 
 /**
