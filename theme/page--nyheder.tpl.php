@@ -5,7 +5,7 @@
 <?php endif; ?>
 <div class="front-main-container-wrapper">
 <div class="main-container container">
-
+  <div class="row">
   <?php /* region--header.tpl.php */ ?>
   <?php print render($page['header']); ?>
 
@@ -86,6 +86,7 @@
     ?>
     <div class="nyheder-seperator"></div>
     <div class="nyheder-content">
+      <div class="row">
     <?php
       $view = views_get_view('svendborg_news_view');
       $view->set_display('block');
@@ -99,44 +100,56 @@
 
       $results = $view->result;
       foreach ($results as $key => $item) {
-
-        print '<div class="row">';
-
             $node = node_load($item->nid);
             $img = field_get_items('node',$node,'field_os2web_base_field_lead_img');
+            $pre_text = field_get_items('node',$node,'field_os2web_base_field_summary');
             $image = $img[0];
             // If you need informations about the file itself (e.g. image resolution):
             image_get_info( $image["filename"] );
-
+            $path = drupal_get_path_alias('node/'.$node->nid);
             // If you want to access the image, use the URI instead of the filename !
             //$public_filename = file_create_url( $image["uri"] );
             $style = 'os2demo_indhold';
             $public_filename = image_style_url($style, $image["uri"]);
-            // Either output the IMG tag directly,
-            echo '<div class="col-md-6 col-sm-6 col-xs-12">';
-            print '<div class="front-s-news-item front-s-news-item-'.$i.'">';
+
+            echo '<div class="col-md-6 col-sm-12 col-xs-12">';
+            echo '<div class="front-s-news-item front-s-news-item-'.$key.'">';
             print '<div class="front-s-news-item-img">';
-            print $html = '<img title = "'.$image["title"].'" src="'.$public_filename.'""/>';
+            print $html = '<a href="'.$path.'"><img title = "'.$image["title"].'" src="'.$public_filename.'""/></a>';
             print '</div>';
-            print
-              '<div class="front-s-news-item-text">';
 
-            $path = drupal_get_path_alias('node/'.$node->nid);
-            print '<div class="bubble"><span><a href="'.$path.'">'. $node->title .'</a>';
-            print "</a></span></div>";
-            print '</div>
-            </div>';
-            echo '</div>';
+            // news-text
+            print '<div class="front-s-news-item-text clearfix">';
+              // date col-md-2
+              print '<div class="col-md-2 col-sm-2 col-xs-2">
+                     <div class="news-text-date">';
+              $day = date('j',$node->created);
+              $month = date('M', $node->created);
+                print '<span class="news-date-day">'. $day . '.</span>';
+                print '<span class="news-date-month">'. $month . '</span>';
+              print '</div></div>';
 
-        print '</div>';
+              // text col-md-10
+              print '<div class="col-md-10 col-sm-10 col-xs-10">
+                      <div><a class="news-title" href="'.$path.'">'. $node->title .'</a></div>';
+                print '<div>';
+                  print '<p>'.$pre_text[0]['value'].'</p>';
+                print '</div>';
+              print "</div>";
+
+            print '</div>';
+            echo '</div></div>';
+
       }
     ?>
+      </div>
     </div>
   </div>
 
   <!-- right sidebar -->
   <div class="col-md-4 col-sm-4 col-xs-12">
-</div>
+  </div>
+  </div>
 </div>
 <?php /* region--footer.tpl.php */ ?>
 <?php print render($page['footer']); ?>

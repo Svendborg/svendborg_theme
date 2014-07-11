@@ -83,7 +83,7 @@
   <?php /* region--header.tpl.php */ ?>
   <?php print render($page['header']); ?>
 
-  <div class="">
+  <div class="row">
 
     <?php /* region--sidebar.tpl.php */ ?>
     <?php if ($page['sidebar_first']): ?>
@@ -215,10 +215,9 @@
 <?php
   // 3 Small news view
   print '<div class="lcontainer-fluid clearfix front-s-news">';
-  print '<div class="container">';
-  print '<div class="row front-s-news-inner">';
+  print '<div class="container front-s-news-inner">';
+  print '<div class="row">';
 
-    print "<div class=' col-md-12 col-sm-12 col-xs-12'>";
 
     $view = views_get_view('svendborg_news_view');
     $view->set_display('block');
@@ -295,10 +294,8 @@
 
       print '</div></div>';
 
-      print "</div>";
       print '<div class="front-seperator"></div>';
 
-    print "</div>";
   print "</div>";
   print "</div>";
   print "</div>";
