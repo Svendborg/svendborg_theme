@@ -11,8 +11,10 @@
   <h3><?php print $title; ?></h3>
 <?php endif; ?>
 <?php foreach ($rows as $id => $row): ?>
-  <div<?php if ($classes_array[$id]) { print ' class="' . $classes_array[$id] .'"';  } ?>>
-    <?php print $row; ?>
-    <i></i>
+  <div<?php if ($classes_array[$id]) : print ' class="' . $classes_array[$id] . '"'; endif; ?>>
+    <div class="inner">
+      <?php print $row; ?>
+      <i></i>
+    </div>
   </div>
 <?php endforeach; ?>
