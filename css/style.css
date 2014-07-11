@@ -6526,6 +6526,25 @@ body {
   background: url(../images/skateboard.jpg) no-repeat fixed;
   background-size: cover;
 }
+.main-container {
+  border-bottom: 1px solid white;
+  background-image: rgba(223, 222, 215, 0.9);
+  border-left: 1px solid rgba(255, 255, 255, 0.8);
+  border-right: 1px solid rgba(255, 255, 255, 0.8);
+  background-image: -webkit-linear-gradient(#ffffff, rgba(223, 222, 215, 0.9) 250px, rgba(223, 222, 215, 0.9));
+  background-image: linear-gradient(#ffffff, rgba(223, 222, 215, 0.9) 250px, rgba(223, 222, 215, 0.9));
+  background-repeat: no-repeat;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#e6dfded7', GradientType=0);
+}
+.main-container,
+.header_svendborg .container {
+  border-left: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.6);
+  border-right: none;
+  border-right: 1px solid rgba(255, 255, 255, 0.6);
+  -webkit-background-clip: padding;
+  background-clip: padding-box;
+}
 .btn-default {
   color: #ffffff;
   background-image: -webkit-linear-gradient(top, #005191 0%, #0089cd 100%);
@@ -7219,14 +7238,6 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-it
 .region-sidebar-first .block-menu-block li.last a {
   border-radius: 0 0 4px 4px;
 }
-.main-container {
-  border-bottom: 1px solid white;
-  background-image: rgba(223, 222, 215, 0.9);
-  background-image: -webkit-linear-gradient(#ffffff, rgba(223, 222, 215, 0.9) 250px, rgba(223, 222, 215, 0.9));
-  background-image: linear-gradient(#ffffff, rgba(223, 222, 215, 0.9) 250px, rgba(223, 222, 215, 0.9));
-  background-repeat: no-repeat;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#e6dfded7', GradientType=0);
-}
 .page-node-edit .region-content section,
 .page-node-add .region-content section {
   background-color: #FFF;
@@ -7619,7 +7630,6 @@ h2.menu-footer a.Kommunen {
 }
 .front .main-container {
   min-height: 700px;
-  border: none;
 }
 .front-main-container-wrapper {
   position: relative;
