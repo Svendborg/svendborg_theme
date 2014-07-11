@@ -7089,6 +7089,8 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-it
   background-repeat: no-repeat;
   border-left: none;
   border-color: #ccc;
+  height: 2em;
+  font-size: 2em;
   /*.search_box_bg();*/
 }
 .header_fixed input {
