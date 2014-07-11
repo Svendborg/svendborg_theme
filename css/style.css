@@ -6537,7 +6537,7 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#e6dfded7', GradientType=0);
 }
 .main-container,
-.header_svendborg .container {
+.header_svendborg .region-navigation.container {
   border-left: none;
   border-left: 1px solid rgba(255, 255, 255, 0.6);
   border-right: none;
