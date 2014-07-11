@@ -736,17 +736,17 @@ pre code {
 }
 @media (min-width: 768px) {
   .container {
-    width: 740px;
+    width: 784px;
   }
 }
 @media (min-width: 992px) {
   .container {
-    width: 960px;
+    width: 1004px;
   }
 }
 @media (min-width: 1200px) {
   .container {
-    width: 1160px;
+    width: 1204px;
   }
 }
 .container-fluid {
@@ -5888,17 +5888,17 @@ body #admin-menu .dropdown li {
 }
 @media screen and (min-width: 768px) {
   .navbar.container {
-    max-width: 720px;
+    max-width: 764px;
   }
 }
 @media screen and (min-width: 992px) {
   .navbar.container {
-    max-width: 940px;
+    max-width: 984px;
   }
 }
 @media screen and (min-width: 1200px) {
   .navbar.container {
-    max-width: 1140px;
+    max-width: 1184px;
   }
 }
 .navbar.container > .container {
