@@ -28,3 +28,41 @@
     }
   }
 }
+
+@call-to-action-height: 60px;
+// Call to action buttons like on portalsider.
+.call-to-action {
+  position: relative;
+  margin-bottom: 20px;
+  a {
+    border-radius: @call-to-action-height / 2;
+    background: white;
+    padding: 0 @call-to-action-height;
+    height: @call-to-action-height;
+    line-height: @call-to-action-height;
+    display: block;
+    font-size: @font-size-h4;
+    font-family: @headings-font-family;
+    color: @text-color;
+  }
+
+
+  img {
+    position: absolute;
+    left: 15px;
+    top: 5px;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    border: 3px solid @gray;
+  }
+
+  i {
+    position: absolute;
+    right: 25px;
+    top: @call-to-action-height / 2 - @nav-arrow-right-green-height / 2;
+
+    .sprite(@nav-arrow-right-green);
+  }
+
+}
