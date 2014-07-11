@@ -1,12 +1,5 @@
 // Insert your styling here.
 
-.main-container {
-  border-bottom: 1px solid white;
-  background-image: rgba(223, 222, 215, 0.9); // #dfded7 Opacity 90%
-
-  #gradient > .vertical-three-colors(#fff, rgba(223, 222, 215, 0.9), 250px, rgba(223, 222, 215, 0.9));
-}
-
 .page-node-edit,
 .page-node-add {
   .region-content section {
@@ -32,6 +25,18 @@
   div.node-os2web-base-news {
     background: white;
     border-radius: 0 0 4px 4px;
+
+    // This is a serious hack to force anchors below the fixed header.
+    // See http://css-tricks.com/hash-tag-links-padding/
+    a, h1, h2, h3, h4, h5, h6 {
+      &[id]:before {
+        display: block;
+        content: " ";
+        margin-top: -100px;
+        height: 100px;
+        visibility: hidden;
+      }
+    }
 
     p {
       line-height: 1.6em;
@@ -71,7 +76,9 @@
         }
       }
       img{
-        border-radius: 4px 4px 0 0;
+        body.two-sidebars& {
+          border-radius: 4px 4px 0 0;
+        }
         width: 100%;
         height: auto;
       }
@@ -137,7 +144,7 @@
     article {
       .wrap,
       header {
-        width: 86%;
+        width: 77.77777776%;
       }
     }
   }
@@ -149,7 +156,9 @@
     article {
       .wrap,
       header {
-        width: 74%;
+        width: 83.33333333%;
+        // &:extend(.col-sm-10);
+        // &:extend(.col-sm-offset-1);
       }
     }
   }

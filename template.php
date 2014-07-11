@@ -40,10 +40,14 @@ function svendborg_theme_preprocess_page(&$variables) {
     foreach ($links as $link) {
       $selfservicelink = node_load($link['nid']);
       if ($selfservicelink) {
-        $selfservicelinks[$link['nid']] = array(
-          'nid' => $selfservicelink->nid,
-          'title' => $selfservicelink->title,
-        );
+        $link_fields = field_get_items('node', $selfservicelink, 'field_spot_link');
+        if (!empty($link_fields)) {
+          $link_field = array_shift($link_fields);
+          $selfservicelinks[$link['nid']] = array(
+            'url' => $link_field['url'],
+            'title' => $link_field['title'],
+          );
+        }
       }
     }
     $variables['page']['selfservicelinks'] = $selfservicelinks;
@@ -196,6 +200,15 @@ function svendborg_theme_breadcrumb($variables) {
     $crumbs .= '</ul>';
     return $crumbs;
   }
+}
+
+/**
+ * Implements hook_menu_breadcrumb_alter().
+ */
+function svendborg_theme_menu_breadcrumb_alter(&$active_trail, $item) {
+  // After disabling the Crumbs module, some taxonomies where dublicated in the
+  // active trail, and then have dubs in breadcrumb.
+  $active_trail = array_unique($active_trail);
 }
 
 /**

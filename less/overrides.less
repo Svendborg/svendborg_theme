@@ -107,6 +107,13 @@ body {
   }
 }
 
+// We override the defaul bootstrap .container padding, because we need a
+// different padding than gutters.
+.container {
+  padding-left:  (@container-padding);
+  padding-right: (@container-padding);
+}
+
 // Default navbar.
 .navbar.container {
   @media @tablet {
@@ -648,7 +655,7 @@ table {
 }
 
 // Exposed filters
-.form-horizontal .form-group label {
+.form-horizontal .form-group > label {
   position: relative;
   min-height: 1px;
   margin-top: 0;
