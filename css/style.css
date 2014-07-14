@@ -6506,6 +6506,57 @@ The provided classes are intended to be used with the array-like variables
   .sprite(@icon-email);
 }
 */
+.front-s-news-item-img {
+  position: relative;
+}
+.front-s-news-item-img:before {
+  content: " ";
+  display: table;
+  z-index: 40;
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  margin-left: -17.5px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -97px;
+  width: 35px;
+  height: 17px;
+}
+.front-s-news-item-img img {
+  max-width: 100%;
+}
+.front-s-news-item {
+  padding: 10px 10px;
+  background-color: #fff;
+  border-radius: 5px 5px;
+  margin-bottom: 10px;
+}
+.news-text-date {
+  text-align: center;
+  color: #fff;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -174px;
+  width: 43px;
+  height: 43px;
+}
+.news-text-date .news-date-inner {
+  width: 20px;
+}
+.news-text-date .news-date-day {
+  font-weight: bold;
+  font-size: 17px;
+  float: right;
+  width: 100%;
+  padding-left: 1px;
+  margin-top: 10px;
+  line-height: 10px;
+}
+.news-text-date .news-date-month {
+  text-transform: uppercase;
+  font-size: 11px;
+  float: right;
+  width: 100%;
+}
 /**
  * This file is only for really global styles. None specific styles.
  */
@@ -7139,7 +7190,7 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-it
 }
 .breadcrumb li i {
   background-image: url(../images/sprites.png);
-  background-position: 0px -42px;
+  background-position: 0px -68px;
   width: 8px;
   height: 13px;
   display: block;
@@ -7164,7 +7215,7 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-it
 }
 .breadcrumb li.last i {
   background-image: url(../images/sprites.png);
-  background-position: 0px -68px;
+  background-position: 0px -55px;
   width: 8px;
   height: 13px;
 }
@@ -7230,7 +7281,7 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-it
   margin-top: -8px;
   margin-left: 11px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -55px;
+  background-position: 0px -42px;
   width: 8px;
   height: 13px;
 }
@@ -7407,6 +7458,63 @@ body.two-sidebars.page-node div.node-os2web-base-news .field-name-field-os2web-b
 .page-node .region-content.col-md-12 article header {
   width: 83.33333333%;
 }
+#nyheder-carousel-large {
+  background-color: #fff;
+  border-radius: 5px 5px;
+  padding: 10px 10px;
+}
+#nyheder-carousel-large .carousel-title {
+  margin-top: 20px;
+}
+#nyheder-carousel-large .carousel-title a.btn {
+  margin: 20px 0;
+  padding: 5px 15px;
+  font-size: 14px;
+}
+#nyheder-carousel-large img {
+  max-width: 100%;
+}
+#nyheder-carousel-large .title {
+  font-size: 24px;
+}
+#nyheder-carousel-large ol.carousel-indicators {
+  right: 0;
+  text-align: right;
+  bottom: 5px;
+  margin-left: 0;
+  width: 100%;
+  left: 0;
+}
+#nyheder-carousel-large ol.carousel-indicators li {
+  height: 18px;
+  width: 18px;
+  border: 3px solid #e4e3e0;
+  margin: 1px;
+}
+#nyheder-carousel-large ol.carousel-indicators li.active {
+  background-color: #7ebb00;
+}
+.page-nyheder h1 {
+  text-transform: inherit;
+}
+.nyheder-seperator {
+  clear: both;
+  height: 20px;
+}
+.front-s-news-item-text {
+  padding: 20px 0;
+}
+.front-s-news-item-text .news-title {
+  font-size: 1.5em;
+  color: #30353c;
+}
+.front-s-news-item-text .news-title:hover {
+  color: #005191;
+  text-decoration: none;
+}
+.front-s-news-item-text p {
+  color: #595d63;
+}
 footer {
   background: white;
 }
@@ -7522,7 +7630,7 @@ h2.menu-footer a.Kommunen {
 }
 .front-indholsdmenu a.Kommunen {
   background-image: url(../images/sprites.png);
-  background-position: 0px -404px;
+  background-position: 0px -447px;
   width: 135px;
   height: 135px;
   font-size: 14px;
@@ -7531,7 +7639,7 @@ h2.menu-footer a.Kommunen {
 }
 .front-indholsdmenu a.Borger {
   background-image: url(../images/sprites.png);
-  background-position: 0px -859px;
+  background-position: 0px -902px;
   width: 182px;
   height: 180px;
   padding: 120px 55px 29px 55px;
@@ -7539,7 +7647,7 @@ h2.menu-footer a.Kommunen {
 }
 .front-indholsdmenu a.Erhverv {
   background-image: url(../images/sprites.png);
-  background-position: 0px -679px;
+  background-position: 0px -722px;
   width: 182px;
   height: 180px;
   padding: 120px 50px 29px 50px;
@@ -7547,7 +7655,7 @@ h2.menu-footer a.Kommunen {
 }
 .front-indholsdmenu a.Politik {
   background-image: url(../images/sprites.png);
-  background-position: 0px -271px;
+  background-position: 0px -314px;
   width: 134px;
   height: 133px;
   font-size: 14px;
@@ -7594,7 +7702,10 @@ h2.menu-footer a.Kommunen {
 #front-carousel-large img {
   max-width: 100%;
 }
-#front-carousel-large ol {
+#front-carousel-large .title {
+  font-size: 30px;
+}
+#front-news-branding ol.carousel-indicators {
   right: 0;
   text-align: right;
   bottom: 5px;
@@ -7602,17 +7713,14 @@ h2.menu-footer a.Kommunen {
   width: 100%;
   left: 0;
 }
-#front-carousel-large ol li {
+#front-news-branding ol.carousel-indicators li {
   height: 18px;
   width: 18px;
   border: 3px solid #e4e3e0;
   margin: 1px;
 }
-#front-carousel-large ol li.active {
+#front-news-branding ol.carousel-indicators li.active {
   background-color: #7ebb00;
-}
-#front-carousel-large .title {
-  font-size: 30px;
 }
 .front-seperator {
   clear: both;
@@ -7629,9 +7737,6 @@ h2.menu-footer a.Kommunen {
 }
 #front-carousel-small ol li.active {
   background-color: #7ebb00;
-}
-.front .main-container {
-  min-height: 700px;
 }
 .front-main-container-wrapper {
   position: relative;
@@ -7670,7 +7775,7 @@ h2.menu-footer a.Kommunen {
   display: table;
   z-index: 40;
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   left: 50%;
   margin-left: -17.5px;
   background-image: url(../images/sprites.png);
@@ -7680,11 +7785,11 @@ h2.menu-footer a.Kommunen {
 }
 @media all and (min-width: 600px) {
   .front-s-news .front-s-news-inner .front-s-news-item {
-    width: 32.66%;
-    margin-right: 1%;
-  }
-  .front-s-news .front-s-news-inner .front-s-news-item img {
-    max-width: 100%;
+    /*width: 32.66%;
+        margin-right: 1%;
+        img {
+          max-width: 100%;
+        }*/
   }
 }
 .front-s-news .front-s-news-inner .front-s-news-item img {

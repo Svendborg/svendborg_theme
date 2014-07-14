@@ -9,12 +9,14 @@
           $('.header_fixed_inner').addClass('container');
           $('.header_svendborg header').removeClass('container');
           $('.main-container').css('padding-top','114px');
+          $('#fixed-navbar').addClass('row');
         }
         else {
           $('.header_svendborg header').removeClass('navbar-fixed-top');
           $('.header_fixed_inner').removeClass('container');
           $('.header_svendborg header').addClass('container');
           $('.main-container').css('padding-top','initial');
+          $('#fixed-navbar').removeClass('row');
         }
     });
   });

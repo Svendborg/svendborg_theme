@@ -93,7 +93,7 @@
     <!-- page--front.tpl.php-->
     <?php
     // Here comes front buttons
-      print "<div class='front-buttons col-md-push-1 col-md-10 col-sm-12 col-xs-12'>";
+      print "<div class='row-no-padding front-buttons col-md-push-1 col-md-10 col-sm-12 col-xs-12'>";
 
         $tree = menu_tree_all_data('menu-indholdsmenu', $link = NULL, $max_depth = 3);
 
@@ -140,7 +140,7 @@
       print "</div>";
 
       // Branding news view
-      print "<div class='front-news-branding col-md-push-1 col-md-10 col-sm-12 col-xs-12'>";
+      print "<div id='front-news-branding' class='front-news-branding col-md-push-1 col-md-10 col-sm-12 col-xs-12'>";
       $view = views_get_view('svendborg_news_view');
       $view->set_display('block');
       $view->set_arguments(array('branding'));
@@ -155,16 +155,16 @@
 
       print '<div class="front-seperator"></div>';
       print '
-      <div id="front-carousel-large" class="carousel slide" data-ride="carousel" data-interval="false">
+      <div class="carousel slide" data-ride="carousel" data-interval="false">
         <!-- Indicators -->
         <ol class="carousel-indicators col-md-12 col-sm-12 col-xs-12">
-        <li data-target="#front-carousel-large" data-slide-to="0" class="active"></li>
-        <li data-target="#front-carousel-large" data-slide-to="1"></li>
-        <li data-target="#front-carousel-large" data-slide-to="2"></li>
+        <li data-target="#front-news-branding" data-slide-to="0" class="active"></li>
+        <li data-target="#front-news-branding" data-slide-to="1"></li>
+        <li data-target="#front-news-branding" data-slide-to="2"></li>
          </ol>
 
       <!-- Wrapper for slides -->
-      <div class="carousel-inner">
+      <div class="carousel-inner" id="front-carousel-large" >
       ';
       foreach ($results as $key => $item) {
         if ($key == 0) {
@@ -215,10 +215,9 @@
 <?php
   // 3 Small news view
   print '<div class="lcontainer-fluid clearfix front-s-news">';
-  print '<div class="container">';
-  print '<div class="row front-s-news-inner">';
+  print '<div class="container front-s-news-inner">';
+  print '<div class="row">';
 
-    print "<div class=' col-md-12 col-sm-12 col-xs-12'>";
 
     $view = views_get_view('svendborg_news_view');
     $view->set_display('block');
@@ -275,7 +274,8 @@
             $style = 'os2demo_indhold';
             $public_filename = image_style_url($style, $image["uri"]);
             // Either output the IMG tag directly,
-            print '<div class="front-s-news-item front-s-news-item-'.$i.' col-md-4 col-sm-4 col-xs-12">';
+            echo '<div class="col-md-4 col-sm-4 col-xs-12">';
+            print '<div class="front-s-news-item front-s-news-item-'.$i.'">';
             print '<div class="front-s-news-item-img">';
             print $html = '<img title = "'.$image["title"].'" src="'.$public_filename.'""/>';
             print '</div>';
@@ -287,16 +287,15 @@
             print "</a></span></div>";
             print '</div>
             </div>';
+            echo '</div>';
           }
           print '</div>';
         }
 
       print '</div></div>';
 
-      print "</div>";
       print '<div class="front-seperator"></div>';
 
-    print "</div>";
   print "</div>";
   print "</div>";
   print "</div>";
@@ -304,8 +303,8 @@
 ?>
 <div class="lcontainer-fluid clearfix front-news-bottom">
   <div class="container">
-    <div class="row front-news-bottom-inner">
-      <div class='col-md-push-3 col-md-6 col-sm-push-3 col-sm-6 col-xs-12'>
+    <div class="front-news-bottom-inner">
+      <div class=''>
         <span>&#216;nsker du at se alle nyheder   <a href="/nyheder" class="btn btn-primary">Tryk her</a></span>
       </div>
     </div>

@@ -28,3 +28,52 @@
     }
   }
 }
+.front-s-news-item-img {
+  position: relative;
+  &:before {
+    content: " ";
+    display: table;
+    z-index: 40;
+
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+
+    margin-left: -@spotbox-arrow-width / 2;
+
+    .sprite(@spotbox-arrow);
+  }
+  img {
+    max-width: 100%;
+  }
+}
+.front-s-news-item {
+  padding: 10px 10px;
+  background-color: #fff;
+  border-radius: 5px 5px;
+  margin-bottom: 10px;
+}
+.news-text-date{
+  text-align: center;
+  color: #fff;
+  .sprite(@date);
+  .news-date-inner {
+    width: 20px;
+  }
+  .news-date-day {
+    font-weight: bold;
+    font-size: 17px;
+    float: right;
+    width: 100%;
+    padding-left: 1px;
+    margin-top: 10px;
+    line-height: 10px;
+  }
+  .news-date-month {
+    text-transform: uppercase;
+    font-size: 11px;
+    float: right;
+    width: 100%;
+  }
+
+}
