@@ -7816,6 +7816,9 @@ h2.menu-footer a.Kommunen {
   clear: both;
   height: 45px;
 }
+#front-carousel-small {
+  background-color: initial;
+}
 #front-carousel-small ol {
   bottom: -35px;
   text-align: center;
