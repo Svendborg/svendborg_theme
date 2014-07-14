@@ -8,6 +8,13 @@
  * Implements template_preprocess_page().
  */
 function svendborg_theme_preprocess_page(&$variables) {
+  // Remove all Taxonomy auto listings here.
+  if (arg(0) == 'taxonomy' && arg(1) == 'term' && is_numeric(arg(2))) {
+    unset($variables['page']['content']['system_main']['nodes']);
+    unset($variables['page']['content']['system_main']['pager']);
+    unset($variables['page']['content']['system_main']['no_content']);
+  }
+
   $node = NULL;
   if (isset($variables['node']) && !empty($variables['node']->nid)) {
     $node = $variables['node'];
@@ -151,6 +158,55 @@ function svendborg_theme_preprocess_page(&$variables) {
       'type' => 'text/css',
     ),
   ), 'google_font_svendborg_theme');
+}
+
+/**
+ * Implements template_preprocess_taxonomy_term().
+ */
+function svendborg_theme_preprocess_taxonomy_term(&$variables) {
+
+  $term = $variables;
+
+  // Spotbox handling. Find all spotboxes for this term.
+  if ($term && $spotboxes = $term['field_os2web_base_field_spotbox']) {
+
+    $spotbox_nids = array();
+    foreach ($spotboxes as $spotbox) {
+      $spotbox_nids[$spotbox['nid']] = $spotbox['nid'];
+    }
+    $spotbox_array = os2web_spotbox_render_spotboxes($spotbox_nids, NULL, NULL, NULL, 'svendborg_spotbox');
+
+    foreach ($spotbox_array['node'] as &$spotbox) {
+      if (is_array($spotbox)) {
+        $spotbox['#prefix'] = '<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">';
+        $spotbox['#suffix'] = '</div>';
+      }
+    }
+
+    $variables['content']['os2web_spotbox'] = array(
+      '#markup' => drupal_render($spotbox_array),
+    );
+  }
+
+
+  // Get all the nodes selvbetjeningslinks and give them to the template.
+  if ($term && $links = $term['field_os2web_base_field_selfserv']) {
+    $selfservicelinks = array();
+    foreach ($links as $link) {
+      $selfservicelink = node_load($link['nid']);
+      if ($selfservicelink) {
+        $link_fields = field_get_items('node', $selfservicelink, 'field_spot_link');
+        if (!empty($link_fields)) {
+          $link_field = array_shift($link_fields);
+          $selfservicelinks[$link['nid']] = array(
+            'url' => $link_field['url'],
+            'title' => $link_field['title'],
+          );
+        }
+      }
+    }
+    $variables['os2web_selfservicelinks'] = $selfservicelinks;
+  }
 }
 
 /**

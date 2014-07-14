@@ -42,13 +42,99 @@
  */
 ?>
 <div id="taxonomy-term-<?php print $term->tid; ?>" class="<?php print $classes; ?>">
-
   <?php if (!$page): ?>
     <h2><a href="<?php print $term_url; ?>"><?php print $term_name; ?></a></h2>
   <?php endif; ?>
 
-  <div class="content">
-    <?php print render($content); ?>
+  <?php if ($page): ?>
+    <?php if(!empty($os2web_selfservicelinks)) : ?>
+      <div class="col-sm-12 col-md-8 col-md-offset-2">
+
+        <div class="dropdown like-panel like-panel-default">
+          <a href="#" data-toggle="dropdown"><?php print t('Nem og hurtig selvbetjening'); ?> <i></i></a>
+          <ul class="dropdown-menu">
+          <?php foreach ($os2web_selfservicelinks as $link) : ?>
+            <li>
+              <a href="<?php print $link['url']; ?>"><?php print $link['title']; ?></a>
+            </li>
+          <?php endforeach; ?>
+         </ul>
+        </div>
+      </div>
+    <?php endif; ?>
+  <?php endif; ?>
+
+  <div class="col-md-12 col-sm-12 content">
+    <?php
+      hide($content['os2web_spotbox']);
+      hide($content['field_os2web_base_field_spotbox']);
+      hide($content['field_list_as_spotboks']);
+      hide($content['field_os2web_base_field_selfserv']);
+      print render($content); ?>
   </div>
+
+  <?php if($page): ?>
+  <div class="row">
+    <div class="col-md-9 col-sm-12 clearfix">
+      <div class="col-sm-12 col-md-12 extra-bottom-padding">
+        <?php
+          // Get news carousel.
+          $view = views_get_view('os2web_news_lists');
+          $view->set_display('panel_pane_1');
+          $view->set_arguments(array('Branding', 'none', $term_name));
+          $view->set_items_per_page(3);
+          $view->pre_execute();
+          $view->execute();
+          print $view->render();
+        ?>
+
+      </div>
+      <div class="col-sm-12 col-md-12 bottom-padding">
+        <?php
+          // Get Sub terms.
+          $view = views_get_view('subtermer');
+          $view->set_display('panel_pane_1');
+          $view->pre_execute();
+          $view->execute();
+          print $view->render();
+        ?>
+      </div>
+      <div class="os2web_spotboxes">
+
+        <?php print render($content['os2web_spotbox']); ?>
+
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-12">
+
+    <?php
+      // Get news carousel.
+      $view = views_get_view('os2web_news_lists');
+      $view->set_display('panel_pane_2');
+      $view->set_arguments(array('all', 'Branding', $term_name));
+      $view->set_items_per_page(3);
+      $view->pre_execute();
+      $view->execute();
+      if (!empty($view->result)) : ?>
+      <div class="panel panel-primary with-arrow">
+        <div class="panel-heading">
+          <h3 class="panel-title"><?php print t('Nyheder og aktuelt'); ?></h3>
+        </div>
+        <div class="panel-body">
+          <div class="panel-body-inner">
+          <?php print $view->render(); ?>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <a href="/nyheder/<?php print strtolower($term_name); ?>" class="btn btn-primary">
+            <?php print t('Se alle nyheder her'); ?>
+          </a>
+        </div>
+      </div>
+      <?php endif; ?>
+    </div>
+  </div>
+
+  <?php endif; ?>
 
 </div>

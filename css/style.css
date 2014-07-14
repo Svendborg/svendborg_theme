@@ -6506,44 +6506,109 @@ The provided classes are intended to be used with the array-like variables
   .sprite(@icon-email);
 }
 */
+.bottom-padding {
+  padding-bottom: 20px;
+}
+.extra-bottom-padding {
+  padding-bottom: 30px;
+}
 .call-to-action {
   margin-bottom: 20px;
 }
 .call-to-action .inner {
   position: relative;
-  border-radius: 30px;
+  border-radius: 32px;
   background: white;
-  height: 60px;
-  line-height: 60px;
+  height: 64px;
+  line-height: 64px;
   display: table;
   width: 100%;
 }
 .call-to-action .inner a {
-  padding: 0 60px;
+  padding: 0 64px;
   font-size: 17.5px;
   font-family: 'Titillium Web', Geneva, Verdana, sans-serif;
   color: #30353c;
   display: table-cell;
   vertical-align: middle;
   line-height: initial;
+  word-break: break-word;
 }
 .call-to-action .inner img {
   position: absolute;
-  left: 5px;
-  top: 5px;
-  height: 50px;
-  width: 50px;
-  border-radius: 25px;
+  left: 6px;
+  top: 6px;
+  height: 52px;
+  width: 52px;
+  border-radius: 26px;
   border: 3px solid #cccccc;
 }
 .call-to-action i {
   position: absolute;
   right: 25px;
-  top: 23.5px;
+  top: 25.5px;
   background-image: url(../images/sprites.png);
   background-position: 0px -55px;
   width: 8px;
   height: 13px;
+}
+.carousel {
+  background-color: #fff;
+  border-radius: 5px 5px;
+  padding: 10px 10px;
+  min-height: 226px;
+}
+.carousel .carousel-title {
+  margin-top: 20px;
+}
+.carousel .carousel-title a.btn {
+  margin: 20px 0;
+  padding: 5px 15px;
+  font-size: 14px;
+}
+.carousel .carousel-indicators {
+  right: 15px;
+  text-align: right;
+  bottom: 0;
+  margin-left: initial;
+  left: initial;
+}
+.carousel .carousel-indicators li {
+  height: 18px;
+  width: 18px;
+  border: 3px solid #e4e3e0;
+  margin: 1px;
+}
+.carousel .carousel-indicators li.active {
+  background-color: #7ebb00;
+}
+.carousel .title {
+  font-size: 30px;
+}
+.carousel .carousel-inner > .item a > img,
+.carousel .carousel-inner > .item > img {
+  max-width: 70%;
+  display: inline;
+  float: left;
+}
+.carousel .carousel-inner > .item > .carousel-caption {
+  width: 30%;
+  right: 0;
+  left: initial;
+  position: relative;
+  float: left;
+  text-align: left;
+  padding: 10px;
+  margin-top: 20px;
+  text-shadow: initial;
+}
+.carousel .carousel-inner > .item > .carousel-caption a {
+  font-size: 1.5em;
+  color: #30353c;
+  text-transform: initial;
+}
+.carousel .carousel-inner > .item .btn-primary {
+  margin-left: 10px;
 }
 /**
  * This file is only for really global styles. None specific styles.
@@ -6917,6 +6982,11 @@ fieldset[disabled] .btn-inverse.active {
   font-size: 15px;
   color: #30353c;
 }
+.panel .panel-footer {
+  background: white;
+  text-align: center;
+  padding: 20px;
+}
 .panel-default > .panel-heading,
 .like-panel.like-panel-default {
   background-image: -webkit-linear-gradient(top, #0089cd 0%, #005191 100%);
@@ -6978,6 +7048,56 @@ fieldset[disabled] .btn-inverse.active {
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff9f0f0', endColorstr='#ffebcccc', GradientType=0);
 }
+.like-panel.like-panel-default > a,
+.like-panel.like-panel-primary > a,
+.like-panel.like-panel-blacknblue > a,
+.like-panel.like-panel-success > a,
+.like-panel.like-panel-info > a,
+.like-panel.like-panel-warning > a,
+.like-panel.like-panel-danger > a {
+  color: white;
+}
+.dropdown.like-panel {
+  padding: 0;
+}
+.dropdown.like-panel > a {
+  display: block;
+  padding-left: 19px;
+  line-height: 2.2em;
+  font-size: 2em;
+  font-family: 'Titillium Web', Geneva, Verdana, sans-serif;
+}
+.dropdown.like-panel > a i {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  height: 2.2em;
+  width: 2.2em;
+  background: #005191;
+  margin-top: -10px;
+  border-radius: 0 4px 4px 0;
+}
+.dropdown.like-panel.open {
+  border-radius: 4px 4px 0 0;
+}
+.dropdown.like-panel.open > a i {
+  height: 4.4em;
+  z-index: 1001;
+}
+.dropdown.like-panel ul.dropdown-menu {
+  margin: 0;
+  width: 100%;
+  border: 2px solid #005191;
+  border-radius: 0 0 4px 4px;
+}
+.dropdown.like-panel ul.dropdown-menu li a {
+  line-height: 2.2em;
+  font-size: 2em;
+  font-family: 'Titillium Web', Geneva, Verdana, sans-serif;
+}
+.dropdown.like-panel ul.dropdown-menu li a:hover {
+  color: #0089cd;
+}
 .spotbox,
 div.panel-pane div.node.node-os2web-spotbox-box,
 div.node-os2web-spotbox-box {
@@ -7023,6 +7143,45 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-it
 .view-os2web-news-page .media-ustream-video iframe {
   width: 100%;
   height: auto;
+}
+.page-taxonomy-term .view-os2web-news-lists.view-display-id-panel_pane_2 .views-row {
+  border-bottom: 1px solid #dfded7;
+}
+.page-taxonomy-term .view-os2web-news-lists.view-display-id-panel_pane_2 .views-row-last {
+  border-bottom: none;
+}
+.page-taxonomy-term .view-os2web-news-lists.view-display-id-panel_pane_2 .views-field-field-os2web-base-field-lead-img {
+  float: left;
+  margin: 0 10px 10px 0;
+}
+.page-taxonomy-term .view-os2web-news-lists.view-display-id-panel_pane_2 .views-field-field-os2web-base-field-lead-img img {
+  height: 52px;
+  width: 52px;
+  border-radius: 26px;
+  border: 3px solid #cccccc;
+}
+.page-taxonomy-term .view-os2web-news-lists.view-display-id-panel_pane_2 .views-field-created {
+  font-family: 'Open Sans', Geneva, Verdana, sans-serif;
+  font-size: 1.2em;
+  line-height: 1.4em;
+}
+.page-taxonomy-term .view-os2web-news-lists.view-display-id-panel_pane_2 .views-field-title {
+  font-weight: bold;
+}
+.page-taxonomy-term .view-os2web-news-lists.view-display-id-panel_pane_2 .views-field-field-os2web-base-field-summary {
+  font-weight: bold;
+  font-size: 1.2em;
+  line-height: 1.4em;
+}
+.page-taxonomy-term .view-os2web-news-lists.view-display-id-panel_pane_2 .views-field-body {
+  font-size: 1.4em;
+  line-height: 1.5em;
+}
+.page-taxonomy-term .view-os2web-news-lists.view-display-id-panel_pane_2 .views-field-field-os2web-base-field-summary,
+.page-taxonomy-term .view-os2web-news-lists.view-display-id-panel_pane_2 .views-field-body,
+.page-taxonomy-term .view-os2web-news-lists.view-display-id-panel_pane_2 .views-field-title {
+  font-family: 'Titillium Web', Geneva, Verdana, sans-serif;
+  margin-bottom: 5px;
 }
 #top_menu {
   position: relative;
@@ -7659,6 +7818,8 @@ h2.menu-footer a.Kommunen {
 }
 #front-carousel-small ol {
   bottom: -35px;
+  text-align: center;
+  width: 100%;
 }
 #front-carousel-small ol li {
   height: 18px;
