@@ -29,6 +29,7 @@
 <div class="header_svendborg">
   <div id="top_menu">
   <div class="container">
+    <div class="row">
     <?php
       $tree = menu_tree_all_data('menu-top-navigation-venstre', $link = NULL, $max_depth = 2);
       if($tree) {
@@ -47,12 +48,13 @@
         print "</div>";
       }
     ?>
+    </div>
   </div>
   </div>
   <header class="region region-navigation header_fixed container"<?php //print $attributes; ?>>
-
+  <div class="row">
     <?php if ($content_attributes): ?><div class="header_fixed_inner navbar-default"<?php //print $content_attributes; ?>><?php endif; ?>
-
+    <div id="fixed-navbar">
     <div class="navbar-header col-md-3 col-sm-4 col-xs-12">
       <?php if ($page['logo']): ?>
         <a class="logo navbar-btn pull-left" href="<?php print $page['front_page']; ?>" title="<?php print t('Home'); ?>">
@@ -88,6 +90,8 @@
     <?php endif; ?>
 
     <?php if ($content_attributes): ?></div><?php endif; ?>
+    </div>
+    </div>
   </header>
 </div>
 <?php endif; ?>
