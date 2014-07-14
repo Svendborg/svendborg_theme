@@ -84,7 +84,7 @@
   <?php print render($page['header']); ?>
 
   <div class="row">
-    <div class="container">
+
       <?php /* region--sidebar.tpl.php */ ?>
       <?php if ($page['sidebar_first']): ?>
         <?php print render($page['sidebar_first']); ?>
@@ -97,14 +97,14 @@
       <?php if ($page['sidebar_second']): ?>
         <?php print render($page['sidebar_second']); ?>
       <?php endif; ?>
-    </div>
+
   </div>
   <?php if ($page['content_bottom']): ?>
   <div class="row">
-    <div class="container">
+
       <?php /* region--content_bottom.tpl.php */ ?>
         <?php print render($page['content_bottom']); ?>
-    </div>
+
   </div>
   <?php endif; ?>
 

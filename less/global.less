@@ -22,3 +22,23 @@ body {
   background: url(../images/skateboard.jpg) no-repeat fixed;
   background-size: cover;
 }
+
+
+.main-container {
+  border-bottom: 1px solid white;
+  background-image: rgba(223, 222, 215, 0.9); // #dfded7 Opacity 90%
+  border-left: 1px solid rgba(255, 255, 255, 0.8);
+  border-right: 1px solid rgba(255, 255, 255, 0.8);
+
+  #gradient > .vertical-three-colors(#fff, rgba(223, 222, 215, 0.9), 250px, rgba(223, 222, 215, 0.9));
+}
+.main-container,
+.header_svendborg .region-navigation.container {
+  border-left: none; // Default on non-rgba browsers.
+  border-left: 1px solid rgba(255, 255, 255, 0.6);
+  border-right: none; // Default on non-rgba browsers.
+  border-right: 1px solid rgba(255, 255, 255, 0.6);
+
+  -webkit-background-clip: padding;
+  background-clip: padding-box;
+}

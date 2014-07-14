@@ -203,6 +203,15 @@ function svendborg_theme_breadcrumb($variables) {
 }
 
 /**
+ * Implements hook_menu_breadcrumb_alter().
+ */
+function svendborg_theme_menu_breadcrumb_alter(&$active_trail, $item) {
+  // After disabling the Crumbs module, some taxonomies where dublicated in the
+  // active trail, and then have dubs in breadcrumb.
+  $active_trail = array_unique($active_trail);
+}
+
+/**
  * Overrides theme_menu_link().
  *
  * Overrides Bootstrap version. Enables to show active trails childrens.
