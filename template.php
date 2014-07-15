@@ -62,7 +62,7 @@ function svendborg_theme_preprocess_page(&$variables) {
       $link_node = node_load($link['nid']);
       if ($link_node) {
         $related_links[$link['nid']] = array(
-          'nid' => $link->nid,
+          'nid' => $link['nid'],
           'title' => $link_node->title,
         );
       }
@@ -70,23 +70,28 @@ function svendborg_theme_preprocess_page(&$variables) {
   }
   // 2. Get all related links related to the KLE number on the node. Only get
   // these if the checkbox "Skjul relaterede links" isn't checked.
-  if ($node &&
-      (!isset($node->field_os2web_base_field_hidlinks['und'][0]['value']) ||
-      $node->field_os2web_base_field_hidlinks['und'][0]['value'] == '0') &&
-      $kle_items = field_get_items('node', $node, 'field_os2web_base_field_kle_ref')) {
+  if (($node &&
+        (!isset($node->field_os2web_base_field_hidlinks['und'][0]['value']) ||
+        $node->field_os2web_base_field_hidlinks['und'][0]['value'] == '0') &&
+        $kle_items = field_get_items('node', $node, 'field_os2web_base_field_kle_ref')) ||
+      ($term &&
+        (!isset($term->field_os2web_base_field_hidlinks['und'][0]['value']) ||
+        $term->field_os2web_base_field_hidlinks['und'][0]['value'] == '0') &&
+        $kle_items = field_get_items('taxonomy_term', $term, 'field_os2web_base_field_kle_ref'))) {
 
     foreach ($kle_items as $kle) {
       // Get all nodes which have the same KLE number as this node.
       $query = new EntityFieldQuery();
       $result = $query->entityCondition('entity_type', 'node')
         ->propertyCondition('status', 1)
-        ->propertyCondition('nid', $node->nid, '!=')
         ->fieldCondition('field_os2web_base_field_kle_ref', 'tid', $kle['tid'])
         ->propertyOrderBy('title', 'ASC')
         ->execute();
       if (isset($result['node'])) {
         foreach ($result['node'] as $link) {
-          if (isset($related_links[$link->nid])) {
+          // Be sure to skip links which already is in list, or links to current
+          // node.
+          if (isset($related_links[$link->nid]) || ($node && $node->nid == $link->nid)) {
             continue;
           }
           $link_node = node_load($link->nid);
