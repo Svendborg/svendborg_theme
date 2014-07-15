@@ -43,21 +43,7 @@ function svendborg_theme_preprocess_page(&$variables) {
 
   // Get all the nodes selvbetjeningslinks and give them to the template.
   if ($node && $links = field_get_items('node', $node, 'field_os2web_base_field_selfserv')) {
-    $selfservicelinks = array();
-    foreach ($links as $link) {
-      $selfservicelink = node_load($link['nid']);
-      if ($selfservicelink) {
-        $link_fields = field_get_items('node', $selfservicelink, 'field_spot_link');
-        if (!empty($link_fields)) {
-          $link_field = array_shift($link_fields);
-          $selfservicelinks[$link['nid']] = array(
-            'url' => $link_field['url'],
-            'title' => $link_field['title'],
-          );
-        }
-      }
-    }
-    $variables['page']['selfservicelinks'] = $selfservicelinks;
+    $variables['page']['selfservicelinks'] = _svendborg_theme_get_selfservicelinks($links);
   }
 
   // Get all related links to this node.
@@ -167,6 +153,13 @@ function svendborg_theme_preprocess_taxonomy_term(&$variables) {
 
   $term = $variables;
 
+  // Get wether this is a top term, and provide a variable for the templates.
+  $variables['term_is_top'] = TRUE;
+  $parent = db_query("SELECT parent FROM {taxonomy_term_hierarchy} WHERE tid = :tid", array(':tid' => $term['tid']))->fetchField();
+  if ($parent > 0) {
+    $variables['term_is_top'] = FALSE;
+  }
+
   // Spotbox handling. Find all spotboxes for this term.
   if ($term && $spotboxes = $term['field_os2web_base_field_spotbox']) {
 
@@ -188,24 +181,10 @@ function svendborg_theme_preprocess_taxonomy_term(&$variables) {
     );
   }
 
-
   // Get all the nodes selvbetjeningslinks and give them to the template.
   if ($term && $links = $term['field_os2web_base_field_selfserv']) {
-    $selfservicelinks = array();
-    foreach ($links as $link) {
-      $selfservicelink = node_load($link['nid']);
-      if ($selfservicelink) {
-        $link_fields = field_get_items('node', $selfservicelink, 'field_spot_link');
-        if (!empty($link_fields)) {
-          $link_field = array_shift($link_fields);
-          $selfservicelinks[$link['nid']] = array(
-            'url' => $link_field['url'],
-            'title' => $link_field['title'],
-          );
-        }
-      }
-    }
-    $variables['os2web_selfservicelinks'] = $selfservicelinks;
+
+    $variables['os2web_selfservicelinks'] = _svendborg_theme_get_selfservicelinks($links);
   }
 }
 
@@ -293,4 +272,31 @@ function svendborg_theme_menu_link(array $variables) {
   }
   $output = l($element['#title'], $element['#href'], $element['#localized_options']);
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
+}
+
+/**
+ * Helper function to retrive the correct array to display selfservicelinks.
+ *
+ * @param array $links
+ *   Associated array of links with indexes 'nid'.
+ *
+ * @return array
+ *   Array of links with URL and Title.
+ */
+function _svendborg_theme_get_selfservicelinks($links) {
+  $selfservicelinks = array();
+  foreach ($links as $link) {
+    $selfservicelink = node_load($link['nid']);
+    if ($selfservicelink) {
+      $link_fields = field_get_items('node', $selfservicelink, 'field_spot_link');
+      if (!empty($link_fields)) {
+        $link_field = array_shift($link_fields);
+        $selfservicelinks[$link['nid']] = array(
+          'url' => $link_field['url'],
+          'title' => $link_field['title'],
+        );
+      }
+    }
+  }
+  return $selfservicelinks;
 }
