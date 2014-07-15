@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Default theme implementation to display a term.
+ * Svendborg template ot taxonomy pages.
  *
  * Available variables:
  * - $name: (deprecated) The unsanitized name of the term. Use $term_name
@@ -20,6 +20,7 @@
  *   - taxonomy-term: The current template type, i.e., "theming hook".
  *   - vocabulary-[vocabulary-name]: The vocabulary to which the term belongs to.
  *     For example, if the term is a "Tag" it would result in "vocabulary-tag".
+ * - $term_is_top : (svendborg) Boolean wether this term is a top term.
  *
  * Other variables:
  * - $term: Full term object. Contains data that may not be safe.
@@ -76,34 +77,37 @@
   <?php if($page): ?>
   <div class="row">
     <div class="col-md-9 col-sm-12 clearfix">
-      <div class="col-sm-12 col-md-12 extra-bottom-padding">
-        <?php
-          // Get news carousel.
-          $view = views_get_view('os2web_news_lists');
-          $view->set_display('panel_pane_1');
-          $view->set_arguments(array('Branding', 'none', $term_name));
-          $view->set_items_per_page(3);
-          $view->pre_execute();
-          $view->execute();
-          print $view->render();
-        ?>
+      <?php
+        // Get news carousel.
+        $view = views_get_view('os2web_news_lists');
+        $view->set_display('panel_pane_1');
+        $view->set_arguments(array('Branding', 'none', $term_name));
+        $view->set_items_per_page(3);
+        $view->pre_execute();
+        $view->execute();
+        if (!empty($view->result)) : ?>
+        <div class="col-sm-12 col-md-12 extra-bottom-padding">
+          <?php print $view->render(); ?>
+        </div>
+      <?php endif; ?>
 
-      </div>
+      <?php
+        // Get Sub terms.
+        $view = views_get_view('subtermer');
+        $view->set_display('panel_pane_1');
+        $view->pre_execute();
+        $view->execute();
+        if (!empty($view->result)) : ?>
       <div class="col-sm-12 col-md-12 bottom-padding">
-        <?php
-          // Get Sub terms.
-          $view = views_get_view('subtermer');
-          $view->set_display('panel_pane_1');
-          $view->pre_execute();
-          $view->execute();
-          print $view->render();
-        ?>
+          <?php print $view->render(); ?>
       </div>
+      <?php endif; ?>
+
+      <?php if(!empty($content['os2web_spotbox'])) : ?>
       <div class="os2web_spotboxes">
-
         <?php print render($content['os2web_spotbox']); ?>
-
       </div>
+      <?php endif; ?>
     </div>
     <div class="col-md-3 col-sm-12">
 
@@ -126,7 +130,7 @@
           <?php print $view->render(); ?>
           </div>
         </div>
-        <div class="panel-footer">
+        <div class="panel-footer no-border">
           <a href="/nyheder/<?php print strtolower($term_name); ?>" class="btn btn-primary">
             <?php print t('Se alle nyheder her'); ?>
           </a>
