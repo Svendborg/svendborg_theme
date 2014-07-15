@@ -92,7 +92,9 @@
       $view->execute();
       if (!empty($view->result)) : ?>
     <div class="col-sm-12 col-md-12 bottom-padding">
+      <div class="row">
         <?php print $view->render(); ?>
+      </div>
     </div>
     <?php endif; ?>
 
