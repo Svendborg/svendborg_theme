@@ -16,7 +16,8 @@
 }
 
 // Default show for a node with 3 columns.
-.page-node {
+body.page-node,
+body.page-taxonomy-term.term-is-not-top {
   h1.page-header {
     display: none;
   }
@@ -25,6 +26,7 @@
   div.node-os2web-base-news {
     background: white;
     border-radius: 0 0 4px 4px;
+    margin-bottom: @grid-gutter-width;
 
     // This is a serious hack to force anchors below the fixed header.
     // See http://css-tricks.com/hash-tag-links-padding/

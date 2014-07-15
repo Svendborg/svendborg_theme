@@ -354,7 +354,8 @@ h6,
 .h4,
 .h5,
 .h6,
-.page-node .field-name-field-os2web-base-field-media .field-label {
+body.page-node .field-name-field-os2web-base-field-media .field-label,
+body.page-taxonomy-term.term-is-not-top .field-name-field-os2web-base-field-media .field-label {
   font-family: 'Titillium Web', Geneva, Verdana, sans-serif;
   font-weight: 100;
   line-height: 1.1;
@@ -417,7 +418,8 @@ h5,
 .h5,
 h6,
 .h6,
-.page-node .field-name-field-os2web-base-field-media .field-label {
+body.page-node .field-name-field-os2web-base-field-media .field-label,
+body.page-taxonomy-term.term-is-not-top .field-name-field-os2web-base-field-media .field-label {
   margin-top: 9px;
   margin-bottom: 9px;
 }
@@ -449,7 +451,8 @@ h3,
 }
 h4,
 .h4,
-.page-node .field-name-field-os2web-base-field-media .field-label {
+body.page-node .field-name-field-os2web-base-field-media .field-label,
+body.page-taxonomy-term.term-is-not-top .field-name-field-os2web-base-field-media .field-label {
   font-size: 17.5px;
 }
 h5,
@@ -6676,7 +6679,8 @@ h3,
 h4,
 h5,
 h6,
-.page-node .field-name-field-os2web-base-field-media .field-label {
+body.page-node .field-name-field-os2web-base-field-media .field-label,
+body.page-taxonomy-term.term-is-not-top .field-name-field-os2web-base-field-media .field-label {
   text-transform: uppercase;
 }
 h3,
@@ -7527,73 +7531,117 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-it
 .page-node-add .form-control {
   color: black;
 }
-.page-node h1.page-header {
+body.page-node h1.page-header,
+body.page-taxonomy-term.term-is-not-top h1.page-header {
   display: none;
 }
-.page-node article,
-.page-node div.node-os2web-borger-dk-article,
-.page-node div.node-os2web-base-news {
+body.page-node article,
+body.page-taxonomy-term.term-is-not-top article,
+body.page-node div.node-os2web-borger-dk-article,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article,
+body.page-node div.node-os2web-base-news,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news {
   background: white;
   border-radius: 0 0 4px 4px;
+  margin-bottom: 20px;
 }
-.page-node article a[id]:before,
-.page-node div.node-os2web-borger-dk-article a[id]:before,
-.page-node div.node-os2web-base-news a[id]:before,
-.page-node article h1[id]:before,
-.page-node div.node-os2web-borger-dk-article h1[id]:before,
-.page-node div.node-os2web-base-news h1[id]:before,
-.page-node article h2[id]:before,
-.page-node div.node-os2web-borger-dk-article h2[id]:before,
-.page-node div.node-os2web-base-news h2[id]:before,
-.page-node article h3[id]:before,
-.page-node div.node-os2web-borger-dk-article h3[id]:before,
-.page-node div.node-os2web-base-news h3[id]:before,
-.page-node article h4[id]:before,
-.page-node div.node-os2web-borger-dk-article h4[id]:before,
-.page-node div.node-os2web-base-news h4[id]:before,
-.page-node article h5[id]:before,
-.page-node div.node-os2web-borger-dk-article h5[id]:before,
-.page-node div.node-os2web-base-news h5[id]:before,
-.page-node article h6[id]:before,
-.page-node div.node-os2web-borger-dk-article h6[id]:before,
-.page-node div.node-os2web-base-news h6[id]:before {
+body.page-node article a[id]:before,
+body.page-taxonomy-term.term-is-not-top article a[id]:before,
+body.page-node div.node-os2web-borger-dk-article a[id]:before,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article a[id]:before,
+body.page-node div.node-os2web-base-news a[id]:before,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news a[id]:before,
+body.page-node article h1[id]:before,
+body.page-taxonomy-term.term-is-not-top article h1[id]:before,
+body.page-node div.node-os2web-borger-dk-article h1[id]:before,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article h1[id]:before,
+body.page-node div.node-os2web-base-news h1[id]:before,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news h1[id]:before,
+body.page-node article h2[id]:before,
+body.page-taxonomy-term.term-is-not-top article h2[id]:before,
+body.page-node div.node-os2web-borger-dk-article h2[id]:before,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article h2[id]:before,
+body.page-node div.node-os2web-base-news h2[id]:before,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news h2[id]:before,
+body.page-node article h3[id]:before,
+body.page-taxonomy-term.term-is-not-top article h3[id]:before,
+body.page-node div.node-os2web-borger-dk-article h3[id]:before,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article h3[id]:before,
+body.page-node div.node-os2web-base-news h3[id]:before,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news h3[id]:before,
+body.page-node article h4[id]:before,
+body.page-taxonomy-term.term-is-not-top article h4[id]:before,
+body.page-node div.node-os2web-borger-dk-article h4[id]:before,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article h4[id]:before,
+body.page-node div.node-os2web-base-news h4[id]:before,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news h4[id]:before,
+body.page-node article h5[id]:before,
+body.page-taxonomy-term.term-is-not-top article h5[id]:before,
+body.page-node div.node-os2web-borger-dk-article h5[id]:before,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article h5[id]:before,
+body.page-node div.node-os2web-base-news h5[id]:before,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news h5[id]:before,
+body.page-node article h6[id]:before,
+body.page-taxonomy-term.term-is-not-top article h6[id]:before,
+body.page-node div.node-os2web-borger-dk-article h6[id]:before,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article h6[id]:before,
+body.page-node div.node-os2web-base-news h6[id]:before,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news h6[id]:before {
   display: block;
   content: " ";
   margin-top: -100px;
   height: 100px;
   visibility: hidden;
 }
-.page-node article p,
-.page-node div.node-os2web-borger-dk-article p,
-.page-node div.node-os2web-base-news p {
+body.page-node article p,
+body.page-taxonomy-term.term-is-not-top article p,
+body.page-node div.node-os2web-borger-dk-article p,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article p,
+body.page-node div.node-os2web-base-news p,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news p {
   line-height: 1.6em;
 }
-.page-node article header h2 a,
-.page-node div.node-os2web-borger-dk-article header h2 a,
-.page-node div.node-os2web-base-news header h2 a {
+body.page-node article header h2 a,
+body.page-taxonomy-term.term-is-not-top article header h2 a,
+body.page-node div.node-os2web-borger-dk-article header h2 a,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article header h2 a,
+body.page-node div.node-os2web-base-news header h2 a,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news header h2 a {
   color: #30353c;
   text-transform: initial;
   font-family: 'Titillium Web', Geneva, Verdana, sans-serif;
   font-size: 2.55em;
 }
-.page-node article .wrap,
-.page-node div.node-os2web-borger-dk-article .wrap,
-.page-node div.node-os2web-base-news .wrap,
-.page-node article header h2,
-.page-node div.node-os2web-borger-dk-article header h2,
-.page-node div.node-os2web-base-news header h2 {
+body.page-node article .wrap,
+body.page-taxonomy-term.term-is-not-top article .wrap,
+body.page-node div.node-os2web-borger-dk-article .wrap,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article .wrap,
+body.page-node div.node-os2web-base-news .wrap,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .wrap,
+body.page-node article header h2,
+body.page-taxonomy-term.term-is-not-top article header h2,
+body.page-node div.node-os2web-borger-dk-article header h2,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article header h2,
+body.page-node div.node-os2web-base-news header h2,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news header h2 {
   padding: 15px;
 }
-.page-node article header time,
-.page-node div.node-os2web-borger-dk-article header time,
-.page-node div.node-os2web-base-news header time {
+body.page-node article header time,
+body.page-taxonomy-term.term-is-not-top article header time,
+body.page-node div.node-os2web-borger-dk-article header time,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article header time,
+body.page-node div.node-os2web-base-news header time,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news header time {
   padding: 15px 30px;
   text-align: right;
   display: block;
 }
-.page-node article header time i,
-.page-node div.node-os2web-borger-dk-article header time i,
-.page-node div.node-os2web-base-news header time i {
+body.page-node article header time i,
+body.page-taxonomy-term.term-is-not-top article header time i,
+body.page-node div.node-os2web-borger-dk-article header time i,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article header time i,
+body.page-node div.node-os2web-base-news header time i,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news header time i {
   display: inline-block;
   zoom: 1;
   *display: inline;
@@ -7603,53 +7651,73 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-it
   width: 12px;
   height: 10px;
 }
-.page-node article .field-name-field-os2web-base-field-image .field-slideshow,
-.page-node div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image .field-slideshow,
-.page-node div.node-os2web-base-news .field-name-field-os2web-base-field-image .field-slideshow {
+body.page-node article .field-name-field-os2web-base-field-image .field-slideshow,
+body.page-taxonomy-term.term-is-not-top article .field-name-field-os2web-base-field-image .field-slideshow,
+body.page-node div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image .field-slideshow,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image .field-slideshow,
+body.page-node div.node-os2web-base-news .field-name-field-os2web-base-field-image .field-slideshow,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .field-name-field-os2web-base-field-image .field-slideshow {
   margin: 0 auto;
 }
-.page-node article .field-name-field-os2web-base-field-image .field-slideshow .field-slideshow-caption,
-.page-node div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image .field-slideshow .field-slideshow-caption,
-.page-node div.node-os2web-base-news .field-name-field-os2web-base-field-image .field-slideshow .field-slideshow-caption {
+body.page-node article .field-name-field-os2web-base-field-image .field-slideshow .field-slideshow-caption,
+body.page-taxonomy-term.term-is-not-top article .field-name-field-os2web-base-field-image .field-slideshow .field-slideshow-caption,
+body.page-node div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image .field-slideshow .field-slideshow-caption,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image .field-slideshow .field-slideshow-caption,
+body.page-node div.node-os2web-base-news .field-name-field-os2web-base-field-image .field-slideshow .field-slideshow-caption,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .field-name-field-os2web-base-field-image .field-slideshow .field-slideshow-caption {
   display: none;
 }
-.page-node article .field-name-field-os2web-base-field-image img,
-.page-node div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image img,
-.page-node div.node-os2web-base-news .field-name-field-os2web-base-field-image img {
+body.page-node article .field-name-field-os2web-base-field-image img,
+body.page-taxonomy-term.term-is-not-top article .field-name-field-os2web-base-field-image img,
+body.page-node div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image img,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image img,
+body.page-node div.node-os2web-base-news .field-name-field-os2web-base-field-image img,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .field-name-field-os2web-base-field-image img {
   width: 100%;
   height: auto;
 }
-body.two-sidebars.page-node article .field-name-field-os2web-base-field-image img,
-body.two-sidebars.page-node div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image img,
-body.two-sidebars.page-node div.node-os2web-base-news .field-name-field-os2web-base-field-image img {
+body.two-sidebarsbody.page-node article .field-name-field-os2web-base-field-image img,
+body.two-sidebarsbody.page-taxonomy-term.term-is-not-top article .field-name-field-os2web-base-field-image img,
+body.two-sidebarsbody.page-node div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image img,
+body.two-sidebarsbody.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image img,
+body.two-sidebarsbody.page-node div.node-os2web-base-news .field-name-field-os2web-base-field-image img,
+body.two-sidebarsbody.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .field-name-field-os2web-base-field-image img {
   border-radius: 4px 4px 0 0;
 }
-.page-node article .field-name-field-os2web-base-field-summary .field-item,
-.page-node div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-summary .field-item,
-.page-node div.node-os2web-base-news .field-name-field-os2web-base-field-summary .field-item {
+body.page-node article .field-name-field-os2web-base-field-summary .field-item,
+body.page-taxonomy-term.term-is-not-top article .field-name-field-os2web-base-field-summary .field-item,
+body.page-node div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-summary .field-item,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-summary .field-item,
+body.page-node div.node-os2web-base-news .field-name-field-os2web-base-field-summary .field-item,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .field-name-field-os2web-base-field-summary .field-item {
   font-family: 'Titillium Web', Geneva, Verdana, sans-serif;
   font-size: 1.5em;
   line-height: 1.7em;
   margin-bottom: 20px;
 }
-.page-node .nav-tabs {
+body.page-node .nav-tabs,
+body.page-taxonomy-term.term-is-not-top .nav-tabs {
   margin-bottom: 0;
 }
-.page-node .field-name-field-os2web-base-field-media .field-label {
+body.page-node .field-name-field-os2web-base-field-media .field-label,
+body.page-taxonomy-term.term-is-not-top .field-name-field-os2web-base-field-media .field-label {
   text-transform: none;
 }
-.page-node .field-name-field-os2web-base-field-media .field-item {
+body.page-node .field-name-field-os2web-base-field-media .field-item,
+body.page-taxonomy-term.term-is-not-top .field-name-field-os2web-base-field-media .field-item {
   border-top: 1px solid #dfded7;
   padding: 5px 0;
 }
-.page-node .field-name-field-os2web-base-field-media .field-item .file-icon {
+body.page-node .field-name-field-os2web-base-field-media .field-item .file-icon,
+body.page-taxonomy-term.term-is-not-top .field-name-field-os2web-base-field-media .field-item .file-icon {
   background-image: url(../images/sprites.png);
   background-position: 0px -127px;
   width: 26px;
   height: 26px;
   padding-left: 26px;
 }
-.page-node .field-name-field-os2web-base-field-media .field-item a {
+body.page-node .field-name-field-os2web-base-field-media .field-item a,
+body.page-taxonomy-term.term-is-not-top .field-name-field-os2web-base-field-media .field-item a {
   margin-left: 10px;
   color: #30353c;
 }

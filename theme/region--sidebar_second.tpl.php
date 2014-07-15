@@ -29,14 +29,14 @@
 ?>
 <?php if ($content): ?>
   <aside<?php print $attributes; ?>>
-    <?php if(!empty($page['page']['selfservicelinks'])) : ?>
+    <?php if(!empty($page['page']['os2web_selfservicelinks']) && (!isset($page['page']['term_is_top']) || $page['page']['term_is_top'] == FALSE)) : ?>
       <div class="panel panel-default with-arrow">
         <div class="panel-heading">
           <h3 class="panel-title"><?php print t('Selvbetjeningslinks'); ?></h3>
         </div>
         <div class="panel-body">
           <ul>
-          <?php foreach ($page['page']['selfservicelinks'] as $link) : ?>
+          <?php foreach ($page['page']['os2web_selfservicelinks'] as $link) : ?>
             <li>
               <a href="<?php print $link['url']; ?>"><?php print $link['title']; ?></a>
             </li>

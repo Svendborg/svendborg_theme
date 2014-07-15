@@ -9,10 +9,16 @@
  */
 function svendborg_theme_preprocess_page(&$variables) {
   // Remove all Taxonomy auto listings here.
+  $term = NULL;
   if (arg(0) == 'taxonomy' && arg(1) == 'term' && is_numeric(arg(2))) {
     unset($variables['page']['content']['system_main']['nodes']);
     unset($variables['page']['content']['system_main']['pager']);
     unset($variables['page']['content']['system_main']['no_content']);
+    $term = taxonomy_term_load(arg(2));
+    // Variable that defines that this term is the top of the hieraki.
+    $term_is_top = _svendborg_theme_term_is_top($term->tid);
+    // Get wether this is a top term, and provide a variable for the templates.
+    $variables['page']['term_is_top'] = $term_is_top;
   }
 
   $node = NULL;
@@ -22,7 +28,7 @@ function svendborg_theme_preprocess_page(&$variables) {
   $sidebar_second_hidden = FALSE;
   $sidebar_first_hidden = FALSE;
 
-  // If node has hidden the sidebar, set content to null and return.
+  // If node has hidden the sidebar, set content to null.
   if ($node && $hide_sidebar_field = field_get_items('node', $node, 'field_svendborg_hide_sidebar')) {
     if ($hide_sidebar_field[0]['value'] == '1') {
       $variables['page']['sidebar_second'] = array();
@@ -42,14 +48,16 @@ function svendborg_theme_preprocess_page(&$variables) {
   }
 
   // Get all the nodes selvbetjeningslinks and give them to the template.
-  if ($node && $links = field_get_items('node', $node, 'field_os2web_base_field_selfserv')) {
-    $variables['page']['selfservicelinks'] = _svendborg_theme_get_selfservicelinks($links);
+  if (($node && $links = field_get_items('node', $node, 'field_os2web_base_field_selfserv')) ||
+      ($term && $links = field_get_items('taxonomy_term', $term, 'field_os2web_base_field_selfserv'))) {
+    $variables['page']['os2web_selfservicelinks'] = _svendborg_theme_get_selfservicelinks($links);
   }
 
   // Get all related links to this node.
   // 1. Get all unique related links from the node.
   $related_links = array();
-  if ($node && $links = field_get_items('node', $node, 'field_os2web_base_field_related')) {
+  if (($node && $links = field_get_items('node', $node, 'field_os2web_base_field_related')) ||
+      ($term && $links = field_get_items('taxonomy_term', $term, 'field_os2web_base_field_related'))) {
     foreach ($links as $link) {
       $link_node = node_load($link['nid']);
       if ($link_node) {
@@ -94,24 +102,47 @@ function svendborg_theme_preprocess_page(&$variables) {
       }
     }
   }
-  // Provide the related links to the templates.
-  $variables['page']['related_links'] = $related_links;
+
+  if (!empty($related_links)) {
+    // Provide the related links to the templates.
+    $variables['page']['related_links'] = $related_links;
+  }
 
   // Hack to force the sidebar_second to be rendered if we have anything to put
   // in it.
-  if (!$sidebar_second_hidden  && empty($variables['page']['sidebar_second']) && (!empty($variables['page']['related_links']) || !empty($variables['page']['selfservicelinks']))) {
+  if (!$sidebar_second_hidden && empty($variables['page']['sidebar_second']) && (!empty($variables['page']['related_links']) || !empty($variables['page']['os2web_selfservicelinks']))) {
     $variables['page']['sidebar_second'] = array(
+      '#theme_wrappers' => array('region'),
+      '#region' => 'sidebar_second',
       'dummy_content' => array(
         '#markup' => ' ',
       ),
-      '#theme_wrappers' => array('region'),
-      '#region' => 'sidebar_second',
     );
+  }
+
+  // On taxonomy pages, add a news list in second sidebar.
+  if ($term) {
+    $view = views_get_view('os2web_news_lists');
+    $view->set_display('panel_pane_2');
+    $view->set_arguments(array('all', 'Branding', $term->name));
+    $view->set_items_per_page(3);
+    $view->pre_execute();
+    $view->execute();
+    if (!empty($view->result)) {
+      if (empty($variables['page']['sidebar_second'])) {
+        $variables['page']['sidebar_second'] = array(
+          '#theme_wrappers' => array('region'),
+          '#region' => 'sidebar_second',
+        );
+      }
+      $variables['page']['sidebar_second'][] = array('#markup' => $view->render());
+    }
   }
 
   // Spotbox handling. Find all spotboxes for this node, and add them to
   // page_bottom.
-  if ($node && $spotboxes = field_get_items('node', $node, 'field_os2web_base_field_spotbox')) {
+  if (($node && $spotboxes = field_get_items('node', $node, 'field_os2web_base_field_spotbox')) ||
+      ($term && $spotboxes = field_get_items('taxonomy_term', $term, 'field_os2web_base_field_spotbox'))) {
 
     $spotbox_nids = array();
     foreach ($spotboxes as $spotbox) {
@@ -154,38 +185,7 @@ function svendborg_theme_preprocess_taxonomy_term(&$variables) {
   $term = $variables;
 
   // Get wether this is a top term, and provide a variable for the templates.
-  $variables['term_is_top'] = TRUE;
-  $parent = db_query("SELECT parent FROM {taxonomy_term_hierarchy} WHERE tid = :tid", array(':tid' => $term['tid']))->fetchField();
-  if ($parent > 0) {
-    $variables['term_is_top'] = FALSE;
-  }
-
-  // Spotbox handling. Find all spotboxes for this term.
-  if ($term && $spotboxes = $term['field_os2web_base_field_spotbox']) {
-
-    $spotbox_nids = array();
-    foreach ($spotboxes as $spotbox) {
-      $spotbox_nids[$spotbox['nid']] = $spotbox['nid'];
-    }
-    $spotbox_array = os2web_spotbox_render_spotboxes($spotbox_nids, NULL, NULL, NULL, 'svendborg_spotbox');
-
-    foreach ($spotbox_array['node'] as &$spotbox) {
-      if (is_array($spotbox)) {
-        $spotbox['#prefix'] = '<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">';
-        $spotbox['#suffix'] = '</div>';
-      }
-    }
-
-    $variables['content']['os2web_spotbox'] = array(
-      '#markup' => drupal_render($spotbox_array),
-    );
-  }
-
-  // Get all the nodes selvbetjeningslinks and give them to the template.
-  if ($term && $links = $term['field_os2web_base_field_selfserv']) {
-
-    $variables['os2web_selfservicelinks'] = _svendborg_theme_get_selfservicelinks($links);
-  }
+  $variables['term_is_top'] = _svendborg_theme_term_is_top($term['tid']);
 }
 
 /**
@@ -199,6 +199,18 @@ function svendborg_theme_preprocess_html(&$variables) {
     'preprocess' => FALSE,
     'weight' => 115,
   ));
+
+  if (arg(0) == 'taxonomy' && arg(1) == 'term' && is_numeric(arg(2))) {
+    // Add wether the term is top to the classes array.
+    $term_is_top = _svendborg_theme_term_is_top(arg(2));
+
+    if ($term_is_top) {
+      $variables['classes_array'][] = 'term-is-top';
+    }
+    else {
+      $variables['classes_array'][] = 'term-is-not-top';
+    }
+  }
 }
 
 /**
@@ -211,9 +223,9 @@ function svendborg_theme_breadcrumb($variables) {
 
   // After disabling the Crumbs module, some taxonomies where dublicated in the
   // active trail, and then have dubs in breadcrumb.
-  if (arg(0) == 'taxonomy' && arg(1) == 'term' && is_numeric(arg(2))) {
-    array_pop($breadcrumbs);
-  }
+  // if (arg(0) == 'taxonomy' && arg(1) == 'term' && is_numeric(arg(2))) {
+  //   array_pop($breadcrumbs);
+  // }
 
   if (!empty($breadcrumbs)) {
     // Provide a navigational heading to give context for breadcrumb links to
@@ -299,4 +311,22 @@ function _svendborg_theme_get_selfservicelinks($links) {
     }
   }
   return $selfservicelinks;
+}
+
+/**
+ * Helper function to return wether a term is a top term.
+ *
+ * @param int $term_tid
+ *   The term tid.
+ *
+ * @return bool
+ *   If this term is top.
+ */
+function _svendborg_theme_term_is_top($term_tid) {
+  $parent = &drupal_static(__FUNCTION__ . $term_tid);
+  if (empty($parent)) {
+    $parent = db_query("SELECT parent FROM {taxonomy_term_hierarchy} WHERE tid = :tid", array(':tid' => $term_tid))->fetchField();
+  }
+
+  return $parent == 0;
 }

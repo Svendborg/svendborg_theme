@@ -42,27 +42,16 @@
  * @ingroup themeable
  */
 ?>
-<div id="taxonomy-term-<?php print $term->tid; ?>" class="<?php print $classes; ?>">
+<article id="taxonomy-term-<?php print $term->tid; ?>" class="<?php print $classes; ?> clearfix">
   <?php if (!$page): ?>
     <h2><a href="<?php print $term_url; ?>"><?php print $term_name; ?></a></h2>
   <?php endif; ?>
 
-  <?php if ($page): ?>
-    <?php if(!empty($os2web_selfservicelinks)) : ?>
-      <div class="col-sm-12 col-md-8 col-md-offset-2">
-
-        <div class="dropdown like-panel like-panel-default">
-          <a href="#" data-toggle="dropdown"><?php print t('Nem og hurtig selvbetjening'); ?> <span class="caret-background"><i></i></span></a>
-          <ul class="dropdown-menu">
-          <?php foreach ($os2web_selfservicelinks as $link) : ?>
-            <li>
-              <a href="<?php print $link['url']; ?>"><?php print $link['title']; ?></a>
-            </li>
-          <?php endforeach; ?>
-         </ul>
-        </div>
-      </div>
-    <?php endif; ?>
+  <?php if ($page && !$term_is_top) : ?>
+  <header>
+    <?php print render($content['field_os2web_base_field_image']); ?>
+    <h2><a href="<?php print $term_url; ?>"><?php print $term_name; ?></a></h2>
+  </header>
   <?php endif; ?>
 
   <div class="col-md-12 col-sm-12 content">
@@ -73,73 +62,46 @@
       hide($content['field_os2web_base_field_selfserv']);
       print render($content); ?>
   </div>
+</article>
 
-  <?php if($page): ?>
-  <div class="row">
-    <div class="col-md-9 col-sm-12 clearfix">
-      <?php
-        // Get news carousel.
-        $view = views_get_view('os2web_news_lists');
-        $view->set_display('panel_pane_1');
-        $view->set_arguments(array('Branding', 'none', $term_name));
-        $view->set_items_per_page(3);
-        $view->pre_execute();
-        $view->execute();
-        if (!empty($view->result)) : ?>
-        <div class="col-sm-12 col-md-12 extra-bottom-padding">
-          <?php print $view->render(); ?>
-        </div>
-      <?php endif; ?>
-
-      <?php
-        // Get Sub terms.
-        $view = views_get_view('subtermer');
-        $view->set_display('panel_pane_1');
-        $view->pre_execute();
-        $view->execute();
-        if (!empty($view->result)) : ?>
-      <div class="col-sm-12 col-md-12 bottom-padding">
-          <?php print $view->render(); ?>
-      </div>
-      <?php endif; ?>
-
-      <?php if(!empty($content['os2web_spotbox'])) : ?>
-      <div class="os2web_spotboxes">
-        <?php print render($content['os2web_spotbox']); ?>
-      </div>
-      <?php endif; ?>
-    </div>
-    <div class="col-md-3 col-sm-12">
-
+<?php if($page): ?>
+<div class="row">
+    <div class="col-md-12 col-sm-12 clearfix">
     <?php
       // Get news carousel.
       $view = views_get_view('os2web_news_lists');
-      $view->set_display('panel_pane_2');
-      $view->set_arguments(array('all', 'Branding', $term_name));
+      $view->set_display('panel_pane_1');
+      $view->set_arguments(array('Branding', 'none', $term_name));
       $view->set_items_per_page(3);
       $view->pre_execute();
       $view->execute();
       if (!empty($view->result)) : ?>
-      <div class="panel panel-primary with-arrow">
-        <div class="panel-heading">
-        <a class="rss-icon" href="#"></a>
-          <h3 class="panel-title"><?php print t('Nyheder og aktuelt'); ?></h3>
-        </div>
-        <div class="panel-body">
-          <div class="panel-body-inner">
-          <?php print $view->render(); ?>
-          </div>
-        </div>
-        <div class="panel-footer no-border">
-          <a href="/nyheder/<?php print strtolower($term_name); ?>" class="btn btn-primary">
-            <?php print t('Se alle nyheder her'); ?>
-          </a>
-        </div>
+      <div class="col-sm-12 col-md-12 extra-bottom-padding">
+        <?php print $view->render(); ?>
       </div>
-      <?php endif; ?>
+    <?php endif; ?>
+
+    <?php
+      // Get Sub terms.
+      $view = views_get_view('subtermer');
+      $view->set_display('panel_pane_1');
+      $view->pre_execute();
+      if (!$term_is_top) :
+        $view->display_handler->default_display->options['style_options']['row_class'] = 'col-md-6 call-to-action';
+      endif;
+      $view->execute();
+      if (!empty($view->result)) : ?>
+    <div class="col-sm-12 col-md-12 bottom-padding">
+        <?php print $view->render(); ?>
     </div>
+    <?php endif; ?>
+
+    <?php if(!empty($content['os2web_spotbox'])) : ?>
+    <div class="os2web_spotboxes">
+      <?php print render($content['os2web_spotbox']); ?>
+    </div>
+    <?php endif; ?>
   </div>
-
-  <?php endif; ?>
-
 </div>
+
+<?php endif; ?>
