@@ -7048,6 +7048,9 @@ fieldset[disabled] .btn-inverse.active {
   text-align: center;
   padding: 20px;
 }
+.panel .panel-footer.no-border {
+  border: none;
+}
 .panel-default > .panel-heading,
 .like-panel.like-panel-default {
   background-image: -webkit-linear-gradient(top, #0089cd 0%, #005191 100%);
@@ -7218,9 +7221,10 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-it
 }
 .page-taxonomy-term .view-os2web-news-lists.view-display-id-panel_pane_2 .views-row {
   border-bottom: 1px solid #dfded7;
+  margin-bottom: 5px;
 }
 .page-taxonomy-term .view-os2web-news-lists.view-display-id-panel_pane_2 .views-row-last {
-  border-bottom: none;
+  margin-bottom: 0;
 }
 .page-taxonomy-term .view-os2web-news-lists.view-display-id-panel_pane_2 .views-field-field-os2web-base-field-lead-img {
   float: left;
