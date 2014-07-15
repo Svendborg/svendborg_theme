@@ -6995,6 +6995,9 @@ fieldset[disabled] .btn-inverse.active {
   border: none;
   box-shadow: none;
 }
+.panel:last-child {
+  margin-bottom: 18px;
+}
 .panel > .panel-heading,
 .like-panel {
   color: white;
@@ -7247,6 +7250,8 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-it
 }
 .page-taxonomy-term .view-os2web-news-lists.view-display-id-panel_pane_2 .views-field-title {
   font-weight: bold;
+  font-size: 1.2em;
+  line-height: 1.4em;
 }
 .page-taxonomy-term .view-os2web-news-lists.view-display-id-panel_pane_2 .views-field-field-os2web-base-field-summary {
   font-weight: bold;
