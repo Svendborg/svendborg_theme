@@ -23,6 +23,11 @@
       font-size: @font-size-h2;
       font-weight: normal;
     }
+
+    a.rss-icon {
+      display: block;
+      float: right;
+    }
   }
 
   &.with-arrow > .panel-body {
@@ -158,23 +163,31 @@
     font-size: 2em;
     font-family: @font-family-sans-serif-second;
 
-    i {
+    .caret-background {
       position: absolute;
       right: 0;
-      top: 10px;
       height: 2.2em;
       width: 2.2em;
       background: @brand-darkblue;
-      margin-top: -10px;
-
+      text-align: center;
       border-radius: 0 4px 4px 0;
+      i {
+        .sprite(@dropdown-arrow-down);
+        margin: 0 auto;
+        margin-top: 0.5em;
+        display: block;
+      }
     }
   }
   &.open {
     border-radius: 4px 4px 0 0;
-    > a i {
+    > a .caret-background {
       height: 4.4em;
       z-index: 1001;
+
+      i {
+        margin-top: 1.5em;
+      }
     }
   }
   ul.dropdown-menu {

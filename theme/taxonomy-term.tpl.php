@@ -51,7 +51,7 @@
       <div class="col-sm-12 col-md-8 col-md-offset-2">
 
         <div class="dropdown like-panel like-panel-default">
-          <a href="#" data-toggle="dropdown"><?php print t('Nem og hurtig selvbetjening'); ?> <i></i></a>
+          <a href="#" data-toggle="dropdown"><?php print t('Nem og hurtig selvbetjening'); ?> <span class="caret-background"><i></i></span></a>
           <ul class="dropdown-menu">
           <?php foreach ($os2web_selfservicelinks as $link) : ?>
             <li>
@@ -118,6 +118,7 @@
       if (!empty($view->result)) : ?>
       <div class="panel panel-primary with-arrow">
         <div class="panel-heading">
+        <a class="rss-icon" href="#"></a>
           <h3 class="panel-title"><?php print t('Nyheder og aktuelt'); ?></h3>
         </div>
         <div class="panel-body">

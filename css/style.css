@@ -6639,7 +6639,7 @@ The provided classes are intended to be used with the array-like variables
   text-align: center;
   color: #fff;
   background-image: url(../images/sprites.png);
-  background-position: 0px -187px;
+  background-position: 0px -257px;
   width: 43px;
   height: 43px;
 }
@@ -6660,6 +6660,12 @@ The provided classes are intended to be used with the array-like variables
   font-size: 11px;
   float: right;
   width: 100%;
+}
+.rss-icon {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -153px;
+  width: 34px;
+  height: 34px;
 }
 /**
  * This file is only for really global styles. None specific styles.
@@ -6996,6 +7002,10 @@ fieldset[disabled] .btn-inverse.active {
   font-size: 1.5em;
   font-weight: normal;
 }
+.panel > .panel-heading a.rss-icon {
+  display: block;
+  float: right;
+}
 .panel.with-arrow > .panel-body {
   position: relative;
   padding-top: 10px;
@@ -7118,22 +7128,33 @@ fieldset[disabled] .btn-inverse.active {
   font-size: 2em;
   font-family: 'Titillium Web', Geneva, Verdana, sans-serif;
 }
-.dropdown.like-panel > a i {
+.dropdown.like-panel > a .caret-background {
   position: absolute;
   right: 0;
-  top: 10px;
   height: 2.2em;
   width: 2.2em;
   background: #005191;
-  margin-top: -10px;
+  text-align: center;
   border-radius: 0 4px 4px 0;
+}
+.dropdown.like-panel > a .caret-background i {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -221px;
+  width: 31px;
+  height: 36px;
+  margin: 0 auto;
+  margin-top: 0.5em;
+  display: block;
 }
 .dropdown.like-panel.open {
   border-radius: 4px 4px 0 0;
 }
-.dropdown.like-panel.open > a i {
+.dropdown.like-panel.open > a .caret-background {
   height: 4.4em;
   z-index: 1001;
+}
+.dropdown.like-panel.open > a .caret-background i {
+  margin-top: 1.5em;
 }
 .dropdown.like-panel ul.dropdown-menu {
   margin: 0;
@@ -7828,7 +7849,7 @@ h2.menu-footer a.Kommunen {
 }
 .front-indholsdmenu a.Kommunen {
   background-image: url(../images/sprites.png);
-  background-position: 0px -460px;
+  background-position: 0px -530px;
   width: 135px;
   height: 135px;
   font-size: 14px;
@@ -7837,7 +7858,7 @@ h2.menu-footer a.Kommunen {
 }
 .front-indholsdmenu a.Borger {
   background-image: url(../images/sprites.png);
-  background-position: 0px -915px;
+  background-position: 0px -985px;
   width: 182px;
   height: 180px;
   padding: 120px 55px 29px 55px;
@@ -7845,7 +7866,7 @@ h2.menu-footer a.Kommunen {
 }
 .front-indholsdmenu a.Erhverv {
   background-image: url(../images/sprites.png);
-  background-position: 0px -735px;
+  background-position: 0px -805px;
   width: 182px;
   height: 180px;
   padding: 120px 50px 29px 50px;
@@ -7853,7 +7874,7 @@ h2.menu-footer a.Kommunen {
 }
 .front-indholsdmenu a.Politik {
   background-image: url(../images/sprites.png);
-  background-position: 0px -327px;
+  background-position: 0px -397px;
   width: 134px;
   height: 133px;
   font-size: 14px;
