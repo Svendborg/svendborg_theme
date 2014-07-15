@@ -223,6 +223,8 @@ function svendborg_theme_breadcrumb($variables) {
 
   // After disabling the Crumbs module, some taxonomies where dublicated in the
   // active trail, and then have dubs in breadcrumb.
+  //
+  // EIDT: WEIRD brødkrumme hack. Problem have maybe resolved itself.
   // if (arg(0) == 'taxonomy' && arg(1) == 'term' && is_numeric(arg(2))) {
   //   array_pop($breadcrumbs);
   // }

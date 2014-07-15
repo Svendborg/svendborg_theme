@@ -32,7 +32,7 @@
     <a id="main-content"></a>
     <?php print render($page['title_prefix']); ?>
 
-    <?php if ($page['title'] && !isset($page['page']['term_is_top'])): ?>
+    <?php if (!empty($page['title']) && !isset($page['page']['term_is_top'])): ?>
       <h1 class="page-header"><?php print $page['title']; ?></h1>
     <?php endif; ?>
 
