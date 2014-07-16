@@ -140,7 +140,7 @@ function svendborg_theme_preprocess_page(&$variables) {
           '#region' => 'sidebar_second',
         );
       }
-      $variables['page']['sidebar_second'][] = array('#markup' => $view->render());
+      $variables['page']['sidebar_second']['os2web_news_lists'] = array('#markup' => $view->render());
     }
   }
 
