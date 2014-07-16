@@ -7681,14 +7681,6 @@ body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .field-name-fi
   width: 100%;
   height: auto;
 }
-body.two-sidebarsbody.page-node article .field-name-field-os2web-base-field-image img,
-body.two-sidebarsbody.page-taxonomy-term.term-is-not-top article .field-name-field-os2web-base-field-image img,
-body.two-sidebarsbody.page-node div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image img,
-body.two-sidebarsbody.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image img,
-body.two-sidebarsbody.page-node div.node-os2web-base-news .field-name-field-os2web-base-field-image img,
-body.two-sidebarsbody.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .field-name-field-os2web-base-field-image img {
-  border-radius: 4px 4px 0 0;
-}
 body.page-node article .field-name-field-os2web-base-field-summary .field-item,
 body.page-taxonomy-term.term-is-not-top article .field-name-field-os2web-base-field-summary .field-item,
 body.page-node div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-summary .field-item,
@@ -7725,6 +7717,26 @@ body.page-node .field-name-field-os2web-base-field-media .field-item a,
 body.page-taxonomy-term.term-is-not-top .field-name-field-os2web-base-field-media .field-item a {
   margin-left: 10px;
   color: #30353c;
+}
+body.page-node.two-sidebars article .field-name-field-os2web-base-field-image img,
+body.page-taxonomy-term.term-is-not-top.two-sidebars article .field-name-field-os2web-base-field-image img,
+body.page-node .region-content.col-sm-6 article .field-name-field-os2web-base-field-image img,
+body.page-taxonomy-term.term-is-not-top .region-content.col-sm-6 article .field-name-field-os2web-base-field-image img,
+body.page-node .region-content.col-md-6 article .field-name-field-os2web-base-field-image img,
+body.page-taxonomy-term.term-is-not-top .region-content.col-md-6 article .field-name-field-os2web-base-field-image img,
+body.page-node.two-sidebars div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image img,
+body.page-taxonomy-term.term-is-not-top.two-sidebars div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image img,
+body.page-node .region-content.col-sm-6 div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image img,
+body.page-taxonomy-term.term-is-not-top .region-content.col-sm-6 div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image img,
+body.page-node .region-content.col-md-6 div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image img,
+body.page-taxonomy-term.term-is-not-top .region-content.col-md-6 div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-image img,
+body.page-node.two-sidebars div.node-os2web-base-news .field-name-field-os2web-base-field-image img,
+body.page-taxonomy-term.term-is-not-top.two-sidebars div.node-os2web-base-news .field-name-field-os2web-base-field-image img,
+body.page-node .region-content.col-sm-6 div.node-os2web-base-news .field-name-field-os2web-base-field-image img,
+body.page-taxonomy-term.term-is-not-top .region-content.col-sm-6 div.node-os2web-base-news .field-name-field-os2web-base-field-image img,
+body.page-node .region-content.col-md-6 div.node-os2web-base-news .field-name-field-os2web-base-field-image img,
+body.page-taxonomy-term.term-is-not-top .region-content.col-md-6 div.node-os2web-base-news .field-name-field-os2web-base-field-image img {
+  border-radius: 4px 4px 0 0;
 }
 .page-node .region-content.col-sm-9 article .wrap,
 .page-node .region-content.col-md-9 article .wrap,
