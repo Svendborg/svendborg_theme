@@ -13,7 +13,9 @@
         $spotboxes = $('.node-os2web-spotbox-box');
 
     // Be sure to only do it when not on mobile width.
-    if ($region_sidebar.length && $(window).width() > 768) {
+    if ($region_sidebar.length &&
+        $(window).width() > 768 &&
+        ($('body').hasClass('node-page') || $('body').hasClass('page-taxonomy-term.term-is-not-top'))) {
       var $region_content = $('.region-content'),
           sidebar_height = $region_sidebar.outerHeight(),
           content_height = $region_content.outerHeight();
