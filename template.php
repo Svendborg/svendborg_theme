@@ -157,7 +157,7 @@ function svendborg_theme_preprocess_page(&$variables) {
 
     foreach ($spotbox_array['node'] as &$spotbox) {
       if (is_array($spotbox)) {
-        $spotbox['#prefix'] = '<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">';
+        $spotbox['#prefix'] = '<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">';
         $spotbox['#suffix'] = '</div>';
       }
     }
