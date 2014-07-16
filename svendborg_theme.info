@@ -47,6 +47,7 @@ scripts[] = 'bootstrap/js/tab.js'
 scripts[] = 'bootstrap/js/transition.js'
 
 scripts[] = 'js/script.js'
+scripts[] = 'js/os2web_spotbox_adjust.js'
 
 ; Disable BootstrapCDN so the compiled LESS source files can be used.
 settings[bootstrap_cdn] = ''
