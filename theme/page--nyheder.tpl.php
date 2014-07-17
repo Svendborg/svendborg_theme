@@ -108,14 +108,13 @@
   <div class="region region-sidebar-second col-md-4 col-sm-4 col-xs-12">
     <!-- filter -->
     <?php
-      //$block = block_load('views','news_filter-block');
-      //$output = _block_get_renderable_array(_block_render_blocks(array($block)));
-      //print drupal_render($output);
-      print views_embed_view('news_filter', 'panel_pane_1');
+      $block = block_load('views','news_filter-block');
+      $output = _block_get_renderable_array(_block_render_blocks(array($block)));
+      print drupal_render($output);
+      //print views_embed_view('news_filter', 'panel_pane_1');
   
     ?>
-    
-    <div class="nyheder-seperator"></div>
+
       <?php
       $block = block_load('menu_block','4');
       $output = _block_get_renderable_array(_block_render_blocks(array($block)));
