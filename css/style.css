@@ -5879,9 +5879,17 @@ body #admin-menu {
 body #admin-menu .dropdown li {
   line-height: normal;
 }
-.container {
-  padding-left: 32px;
-  padding-right: 32px;
+@media screen and (min-width: 768px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
 }
 .navbar.container {
   margin-top: 20px;
@@ -6528,8 +6536,7 @@ The provided classes are intended to be used with the array-like variables
 .front-s-news-item {
   padding: 10px 10px;
   background-color: #fff;
-  border-radius: 5px 5px;
-  margin-bottom: 10px;
+  border-radius: 3px 3px;
 }
 .news-text-date {
   text-align: center;
@@ -6668,20 +6675,20 @@ fieldset[disabled] .btn-primary.active {
 }
 .btn-blacknblue {
   color: #ffffff;
-  background-image: -webkit-linear-gradient(top, #30353c 0%, #191c20 100%);
-  background-image: linear-gradient(to bottom, #30353c 0%, #191c20 100%);
+  background-image: -webkit-linear-gradient(top, #496e7e 0%, #36525e 100%);
+  background-image: linear-gradient(to bottom, #496e7e 0%, #36525e 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff30353c', endColorstr='#ff191c20', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff496e7e', endColorstr='#ff36525e', GradientType=0);
   border: none;
 }
 .btn-blacknblue:hover,
 .btn-blacknblue:focus,
 .btn-blacknblue:active,
 .btn-blacknblue.active {
-  background-image: -webkit-linear-gradient(top, #191c20 0%, #30353c 100%);
-  background-image: linear-gradient(to bottom, #191c20 0%, #30353c 100%);
+  background-image: -webkit-linear-gradient(top, #36525e 0%, #496e7e 100%);
+  background-image: linear-gradient(to bottom, #36525e 0%, #496e7e 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff191c20', endColorstr='#ff30353c', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff36525e', endColorstr='#ff496e7e', GradientType=0);
   color: #ffffff;
 }
 .btn-blacknblue.disabled,
@@ -6699,7 +6706,7 @@ fieldset[disabled] .btn-blacknblue:active,
 .btn-blacknblue.disabled.active,
 .btn-blacknblue[disabled].active,
 fieldset[disabled] .btn-blacknblue.active {
-  background-color: #191c20;
+  background-color: #36525e;
 }
 .btn-success {
   color: #ffffff;
@@ -7104,6 +7111,7 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-it
   .header_fixed .navbar-default.header_main_menu {
     background-color: #e3e3e3;
     border-radius: 2px 2px 2px 2px;
+    z-index: 900;
   }
 }
 .header_fixed .navbar-default.header_main_menu ul li {
@@ -7460,7 +7468,7 @@ body.two-sidebars.page-node div.node-os2web-base-news .field-name-field-os2web-b
 }
 #nyheder-carousel-large {
   background-color: #fff;
-  border-radius: 5px 5px;
+  border-radius: 3px 3px;
   padding: 10px 10px;
 }
 #nyheder-carousel-large .carousel-title {
@@ -7502,7 +7510,7 @@ body.two-sidebars.page-node div.node-os2web-base-news .field-name-field-os2web-b
   height: 20px;
 }
 .front-s-news-item-text {
-  padding: 20px 0;
+  padding: 10px 0;
 }
 .front-s-news-item-text .news-title {
   font-size: 1.5em;
@@ -7514,6 +7522,188 @@ body.two-sidebars.page-node div.node-os2web-base-news .field-name-field-os2web-b
 }
 .front-s-news-item-text p {
   color: #595d63;
+}
+#svendborg_tabs {
+  min-height: 298px;
+}
+#svendborg_tabs .view-content {
+  background-color: #fff;
+  padding: 25px 0px 10px 0px;
+  min-height: 199px;
+}
+#svendborg_tabs .view-content .quicktabs-row-border {
+  border-bottom: 1px solid #dfded7;
+  padding-bottom: 10px;
+}
+#svendborg_tabs .view-footer {
+  background-color: #fff;
+  padding: 0px 0px 25px 0px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  text-align: center;
+}
+#svendborg_tabs .view-footer a {
+  text-decoration: none;
+  color: #fff;
+}
+#svendborg_tabs .view-footer a:hover {
+  color: #fff;
+}
+#svendborg_tabs ul.quicktabs-tabs {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  padding: 0px 0px;
+  margin-bottom: 0px;
+  width: 100%;
+  background-image: -webkit-linear-gradient(top, #496e7e 0%, #194254 100%);
+  background-image: linear-gradient(to bottom, #496e7e 0%, #194254 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff496e7e', endColorstr='#ff194254', GradientType=0);
+}
+#svendborg_tabs ul.quicktabs-tabs li {
+  padding: 0;
+  position: relative;
+  display: inline-block;
+  width: 25%;
+  height: 56px;
+  text-align: center;
+  vertical-align: middle;
+  color: #ffffff;
+  background-image: -webkit-linear-gradient(top, #496e7e 0%, #36525e 100%);
+  background-image: linear-gradient(to bottom, #496e7e 0%, #36525e 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff496e7e', endColorstr='#ff36525e', GradientType=0);
+  border: none;
+}
+#svendborg_tabs ul.quicktabs-tabs li:hover,
+#svendborg_tabs ul.quicktabs-tabs li:focus,
+#svendborg_tabs ul.quicktabs-tabs li:active,
+#svendborg_tabs ul.quicktabs-tabs li.active {
+  background-image: -webkit-linear-gradient(top, #36525e 0%, #496e7e 100%);
+  background-image: linear-gradient(to bottom, #36525e 0%, #496e7e 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff36525e', endColorstr='#ff496e7e', GradientType=0);
+  color: #ffffff;
+}
+#svendborg_tabs ul.quicktabs-tabs li.disabled,
+#svendborg_tabs ul.quicktabs-tabs li[disabled],
+fieldset[disabled] #svendborg_tabs ul.quicktabs-tabs li,
+#svendborg_tabs ul.quicktabs-tabs li.disabled:hover,
+#svendborg_tabs ul.quicktabs-tabs li[disabled]:hover,
+fieldset[disabled] #svendborg_tabs ul.quicktabs-tabs li:hover,
+#svendborg_tabs ul.quicktabs-tabs li.disabled:focus,
+#svendborg_tabs ul.quicktabs-tabs li[disabled]:focus,
+fieldset[disabled] #svendborg_tabs ul.quicktabs-tabs li:focus,
+#svendborg_tabs ul.quicktabs-tabs li.disabled:active,
+#svendborg_tabs ul.quicktabs-tabs li[disabled]:active,
+fieldset[disabled] #svendborg_tabs ul.quicktabs-tabs li:active,
+#svendborg_tabs ul.quicktabs-tabs li.disabled.active,
+#svendborg_tabs ul.quicktabs-tabs li[disabled].active,
+fieldset[disabled] #svendborg_tabs ul.quicktabs-tabs li.active {
+  background-color: #36525e;
+}
+#svendborg_tabs ul.quicktabs-tabs li.active {
+  background-image: -webkit-linear-gradient(top, #85c500 0%, #589000 100%);
+  background-image: linear-gradient(to bottom, #85c500 0%, #589000 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff85c500', endColorstr='#ff589000', GradientType=0);
+}
+#svendborg_tabs ul.quicktabs-tabs li.active:after {
+  content: " ";
+  display: table;
+  z-index: 40;
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  margin-left: -17.5px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -81px;
+  width: 31px;
+  height: 16px;
+}
+#svendborg_tabs ul.quicktabs-tabs li.tab-0 {
+  border-top-left-radius: 3px;
+}
+#svendborg_tabs ul.quicktabs-tabs li.tab-3.last {
+  border-top-right-radius: 3px;
+}
+#svendborg_tabs ul.quicktabs-tabs li .bubble {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  min-height: 56px;
+  display: table;
+}
+#svendborg_tabs ul.quicktabs-tabs li .bubble span {
+  text-align: center;
+  display: table-cell;
+  white-space: pre-wrap;
+  vertical-align: middle;
+}
+#svendborg_tabs ul.quicktabs-tabs li a {
+  padding: 13px 10px;
+  color: #fff;
+  display: inline-block;
+  word-break: break-all;
+}
+#svendborg_tabs ul.quicktabs-tabs li a:hover {
+  text-decoration: none;
+}
+#svendborg_tabs .views-row {
+  display: table;
+  width: 100%;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+#svendborg_tabs .views-row img {
+  border-radius: 50%;
+  border: 3px solid #ccc;
+}
+#svendborg_tabs .views-row h4 {
+  text-transform: inherit;
+  font-weight: bold;
+  font-size: 1.2em;
+  line-height: 1.4em;
+  margin-top: 0px;
+}
+#svendborg_tabs .views-row h4 a {
+  color: #30353c;
+  text-decoration: none;
+}
+#svendborg_tabs .views-row h4 a:hover {
+  color: #005191;
+}
+#svendborg_tabs .views-row .quicktabs-nyheder-row {
+  min-height: 67px;
+}
+.nyheder-content .view-svendborg-news-view.view-id-svendborg_news_view .views-row {
+  margin-bottom: 20px;
+}
+#block-views-news-filter-block {
+  background-color: #fff;
+  border-radius: 4px 4px;
+}
+#block-views-news-filter-block .view-id-news_filter {
+  margin: 30px 0 20px 0;
+}
+#block-views-news-filter-block #filter-all,
+#block-views-news-filter-block #filter-link {
+  font-weight: bold;
+}
+.menu-block-wrapper ul {
+  padding: 0;
+  margin: 0;
+  border-radius: 0 0 4px 4px;
+  background: white;
+  list-style: none;
+}
+.menu-block-wrapper ul li {
+  border-bottom: 1px solid #dfded7;
+}
+.menu-block-wrapper ul li a {
+  padding: 7px 5px 11px 26px;
+  font-size: 15px;
+  color: #30353c;
 }
 footer {
   background: white;
@@ -7688,7 +7878,7 @@ h2.menu-footer a.Kommunen {
 }
 #front-carousel-large {
   background-color: #fff;
-  border-radius: 5px 5px;
+  border-radius: 3px 3px;
   padding: 10px 10px;
 }
 #front-carousel-large .carousel-title {
@@ -7764,7 +7954,7 @@ h2.menu-footer a.Kommunen {
 .front-s-news .front-s-news-inner .front-s-news-item {
   padding: 10px 10px;
   background-color: #fff;
-  border-radius: 5px 5px;
+  border-radius: 3px 3px;
   margin-bottom: 10px;
 }
 .front-s-news .front-s-news-inner .front-s-news-item .front-s-news-item-img {
@@ -7808,9 +7998,12 @@ h2.menu-footer a.Kommunen {
   display: table;
 }
 .front-s-news .front-s-news-inner .front-s-news-item .front-s-news-item-text .bubble span {
-  display: table-cell;
-  vertical-align: middle;
   text-align: center;
+  display: table-cell;
+  white-space: pre-wrap;
+  vertical-align: middle;
+}
+.front-s-news .front-s-news-inner .front-s-news-item .front-s-news-item-text .bubble span {
   font-size: 20px;
 }
 .front-s-news .front-s-news-inner .front-s-news-item .front-s-news-item-text .bubble span a {
