@@ -16,7 +16,8 @@
 }
 
 // Default show for a node with 3 columns.
-.page-node {
+body.page-node,
+body.page-taxonomy-term.term-is-not-top {
   h1.page-header {
     display: none;
   }
@@ -25,6 +26,7 @@
   div.node-os2web-base-news {
     background: white;
     border-radius: 0 0 4px 4px;
+    margin-bottom: @grid-gutter-width;
 
     // This is a serious hack to force anchors below the fixed header.
     // See http://css-tricks.com/hash-tag-links-padding/
@@ -76,9 +78,6 @@
         }
       }
       img{
-        body.two-sidebars& {
-          border-radius: 4px 4px 0 0;
-        }
         width: 100%;
         height: auto;
       }
@@ -114,6 +113,44 @@
         margin-left: 10px;
         color: @brand-blacknblue;
       }
+    }
+  }
+}
+
+// These rules target the article when we have two sidebars.
+body.page-node,
+body.page-taxonomy-term.term-is-not-top {
+  // Somehow .two-sidebars class are sometimes wrongly set, so we targeted it
+  // also by seeing after the col-md-XX classes on region-content.
+  &.two-sidebars,
+  .region-content.col-sm-6,
+  .region-content.col-md-6 {
+    article,
+    div.node-os2web-borger-dk-article,
+    div.node-os2web-base-news {
+      .field-name-field-os2web-base-field-image img {
+        border-radius: 4px 4px 0 0;
+      }
+    }
+  }
+
+  &.one-sidebar,
+  .region-content.col-sm-6,
+  .region-content.col-md-6 {
+    article,
+    div.node-os2web-borger-dk-article,
+    div.node-os2web-base-news {
+      // .one-sidebar
+    }
+  }
+
+  &.no-sidebars,
+  .region-content.col-sm-12,
+  .region-content.col-md-12 {
+    article,
+    div.node-os2web-borger-dk-article,
+    div.node-os2web-base-news {
+      // .no-sidebars
     }
   }
 }

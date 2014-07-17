@@ -12,7 +12,9 @@
   border: none;
 
   box-shadow: none;
-
+  &:last-child {
+    margin-bottom: 18px;
+  }
   & > .panel-heading {
     color: white;
     border: none;
@@ -22,6 +24,11 @@
       text-transform: none;
       font-size: @font-size-h2;
       font-weight: normal;
+    }
+
+    a.rss-icon {
+      display: block;
+      float: right;
     }
   }
 
@@ -68,6 +75,15 @@
           color: @brand-blacknblue;
         }
       }
+    }
+  }
+
+  .panel-footer {
+    background: white;
+    text-align: center;
+    padding: 20px;
+    &.no-border {
+      border: none;
     }
   }
 }
@@ -128,4 +144,70 @@
 .like-panel {
   &:extend(.panel > .panel-heading);
   &:extend(.panel);
+}
+
+.like-panel.like-panel-default,
+.like-panel.like-panel-primary,
+.like-panel.like-panel-blacknblue,
+.like-panel.like-panel-success,
+.like-panel.like-panel-info,
+.like-panel.like-panel-warning,
+.like-panel.like-panel-danger {
+  > a {
+    color: white;
+  }
+}
+
+.dropdown.like-panel {
+  padding: 0;
+  > a {
+    display: block;
+    padding-left: 19px;
+
+    line-height: 2.2em;
+    font-size: 2em;
+    font-family: @font-family-sans-serif-second;
+
+    .caret-background {
+      position: absolute;
+      right: 0;
+      height: 2.2em;
+      width: 2.2em;
+      background: @brand-darkblue;
+      text-align: center;
+      border-radius: 0 4px 4px 0;
+      i {
+        .sprite(@dropdown-arrow-down);
+        margin: 0 auto;
+        margin-top: 0.5em;
+        display: block;
+      }
+    }
+  }
+  &.open {
+    border-radius: 4px 4px 0 0;
+    > a .caret-background {
+      height: 4.4em;
+      z-index: 1001;
+
+      i {
+        margin-top: 1.5em;
+      }
+    }
+  }
+  ul.dropdown-menu {
+    margin: 0;
+    width: 100%;
+    border: 2px solid @brand-darkblue;
+    border-radius: 0 0 4px 4px;
+
+    li a {
+      line-height: 2.2em;
+      font-size: 2em;
+      font-family: @font-family-sans-serif-second;
+      &:hover {
+        color: @link-color;
+      }
+    }
+  }
 }

@@ -23,6 +23,7 @@ module.exports = function(grunt) {
         },
         files: {
           "./css/style.css": "./less/style.less",
+          "./css/editor.css": "./less/editor.less",
           "./css/ie.css": "./less/ie.less"
         }
       },
