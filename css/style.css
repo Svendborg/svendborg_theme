@@ -6551,7 +6551,7 @@ The provided classes are intended to be used with the array-like variables
   right: 25px;
   top: 25.5px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -55px;
+  background-position: 0px -68px;
   width: 8px;
   height: 13px;
 }
@@ -6625,7 +6625,7 @@ The provided classes are intended to be used with the array-like variables
   left: 50%;
   margin-left: -17.5px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -110px;
+  background-position: 0px -126px;
   width: 35px;
   height: 17px;
 }
@@ -6642,7 +6642,7 @@ The provided classes are intended to be used with the array-like variables
   text-align: center;
   color: #fff;
   background-image: url(../images/sprites.png);
-  background-position: 0px -257px;
+  background-position: 0px -227px;
   width: 43px;
   height: 43px;
 }
@@ -6666,9 +6666,9 @@ The provided classes are intended to be used with the array-like variables
 }
 .rss-icon {
   background-image: url(../images/sprites.png);
-  background-position: 0px -153px;
-  width: 34px;
-  height: 34px;
+  background-position: 0px -143px;
+  width: 24px;
+  height: 24px;
 }
 /**
  * This file is only for really global styles. None specific styles.
@@ -7025,7 +7025,7 @@ fieldset[disabled] .btn-inverse.active {
   left: 50%;
   margin-left: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -14px;
+  background-position: 0px 0px;
   width: 14px;
   height: 7px;
 }
@@ -7074,7 +7074,7 @@ fieldset[disabled] .btn-inverse.active {
 }
 .panel-primary.with-arrow > .panel-body:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px 0px;
+  background-position: 0px -14px;
   width: 14px;
   height: 7px;
 }
@@ -7149,11 +7149,11 @@ fieldset[disabled] .btn-inverse.active {
 }
 .dropdown.like-panel > a .caret-background i {
   background-image: url(../images/sprites.png);
-  background-position: 0px -221px;
-  width: 31px;
-  height: 36px;
+  background-position: 0px -110px;
+  width: 14px;
+  height: 16px;
   margin: 0 auto;
-  margin-top: 0.5em;
+  margin-top: 0.8em;
   display: block;
 }
 .dropdown.like-panel.open {
@@ -7164,7 +7164,7 @@ fieldset[disabled] .btn-inverse.active {
   z-index: 1001;
 }
 .dropdown.like-panel.open > a .caret-background i {
-  margin-top: 1.5em;
+  margin-top: 1.9em;
 }
 .dropdown.like-panel ul.dropdown-menu {
   margin: 0;
@@ -7218,7 +7218,7 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-it
   left: 50%;
   margin-left: -17.5px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -110px;
+  background-position: 0px -126px;
   width: 35px;
   height: 17px;
 }
@@ -7422,7 +7422,7 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-it
 }
 .breadcrumb li i {
   background-image: url(../images/sprites.png);
-  background-position: 0px -42px;
+  background-position: 0px -55px;
   width: 8px;
   height: 13px;
   display: block;
@@ -7468,7 +7468,7 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-it
   left: 50%;
   margin-left: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px 0px;
+  background-position: 0px -14px;
   width: 14px;
   height: 7px;
 }
@@ -7513,7 +7513,7 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-it
   margin-top: -8px;
   margin-left: 11px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -68px;
+  background-position: 0px -42px;
   width: 8px;
   height: 13px;
 }
@@ -7708,7 +7708,7 @@ body.page-taxonomy-term.term-is-not-top .field-name-field-os2web-base-field-medi
 body.page-node .field-name-field-os2web-base-field-media .field-item .file-icon,
 body.page-taxonomy-term.term-is-not-top .field-name-field-os2web-base-field-media .field-item .file-icon {
   background-image: url(../images/sprites.png);
-  background-position: 0px -127px;
+  background-position: 0px -167px;
   width: 26px;
   height: 26px;
   padding-left: 26px;
@@ -7938,7 +7938,7 @@ h2.menu-footer a.Kommunen {
 }
 .front-indholsdmenu a.Kommunen {
   background-image: url(../images/sprites.png);
-  background-position: 0px -530px;
+  background-position: 0px -500px;
   width: 135px;
   height: 135px;
   font-size: 14px;
@@ -7947,7 +7947,7 @@ h2.menu-footer a.Kommunen {
 }
 .front-indholsdmenu a.Borger {
   background-image: url(../images/sprites.png);
-  background-position: 0px -985px;
+  background-position: 0px -955px;
   width: 182px;
   height: 180px;
   padding: 120px 55px 29px 55px;
@@ -7955,7 +7955,7 @@ h2.menu-footer a.Kommunen {
 }
 .front-indholsdmenu a.Erhverv {
   background-image: url(../images/sprites.png);
-  background-position: 0px -805px;
+  background-position: 0px -775px;
   width: 182px;
   height: 180px;
   padding: 120px 50px 29px 50px;
@@ -7963,7 +7963,7 @@ h2.menu-footer a.Kommunen {
 }
 .front-indholsdmenu a.Politik {
   background-image: url(../images/sprites.png);
-  background-position: 0px -397px;
+  background-position: 0px -367px;
   width: 134px;
   height: 133px;
   font-size: 14px;
@@ -8092,7 +8092,7 @@ h2.menu-footer a.Kommunen {
   left: 50%;
   margin-left: -17.5px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -110px;
+  background-position: 0px -126px;
   width: 35px;
   height: 17px;
 }
