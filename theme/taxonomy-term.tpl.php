@@ -49,7 +49,9 @@
 
   <?php if ($page && !$term_is_top) : ?>
   <header>
-    <?php print render($content['field_os2web_base_field_image']); ?>
+    <?php if (isset($content['field_os2web_base_field_image'])): ?>
+      <?php print render($content['field_os2web_base_field_image']); ?>
+    <?php endif; ?>
     <h2><a href="<?php print $term_url; ?>"><?php print $term_name; ?></a></h2>
   </header>
   <?php endif; ?>
