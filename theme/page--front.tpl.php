@@ -181,9 +181,10 @@
 
         // If you want to access the image, use the URI instead of the filename !
         //$public_filename = file_create_url( $image["uri"] );
-        $style = 'os2demo_indhold'; 
+        $style = 'svendborg_content_image'; 
         $public_filename = image_style_url($style, $image["uri"]);
         // Either output the IMG tag directly,
+        echo '<a href="' . $path . '" title="'.$node->title.'">';
         print '<div class="row-no-padding col-md-8 col-sm-8 col-xs-12">';
 
         print $html = '<img title = "'.$image["title"].'" src="'.$public_filename.'""/>';
@@ -199,7 +200,9 @@
           $path = drupal_get_path_alias('node/'.$node->nid);
           print '<a href="' . $path . '" title="'.$node->title.'" class="btn btn-primary">L&aelig;s mere</a>';
           print '</div>
-          </div>
+          </div>';
+          echo "</a>";
+          print '
         </div>';
       }
       print '</div>';

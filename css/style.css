@@ -6517,6 +6517,14 @@ The provided classes are intended to be used with the array-like variables
   .sprite(@icon-email);
 }
 */
+a {
+  color: #30353c;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+  color: #005191;
+}
 .bottom-padding {
   padding-bottom: 20px;
 }
@@ -7793,7 +7801,6 @@ body.page-taxonomy-term.term-is-not-top .region-content.col-md-6 div.node-os2web
 #nyheder-carousel-large {
   background-color: #fff;
   border-radius: 3px 3px;
-  padding: 10px 10px;
 }
 #nyheder-carousel-large .carousel-title {
   margin-top: 20px;
@@ -8207,7 +8214,6 @@ h2.menu-footer a.Kommunen {
 #front-carousel-large {
   background-color: #fff;
   border-radius: 3px 3px;
-  padding: 10px 10px;
 }
 #front-carousel-large .carousel-title {
   margin-top: 20px;
@@ -8281,8 +8287,7 @@ h2.menu-footer a.Kommunen {
 }
 .front-s-news .front-s-news-inner {
   padding-top: 25px;
-  background-image: url('../images/front_s_news_container.png');
-  background-repeat: round;
+  background: linear-gradient(to top, rgba(14, 14, 14, 0.05), rgba(46, 46, 46, 0.05));
 }
 .front-s-news .front-s-news-inner .front-s-news-item {
   padding: 10px 10px;
