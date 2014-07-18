@@ -55,7 +55,9 @@ body.page-taxonomy-term.term-is-not-top {
     header h2 {
       padding: 15px;
     }
-
+    .inner {
+      padding: 0 15px;
+    }
     header time {
       padding: 15px 30px;
       text-align: right;
@@ -82,12 +84,52 @@ body.page-taxonomy-term.term-is-not-top {
         height: auto;
       }
     }
-
+    .borger_dk_header_text,
     .field-name-field-os2web-base-field-summary .field-item {
       font-family: @font-family-sans-serif-second;
       font-size: @font-size-h2;
       line-height: 1.7em;
       margin-bottom: 20px;
+    }
+    .borger_dk_header_text {
+      margin-bottom: 0px;
+    }
+    .borger_dk_body_intro_text {
+      margin-bottom: 20px;
+    }
+    #borger_dk-body {
+      clear: both;
+      .microArticle {
+        padding: 10px 10px;
+        background-color: #e3e3e3;
+        border-radius: 5px;
+        margin-bottom: 5px;
+      }
+      div.mArticle {
+        padding-top: 10px;
+      }
+      h2 {
+        display: inline-block;
+        width: 96%;
+        border-top: none;
+        margin-top: 0;
+        text-transform: inherit;
+        font-weight: bold;
+        font-size: 16px;
+        background: none;
+      }
+      a.gplus {
+        display: inline-block;
+        .sprite(@gplus);
+        font-size: 0;
+        vertical-align: middle;
+      }
+      a.gminus {
+        display: inline-block;
+        .sprite(@gminus);
+        font-size: 0;
+        vertical-align: middle;
+      }
     }
   }
   .nav-tabs {

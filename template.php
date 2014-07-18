@@ -42,8 +42,8 @@ function svendborg_theme_preprocess_page(&$variables) {
     $menu_trail = menu_get_active_trail();
     $active = end($menu_trail);
     if ($active['menu_name'] !== 'menu-indholdsmenu') {
-      $variables['page']['sidebar_first'] = array();
-      $sidebar_first_hidden = TRUE;
+      //$variables['page']['sidebar_first'] = array();
+      //$sidebar_first_hidden = TRUE;
     }
   }
 

@@ -35,7 +35,7 @@
 <section id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
   <?php print render($title_prefix); ?>
-  <?php if ($title): ?>
+  <?php if ($title && $block_html_id == "block-views-news-filter-block"): ?>
   <div class="panel panel-primary with-big-arrow">
     <div class="panel-heading">
       <a class="rss-icon" href="#"></a>
