@@ -1,10 +1,33 @@
+<article id="taxonomy-term-<?php print $term->tid; ?>" class="<?php print $classes; ?> clearfix">
+  <?php if (!$page): ?>
+    <h2><a href="<?php print $term_url; ?>"><?php print $term_name; ?></a></h2>
+  <?php endif; ?>
 
+  <?php if ($page && !$term_is_top) : ?>
+  <header>
+    <?php print render($content['field_os2web_base_field_image']); ?>
+    <h2><a href="<?php print $term_url; ?>"><?php print $term_name; ?></a></h2>
+  </header>
+  <?php endif; ?>
+
+  <div class="col-md-12 col-sm-12 content">
+    <?php
+      hide($content['os2web_spotbox']);
+      hide($content['field_os2web_base_field_spotbox']);
+      hide($content['field_list_as_spotboks']);
+      hide($content['field_os2web_base_field_selfserv']);
+      print render($content); ?>
+  </div>
+</article>
+
+<?php if($page): ?>
 <?php /* region--navigation.tpl.php */ ?>
 <?php if ($page['navigation']): ?>
   <?php print render($page['navigation']); ?>
 <?php endif; ?>
 <div class="front-main-container-wrapper">
 <div class="main-container container">
+
   <div class="row">
   <?php /* region--header.tpl.php */ ?>
   <?php print render($page['header']); ?>
@@ -14,13 +37,12 @@
       <?php //print render($page['sidebar_first']); ?>
     <?php endif; ?>
 
-    <!-- page--nyheder.tpl.php-->
-    <div class="col-md-8 col-sm-8 col-xs-12">
+    <!-- taxonomy-term--tid.tpl.php-->
+    <div class="region region-content col-md-8 col-sm-8 col-xs-12">
       <h1>Nyheder og aktuelt</h1>
-
     <?php
 
-      // Branding news view
+       //Branding news view
 
       $view = views_get_view('svendborg_news_view');
       $view->set_display('block');
@@ -61,9 +83,10 @@
 
         // If you want to access the image, use the URI instead of the filename !
         //$public_filename = file_create_url( $image["uri"] );
-        $style = 'os2demo_indhold'; 
+        $style = 'svendborg_content_image'; 
         $public_filename = image_style_url($style, $image["uri"]);
         // Either output the IMG tag directly,
+        echo '<a href="' . $path . '" title="'.$node->title.'">';
         print '<div class="row-no-padding col-md-8 col-sm-12 col-xs-12">';
 
         print $html = '<img title = "'.$image["title"].'" src="'.$public_filename.'""/>';
@@ -78,78 +101,73 @@
         $path = drupal_get_path_alias('node/'.$node->nid);
         print '<a href="' . $path . '" title="'.$node->title.'" class="btn btn-primary">L&aelig;s mere</a>';
         print '</div>
-          </div>
+          </div>';
+        print '</a>
         </div>';
       }
       print '</div></div></div>';
-
+      drupal_add_js('http://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.0.4/jquery.imagesloaded.js');
     ?>
     <div class="nyheder-seperator"></div>
-    <div class="nyheder-content">
+    <div class="nyheder-content" id="nyheder-content-isotoper">
       <div class="row">
     <?php
+      
       $view = views_get_view('svendborg_news_view');
       $view->set_display('block');
       $view->set_arguments(array('nyhed'));
       //$filter = $view->get_item('block', 'filter', 'promote');
       //$filter['value'] = 1;
       //$view->set_item('block', 'filter', 'promote', $filter);
-      $view->set_items_per_page(8);
+      //$view->set_items_per_page(3);
 
       $view->execute();
-
-      $results = $view->result;
-      foreach ($results as $key => $item) {
-            $node = node_load($item->nid);
-            $img = field_get_items('node',$node,'field_os2web_base_field_lead_img');
-            $pre_text = field_get_items('node',$node,'field_os2web_base_field_summary');
-            $image = $img[0];
-            // If you need informations about the file itself (e.g. image resolution):
-            image_get_info( $image["filename"] );
-            $path = drupal_get_path_alias('node/'.$node->nid);
-            // If you want to access the image, use the URI instead of the filename !
-            //$public_filename = file_create_url( $image["uri"] );
-            $style = 'os2demo_indhold';
-            $public_filename = image_style_url($style, $image["uri"]);
-
-            echo '<div class="col-md-6 col-sm-12 col-xs-12">';
-            echo '<div class="front-s-news-item front-s-news-item-'.$key.'">';
-            print '<div class="front-s-news-item-img">';
-            print $html = '<a href="'.$path.'"><img title = "'.$image["title"].'" src="'.$public_filename.'""/></a>';
-            print '</div>';
-
-            // news-text
-            print '<div class="front-s-news-item-text clearfix">';
-              // date col-md-2
-              print '<div class="col-md-2 col-sm-2 col-xs-2">
-                     <div class="news-text-date">';
-              $day = date('j',$node->created);
-              $month = date('M', $node->created);
-                print '<span class="news-date-day">'. $day . '.</span>';
-                print '<span class="news-date-month">'. $month . '</span>';
-              print '</div></div>';
-
-              // text col-md-10
-              print '<div class="col-md-10 col-sm-10 col-xs-10">
-                      <div><a class="news-title" href="'.$path.'">'. $node->title .'</a></div>';
-                print '<div>';
-                  print '<p>'.$pre_text[0]['value'].'</p>';
-                print '</div>';
-              print "</div>";
-
-            print '</div>';
-            echo '</div></div>';
-
-      }
+      print $view->render('block');
     ?>
       </div>
     </div>
   </div>
 
   <!-- right sidebar -->
-  <div class="col-md-4 col-sm-4 col-xs-12">
+  <div class="region region-sidebar-second col-md-4 col-sm-4 col-xs-12">
+    <!-- filter -->
+    <?php
+      $block = block_load('views','news_filter-block');
+      $output = _block_get_renderable_array(_block_render_blocks(array($block)));
+      print drupal_render($output);
+      //print views_embed_view('news_filter', 'panel_pane_1');
+  
+    ?>
+
+      <?php
+      $block = block_load('menu_block','4');
+      $output = _block_get_renderable_array(_block_render_blocks(array($block)));
+      print drupal_render($output);
+  
+      ?>
+    <div class="nyheder-seperator"></div>
+    <div id="svendborg_tabs">
+      <?php
+        $block_tab = block_load('quicktabs','nyhed_quicktabs');
+        $output = _block_get_renderable_array(_block_render_blocks(array($block_tab)));
+        print drupal_render($output);
+      ?>
+    </div>
+  
+    <div class="nyheder-seperator"></div>
+    <div class="">
+      <?php if(!empty($content['os2web_spotbox'])) : ?>
+        <div class="os2web_spotboxes">
+          <?php print render($content['os2web_spotbox']); ?>
+        </div>
+      <?php endif; ?>
+    </div>
+
   </div>
+  <!-- end of right sidebar -->
   </div>
 </div>
 <?php /* region--footer.tpl.php */ ?>
 <?php print render($page['footer']); ?>
+
+<?php endif; ?>

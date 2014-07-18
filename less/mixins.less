@@ -28,7 +28,14 @@
     }
   }
 }
-
+a {
+  color: @text-color;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+    color:  @link-hover-color;
+  }
+}
 .white-and-round() {
   background-color: #fff;
   border-radius: 5px 5px;
@@ -176,8 +183,7 @@
 .front-s-news-item {
   padding: 10px 10px;
   background-color: #fff;
-  border-radius: 5px 5px;
-  margin-bottom: 10px;
+  border-radius: 3px 3px;
 }
 .news-text-date{
   text-align: center;
@@ -204,6 +210,19 @@
 
 }
 
+.bubble(@top,@height) {
+  position: absolute;
+  top: @top;
+  width: 100%;
+  min-height: @height;
+  display: table;
+  span {
+    text-align: center;
+    display: table-cell;
+    white-space: pre-wrap;
+    vertical-align: middle;
+  }
+}
 .rss-icon {
   .sprite(@rss);
 }

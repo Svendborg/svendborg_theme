@@ -51,6 +51,24 @@
 
     }
   }
+  &.with-big-arrow > .panel-body {
+    position: relative;
+    padding-top: @panel-arrow-blue-height + 3px;
+    &:before {
+      // Add an arrow to all panels bodies.
+      content: " ";
+      display: table;
+
+      position: absolute;
+      top: 0;
+      left: 48%;
+
+      margin-left: -@panel-arrow-blue-width / 2;
+
+      .sprite(@panel-arrow-green-big);
+
+    }
+  }
 
   .panel-body {
     padding: 0;

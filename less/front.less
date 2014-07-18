@@ -70,8 +70,8 @@
 }
 #front-carousel-large {
   background-color: #fff;
-  border-radius: 5px 5px;
-  padding: 10px 10px;
+  border-radius: 3px 3px;
+
   .carousel-title {
     margin-top:  20px;
     a.btn {
@@ -150,12 +150,13 @@
   background-image: url('../images/front_s_news_bg.png');
   .front-s-news-inner{
     padding-top: 25px;
-    background-image: url('../images/front_s_news_container.png');
-    background-repeat: round;
+    background: linear-gradient(to top, rgba(14, 14, 14, 0.05), rgba(46, 46, 46, 0.05));
+    //background-image: url('../images/front_s_news_container.png');
+    //background-repeat: repeat;
     .front-s-news-item {
       padding: 10px 10px;
       background-color: #fff;
-      border-radius: 5px 5px;
+      border-radius: 3px 3px;
       margin-bottom: 10px;
       .front-s-news-item-img {
         position: relative;
@@ -189,15 +190,8 @@
         text-align: center;
         min-height: 80px;
         .bubble {
-          position: absolute;
-          top: 5px;
-          width: 100%;
-          min-height: 80px;
-          display: table;
+          .bubble(5px, 80px);
           span {
-            display: table-cell;
-            vertical-align: middle;
-            text-align: center;
             font-size: 20px;
             a {
               color: #30353c;
