@@ -7692,7 +7692,7 @@ body.page-node div.node-os2web-borger-dk-article .inner,
 body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article .inner,
 body.page-node div.node-os2web-base-news .inner,
 body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .inner {
-  padding: 0 15px;
+  padding: 15px 0px;
 }
 body.page-node article header time,
 body.page-taxonomy-term.term-is-not-top article header time,
@@ -7811,7 +7811,7 @@ body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article #borge
 body.page-node div.node-os2web-base-news #borger_dk-body h2,
 body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news #borger_dk-body h2 {
   display: inline-block;
-  width: 96%;
+  width: 90%;
   border-top: none;
   margin-top: 0;
   text-transform: inherit;
@@ -7832,6 +7832,7 @@ body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news #borger_dk-bod
   height: 23px;
   font-size: 0;
   vertical-align: middle;
+  float: right;
 }
 body.page-node article #borger_dk-body a.gminus,
 body.page-taxonomy-term.term-is-not-top article #borger_dk-body a.gminus,
@@ -7846,6 +7847,7 @@ body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news #borger_dk-bod
   height: 23px;
   font-size: 0;
   vertical-align: middle;
+  float: right;
 }
 body.page-node .nav-tabs,
 body.page-taxonomy-term.term-is-not-top .nav-tabs {
