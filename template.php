@@ -196,7 +196,8 @@ function svendborg_theme_preprocess_page(&$variables) {
       'type' => 'text/css',
     ),
   ), 'google_font_svendborg_theme');
-  if ($term->name == "Nyheder") {
+
+  if ($term && strtolower($term->name) === "nyheder") {
     $variables['theme_hook_suggestions'][] = 'taxonomy_term__' . $term->tid;
   }
 }
@@ -241,10 +242,10 @@ function svendborg_theme_preprocess_html(&$variables) {
  */
 function svendborg_theme_preprocess_node(&$vars) {
 
-  // Add css class "node--NODETYPE--VIEWMODE" to nodes
+  // Add css class "node--NODETYPE--VIEWMODE" to nodes.
   $vars['classes_array'][] = 'node--' . $vars['type'] . '--' . $vars['view_mode'];
 
-  // Make "node--NODETYPE--VIEWMODE.tpl.php" templates available for nodes 
+  // Make "node--NODETYPE--VIEWMODE.tpl.php" templates available for nodes.
   $vars['theme_hook_suggestions'][] = 'node__' . $vars['type'] . '__' . $vars['view_mode'];
 }
 /**
@@ -344,11 +345,12 @@ function svendborg_theme_qt_quicktabs_tabset($vars) {
         $class = "last";
       }
       if ($key == $vars['tabset']['#options']['active']) {
-        $item['class'] = array('active','tab-'.$key, $class);
+        $item['class'] = array('active','tab-' . $key, $class);
       }
-      else
-        $item['class'] = array('tab-'.$key, $class);
-      $item['data'] = "<div class = 'bubble' ><span>".drupal_render($tab) ."</span></div>";
+      else {
+        $item['class'] = array('tab-' . $key, $class);
+      }
+      $item['data'] = "<div class = 'bubble' ><span>" . drupal_render($tab) . "</span></div>";
       $variables['items'][] = $item;
     }
   }
