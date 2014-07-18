@@ -7661,6 +7661,15 @@ body.page-node div.node-os2web-base-news p,
 body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news p {
   line-height: 1.6em;
 }
+body.page-node article header h2,
+body.page-taxonomy-term.term-is-not-top article header h2,
+body.page-node div.node-os2web-borger-dk-article header h2,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article header h2,
+body.page-node div.node-os2web-base-news header h2,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news header h2 {
+  margin: 0;
+  margin-top: 14px;
+}
 body.page-node article header h2 a,
 body.page-taxonomy-term.term-is-not-top article header h2 a,
 body.page-node div.node-os2web-borger-dk-article header h2 a,
