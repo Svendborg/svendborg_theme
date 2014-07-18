@@ -7773,6 +7773,11 @@ body.page-taxonomy-term.term-is-not-top .field-name-field-os2web-base-field-medi
   margin-left: 10px;
   color: #30353c;
 }
+body.page-node .field-type-text-long img,
+body.page-taxonomy-term.term-is-not-top .field-type-text-long img {
+  max-width: 100%;
+  height: auto;
+}
 body.page-node.two-sidebars article .field-name-field-os2web-base-field-image img,
 body.page-taxonomy-term.term-is-not-top.two-sidebars article .field-name-field-os2web-base-field-image img,
 body.page-node .region-content.col-sm-6 article .field-name-field-os2web-base-field-image img,
