@@ -1684,7 +1684,7 @@ output {
   padding-top: 7px;
   font-size: 13px;
   line-height: 1.42857143;
-  color: #cccccc;
+  color: #30353c;
 }
 .form-control {
   display: block;
@@ -1693,7 +1693,7 @@ output {
   padding: 6px 12px;
   font-size: 13px;
   line-height: 1.42857143;
-  color: #cccccc;
+  color: #30353c;
   background-color: #ffffff;
   background-image: none;
   border: 1px solid #cccccc;
@@ -3387,7 +3387,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   font-size: 13px;
   font-weight: normal;
   line-height: 1;
-  color: #cccccc;
+  color: #30353c;
   text-align: center;
   background-color: #eeeeee;
   border: 1px solid #cccccc;
@@ -6089,7 +6089,7 @@ table tr.error {
 .control-group.error textarea,
 .control-group.error select,
 .control-group.error .uneditable-input {
-  color: #cccccc;
+  color: #30353c;
   border: 1px solid #cccccc;
 }
 .control-group.error .help-block,
@@ -7072,11 +7072,21 @@ fieldset[disabled] .btn-inverse.active {
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff85c500', endColorstr='#ff589000', GradientType=0);
 }
+.large-arrow.panel-primary.with-arrow > .panel-body {
+  padding-top: 19px;
+}
 .panel-primary.with-arrow > .panel-body:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -14px;
-  width: 14px;
-  height: 7px;
+  background-position: 0px -94px;
+  width: 31px;
+  height: 16px;
+}
+.large-arrow.panel-primary.with-arrow > .panel-body:before {
+  margin-left: -15.5px;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -94px;
+  width: 31px;
+  height: 16px;
 }
 .panel-blacknblue > .panel-heading,
 .like-panel.like-panel-blacknblue {
@@ -7204,12 +7214,18 @@ div.node-os2web-spotbox-box h3 {
 }
 .spotbox .field-name-field-os2web-spotbox-big-image .field-item,
 div.panel-pane div.node.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-item,
-div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-item {
+div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-item,
+.spotbox .field-name-field-os2web-spotbox-video .field-item,
+div.panel-pane div.node.node-os2web-spotbox-box .field-name-field-os2web-spotbox-video .field-item,
+div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-video .field-item {
   position: relative;
 }
 .spotbox .field-name-field-os2web-spotbox-big-image .field-item:before,
 div.panel-pane div.node.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-item:before,
-div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-item:before {
+div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-item:before,
+.spotbox .field-name-field-os2web-spotbox-video .field-item:before,
+div.panel-pane div.node.node-os2web-spotbox-box .field-name-field-os2web-spotbox-video .field-item:before,
+div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-video .field-item:before {
   content: " ";
   display: table;
   z-index: 40;
@@ -7221,6 +7237,12 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-it
   background-position: 0px -126px;
   width: 35px;
   height: 17px;
+}
+.spotbox .field-name-field-os2web-spotbox-video iframe,
+div.panel-pane div.node.node-os2web-spotbox-box .field-name-field-os2web-spotbox-video iframe,
+div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-video iframe {
+  width: 100%;
+  height: auto;
 }
 .view-os2web-news-page .media-ustream-video iframe {
   width: 100%;
@@ -7459,6 +7481,7 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-big-image .field-it
   padding-top: 7px;
   border-radius: 0 0 4px 4px;
   background: white;
+  margin-bottom: 20px;
 }
 .region-sidebar-first .block-menu-block:before {
   content: " ";
