@@ -115,8 +115,18 @@
 .like-panel.like-panel-primary {
   #gradient > .vertical(@brand-lightgreen, @brand-darkgreen, 0%, 100%);
 }
-.panel-primary.with-arrow > .panel-body:before {
-  .sprite(@panel-arrow-green);
+.panel-primary.with-arrow > .panel-body {
+  .large-arrow& {
+    padding-top: @panel-arrow-green-big-height + 3px;
+  }
+  &:before {
+    .sprite(@panel-arrow-green-big);
+
+    .large-arrow& {
+      margin-left: -@panel-arrow-green-big-width / 2;
+      .sprite(@panel-arrow-green-big);
+    }
+  }
 }
 
 .panel-blacknblue > .panel-heading,
@@ -197,7 +207,7 @@
       i {
         .sprite(@dropdown-arrow-down);
         margin: 0 auto;
-        margin-top: 0.5em;
+        margin-top: 0.8em;
         display: block;
       }
     }
@@ -209,7 +219,7 @@
       z-index: 1001;
 
       i {
-        margin-top: 1.5em;
+        margin-top: 1.9em;
       }
     }
   }

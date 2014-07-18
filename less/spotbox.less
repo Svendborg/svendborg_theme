@@ -21,7 +21,8 @@ div.node-os2web-spotbox-box {
     }
   }
 
-  .field-name-field-os2web-spotbox-big-image .field-item {
+  .field-name-field-os2web-spotbox-big-image .field-item,
+  .field-name-field-os2web-spotbox-video .field-item {
     position: relative;
     &:before {
       // Add an arrow to all panels bodies.
@@ -39,6 +40,10 @@ div.node-os2web-spotbox-box {
       .sprite(@spotbox-arrow);
 
     }
+  }
+  .field-name-field-os2web-spotbox-video iframe {
+    width: 100%;
+    height: auto;
   }
   // Use col-xx classes decide size of spotbox:
   &.col-md-4 {

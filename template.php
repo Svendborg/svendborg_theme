@@ -113,6 +113,22 @@ function svendborg_theme_preprocess_page(&$variables) {
     $variables['page']['related_links'] = $related_links;
   }
 
+  // When a node's menu link is deaktivated and has no siblings, menu_block is
+  // empty, and then sidebar_first are hidden. We want to force the
+  // sidebar_first to still be shown.
+  $active_trail = menu_get_active_trail();
+  $current_trail = end($active_trail);
+
+  if (isset($current_trail['hidden']) && $current_trail['hidden'] && empty($variables['page']['sidebar_first'])) {
+    $variables['page']['sidebar_first'] = array(
+      '#theme_wrappers' => array('region'),
+      '#region' => 'sidebar_first',
+      'dummy_content' => array(
+        '#markup' => ' ',
+      ),
+    );
+  }
+
   // Hack to force the sidebar_second to be rendered if we have anything to put
   // in it.
   if (!$sidebar_second_hidden && empty($variables['page']['sidebar_second']) && (!empty($variables['page']['related_links']) || !empty($variables['page']['os2web_selfservicelinks']))) {
@@ -180,7 +196,8 @@ function svendborg_theme_preprocess_page(&$variables) {
       'type' => 'text/css',
     ),
   ), 'google_font_svendborg_theme');
-  if (isset($term->name) && $term->name == "Nyheder") {
+
+  if ($term && strtolower($term->name) === "nyheder") {
     $variables['theme_hook_suggestions'][] = 'taxonomy_term__' . $term->tid;
   }
 }
@@ -225,10 +242,10 @@ function svendborg_theme_preprocess_html(&$variables) {
  */
 function svendborg_theme_preprocess_node(&$vars) {
 
-  // Add css class "node--NODETYPE--VIEWMODE" to nodes
+  // Add css class "node--NODETYPE--VIEWMODE" to nodes.
   $vars['classes_array'][] = 'node--' . $vars['type'] . '--' . $vars['view_mode'];
 
-  // Make "node--NODETYPE--VIEWMODE.tpl.php" templates available for nodes 
+  // Make "node--NODETYPE--VIEWMODE.tpl.php" templates available for nodes.
   $vars['theme_hook_suggestions'][] = 'node__' . $vars['type'] . '__' . $vars['view_mode'];
 }
 /**
@@ -328,11 +345,12 @@ function svendborg_theme_qt_quicktabs_tabset($vars) {
         $class = "last";
       }
       if ($key == $vars['tabset']['#options']['active']) {
-        $item['class'] = array('active','tab-'.$key, $class);
+        $item['class'] = array('active','tab-' . $key, $class);
       }
-      else
-        $item['class'] = array('tab-'.$key, $class);
-      $item['data'] = "<div class = 'bubble' ><span>".drupal_render($tab) ."</span></div>";
+      else {
+        $item['class'] = array('tab-' . $key, $class);
+      }
+      $item['data'] = "<div class = 'bubble' ><span>" . drupal_render($tab) . "</span></div>";
       $variables['items'][] = $item;
     }
   }
