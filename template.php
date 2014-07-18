@@ -180,7 +180,7 @@ function svendborg_theme_preprocess_page(&$variables) {
       'type' => 'text/css',
     ),
   ), 'google_font_svendborg_theme');
-  if ($term->name == "Nyheder") {
+  if (isset($term->name) && $term->name == "Nyheder") {
     $variables['theme_hook_suggestions'][] = 'taxonomy_term__' . $term->tid;
   }
 }
