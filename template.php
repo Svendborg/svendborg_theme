@@ -113,6 +113,22 @@ function svendborg_theme_preprocess_page(&$variables) {
     $variables['page']['related_links'] = $related_links;
   }
 
+  // When a node's menu link is deaktivated and has no siblings, menu_block is
+  // empty, and then sidebar_first are hidden. We want to force the
+  // sidebar_first to still be shown.
+  $active_trail = menu_get_active_trail();
+  $current_trail = end($active_trail);
+
+  if (isset($current_trail['hidden']) && $current_trail['hidden'] && empty($variables['page']['sidebar_first'])) {
+    $variables['page']['sidebar_first'] = array(
+      '#theme_wrappers' => array('region'),
+      '#region' => 'sidebar_first',
+      'dummy_content' => array(
+        '#markup' => ' ',
+      ),
+    );
+  }
+
   // Hack to force the sidebar_second to be rendered if we have anything to put
   // in it.
   if (!$sidebar_second_hidden && empty($variables['page']['sidebar_second']) && (!empty($variables['page']['related_links']) || !empty($variables['page']['os2web_selfservicelinks']))) {
