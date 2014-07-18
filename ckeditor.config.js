@@ -34,12 +34,6 @@ CKEDITOR.on('dialogDefinition', function( ev ) {
   if(dialogName === 'image') {
     dialogDefinition.removeContents( 'Link' );
     dialogDefinition.removeContents( 'advanced' );
-    infoTab.remove('txtWidth');
-    infoTab.remove('txtHeight');
     infoTab.remove('txtBorder');
-    infoTab.remove('txtHSpace');
-    infoTab.remove('txtVSpace');
-    infoTab.remove('ratioLock');
-    infoTab.remove('cmbAlign');
   }
 });
