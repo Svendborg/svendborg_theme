@@ -34,7 +34,9 @@
 
     // Initial masonry
     var $container = $("#nyheder-content-isotoper .view-content");
-      $container.imagesLoaded(function(){
+    if ($container.length) {
+
+     $container.imagesLoaded(function(){
       $container.masonry({
         itemSelector: '.switch-elements',
         columnWidth: '.switch-elements',
@@ -70,7 +72,27 @@
       check_button();
 
     });
+    }
 
+    // borger.dk articles
+      $("div.mArticle").hide();
+      $(".microArticle a.gplus").click(function() {
+        var article = $(this).parent().find('h2');
+        var myid = article.attr('id');
+        var style = $('div.' + myid).css('display');
+        var path = $(this).css("background-image");
+        if (style == 'none') {
+          $("div." + myid).show("500");
+          $(this).addClass('gminus');
+          $(this).removeClass('gplus');
+        }
+        else {
+          $("div." + myid).hide("500");
+          $(this).addClass('gplus');
+          $(this).removeClass('gminus');
+        }
+        return false;
+      });
 
   });
 

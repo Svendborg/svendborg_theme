@@ -6567,7 +6567,7 @@ a:hover {
   right: 25px;
   top: 25.5px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -68px;
+  background-position: 0px -42px;
   width: 8px;
   height: 13px;
 }
@@ -6657,7 +6657,7 @@ a:hover {
   text-align: center;
   color: #fff;
   background-image: url(../images/sprites.png);
-  background-position: 0px -227px;
+  background-position: 0px -273px;
   width: 43px;
   height: 43px;
 }
@@ -6681,7 +6681,7 @@ a:hover {
 }
 .rss-icon {
   background-image: url(../images/sprites.png);
-  background-position: 0px -143px;
+  background-position: 0px -189px;
   width: 24px;
   height: 24px;
 }
@@ -7128,7 +7128,7 @@ fieldset[disabled] .btn-inverse.active {
 }
 .panel-blacknblue.with-arrow > .panel-body:before {
   background-image: url(../images/sprites.png);
-  background-position: 0px -7px;
+  background-position: 0px -14px;
   width: 14px;
   height: 7px;
 }
@@ -7476,7 +7476,7 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-video iframe {
 }
 .breadcrumb li i {
   background-image: url(../images/sprites.png);
-  background-position: 0px -55px;
+  background-position: 0px -81px;
   width: 8px;
   height: 13px;
   display: block;
@@ -7501,7 +7501,7 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-video iframe {
 }
 .breadcrumb li.last i {
   background-image: url(../images/sprites.png);
-  background-position: 0px -81px;
+  background-position: 0px -68px;
   width: 8px;
   height: 13px;
 }
@@ -7523,7 +7523,7 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-video iframe {
   left: 50%;
   margin-left: -7px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -14px;
+  background-position: 0px -7px;
   width: 14px;
   height: 7px;
 }
@@ -7568,7 +7568,7 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-video iframe {
   margin-top: -8px;
   margin-left: 11px;
   background-image: url(../images/sprites.png);
-  background-position: 0px -42px;
+  background-position: 0px -55px;
   width: 8px;
   height: 13px;
 }
@@ -7686,6 +7686,14 @@ body.page-node div.node-os2web-base-news header h2,
 body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news header h2 {
   padding: 15px;
 }
+body.page-node article .inner,
+body.page-taxonomy-term.term-is-not-top article .inner,
+body.page-node div.node-os2web-borger-dk-article .inner,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article .inner,
+body.page-node div.node-os2web-base-news .inner,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .inner {
+  padding: 0 15px;
+}
 body.page-node article header time,
 body.page-taxonomy-term.term-is-not-top article header time,
 body.page-node div.node-os2web-borger-dk-article header time,
@@ -7736,6 +7744,12 @@ body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .field-name-fi
   width: 100%;
   height: auto;
 }
+body.page-node article .borger_dk_header_text,
+body.page-taxonomy-term.term-is-not-top article .borger_dk_header_text,
+body.page-node div.node-os2web-borger-dk-article .borger_dk_header_text,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article .borger_dk_header_text,
+body.page-node div.node-os2web-base-news .borger_dk_header_text,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .borger_dk_header_text,
 body.page-node article .field-name-field-os2web-base-field-summary .field-item,
 body.page-taxonomy-term.term-is-not-top article .field-name-field-os2web-base-field-summary .field-item,
 body.page-node div.node-os2web-borger-dk-article .field-name-field-os2web-base-field-summary .field-item,
@@ -7746,6 +7760,92 @@ body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .field-name-fi
   font-size: 1.5em;
   line-height: 1.7em;
   margin-bottom: 20px;
+}
+body.page-node article .borger_dk_header_text,
+body.page-taxonomy-term.term-is-not-top article .borger_dk_header_text,
+body.page-node div.node-os2web-borger-dk-article .borger_dk_header_text,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article .borger_dk_header_text,
+body.page-node div.node-os2web-base-news .borger_dk_header_text,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .borger_dk_header_text {
+  margin-bottom: 0px;
+}
+body.page-node article .borger_dk_body_intro_text,
+body.page-taxonomy-term.term-is-not-top article .borger_dk_body_intro_text,
+body.page-node div.node-os2web-borger-dk-article .borger_dk_body_intro_text,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article .borger_dk_body_intro_text,
+body.page-node div.node-os2web-base-news .borger_dk_body_intro_text,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .borger_dk_body_intro_text {
+  margin-bottom: 20px;
+}
+body.page-node article #borger_dk-body,
+body.page-taxonomy-term.term-is-not-top article #borger_dk-body,
+body.page-node div.node-os2web-borger-dk-article #borger_dk-body,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article #borger_dk-body,
+body.page-node div.node-os2web-base-news #borger_dk-body,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news #borger_dk-body {
+  clear: both;
+}
+body.page-node article #borger_dk-body .microArticle,
+body.page-taxonomy-term.term-is-not-top article #borger_dk-body .microArticle,
+body.page-node div.node-os2web-borger-dk-article #borger_dk-body .microArticle,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article #borger_dk-body .microArticle,
+body.page-node div.node-os2web-base-news #borger_dk-body .microArticle,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news #borger_dk-body .microArticle {
+  padding: 10px 10px;
+  background-color: #e3e3e3;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+body.page-node article #borger_dk-body div.mArticle,
+body.page-taxonomy-term.term-is-not-top article #borger_dk-body div.mArticle,
+body.page-node div.node-os2web-borger-dk-article #borger_dk-body div.mArticle,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article #borger_dk-body div.mArticle,
+body.page-node div.node-os2web-base-news #borger_dk-body div.mArticle,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news #borger_dk-body div.mArticle {
+  padding-top: 10px;
+}
+body.page-node article #borger_dk-body h2,
+body.page-taxonomy-term.term-is-not-top article #borger_dk-body h2,
+body.page-node div.node-os2web-borger-dk-article #borger_dk-body h2,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article #borger_dk-body h2,
+body.page-node div.node-os2web-base-news #borger_dk-body h2,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news #borger_dk-body h2 {
+  display: inline-block;
+  width: 96%;
+  border-top: none;
+  margin-top: 0;
+  text-transform: inherit;
+  font-weight: bold;
+  font-size: 16px;
+  background: none;
+}
+body.page-node article #borger_dk-body a.gplus,
+body.page-taxonomy-term.term-is-not-top article #borger_dk-body a.gplus,
+body.page-node div.node-os2web-borger-dk-article #borger_dk-body a.gplus,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article #borger_dk-body a.gplus,
+body.page-node div.node-os2web-base-news #borger_dk-body a.gplus,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news #borger_dk-body a.gplus {
+  display: inline-block;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -143px;
+  width: 23px;
+  height: 23px;
+  font-size: 0;
+  vertical-align: middle;
+}
+body.page-node article #borger_dk-body a.gminus,
+body.page-taxonomy-term.term-is-not-top article #borger_dk-body a.gminus,
+body.page-node div.node-os2web-borger-dk-article #borger_dk-body a.gminus,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article #borger_dk-body a.gminus,
+body.page-node div.node-os2web-base-news #borger_dk-body a.gminus,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news #borger_dk-body a.gminus {
+  display: inline-block;
+  background-image: url(../images/sprites.png);
+  background-position: 0px -166px;
+  width: 23px;
+  height: 23px;
+  font-size: 0;
+  vertical-align: middle;
 }
 body.page-node .nav-tabs,
 body.page-taxonomy-term.term-is-not-top .nav-tabs {
@@ -7763,7 +7863,7 @@ body.page-taxonomy-term.term-is-not-top .field-name-field-os2web-base-field-medi
 body.page-node .field-name-field-os2web-base-field-media .field-item .file-icon,
 body.page-taxonomy-term.term-is-not-top .field-name-field-os2web-base-field-media .field-item .file-icon {
   background-image: url(../images/sprites.png);
-  background-position: 0px -167px;
+  background-position: 0px -213px;
   width: 26px;
   height: 26px;
   padding-left: 26px;
@@ -8178,7 +8278,7 @@ h2.menu-footer a.Kommunen {
 }
 .front-indholsdmenu a.Kommunen {
   background-image: url(../images/sprites.png);
-  background-position: 0px -500px;
+  background-position: 0px -546px;
   width: 135px;
   height: 135px;
   font-size: 14px;
@@ -8187,7 +8287,7 @@ h2.menu-footer a.Kommunen {
 }
 .front-indholsdmenu a.Borger {
   background-image: url(../images/sprites.png);
-  background-position: 0px -955px;
+  background-position: 0px -821px;
   width: 182px;
   height: 180px;
   padding: 120px 55px 29px 55px;
@@ -8195,7 +8295,7 @@ h2.menu-footer a.Kommunen {
 }
 .front-indholsdmenu a.Erhverv {
   background-image: url(../images/sprites.png);
-  background-position: 0px -775px;
+  background-position: 0px -1001px;
   width: 182px;
   height: 180px;
   padding: 120px 50px 29px 50px;
@@ -8203,7 +8303,7 @@ h2.menu-footer a.Kommunen {
 }
 .front-indholsdmenu a.Politik {
   background-image: url(../images/sprites.png);
-  background-position: 0px -367px;
+  background-position: 0px -413px;
   width: 134px;
   height: 133px;
   font-size: 14px;
