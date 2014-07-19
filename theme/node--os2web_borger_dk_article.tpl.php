@@ -140,7 +140,11 @@
 
       if (!empty($content_field['body'])) {
         print "<div class='borger_dk-body node-body inner' id='borger_dk-body'>";
-        print "<div class='borger_dk_body_intro_text'>" . "Læs om " . $node->title . "</div>";
+        print "<div class='borger_dk_body_intro_text'><span class='intro_text_text'>" . "Læs om " . $node->title .'</span>';
+        print "<div class='intro_text_buttons'><a href='#' class='gplus_all gplus_gminus'>Alle<span class='gplus_button'>+</span></a>";
+        print "<a href='#' class='gminus_all gplus_gminus'>Alle<span class='gminus_button'>-</span></a></div>";
+
+        print "</div>";
         print render($content_field['body']);
         print '</div>';
         print "<div class='panel-separator'></div>";

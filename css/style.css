@@ -7786,6 +7786,59 @@ body.page-node div.node-os2web-base-news .borger_dk_body_intro_text,
 body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .borger_dk_body_intro_text {
   margin-bottom: 20px;
 }
+body.page-node article .borger_dk_body_intro_text .intro_text_text,
+body.page-taxonomy-term.term-is-not-top article .borger_dk_body_intro_text .intro_text_text,
+body.page-node div.node-os2web-borger-dk-article .borger_dk_body_intro_text .intro_text_text,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article .borger_dk_body_intro_text .intro_text_text,
+body.page-node div.node-os2web-base-news .borger_dk_body_intro_text .intro_text_text,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .borger_dk_body_intro_text .intro_text_text {
+  width: 70%;
+  display: inline-block;
+}
+body.page-node article .borger_dk_body_intro_text .intro_text_buttons,
+body.page-taxonomy-term.term-is-not-top article .borger_dk_body_intro_text .intro_text_buttons,
+body.page-node div.node-os2web-borger-dk-article .borger_dk_body_intro_text .intro_text_buttons,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article .borger_dk_body_intro_text .intro_text_buttons,
+body.page-node div.node-os2web-base-news .borger_dk_body_intro_text .intro_text_buttons,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .borger_dk_body_intro_text .intro_text_buttons {
+  float: right;
+}
+body.page-node article .borger_dk_body_intro_text .gplus_gminus,
+body.page-taxonomy-term.term-is-not-top article .borger_dk_body_intro_text .gplus_gminus,
+body.page-node div.node-os2web-borger-dk-article .borger_dk_body_intro_text .gplus_gminus,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article .borger_dk_body_intro_text .gplus_gminus,
+body.page-node div.node-os2web-base-news .borger_dk_body_intro_text .gplus_gminus,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .borger_dk_body_intro_text .gplus_gminus {
+  margin-left: 10px;
+}
+body.page-node article .borger_dk_body_intro_text .gplus_button,
+body.page-taxonomy-term.term-is-not-top article .borger_dk_body_intro_text .gplus_button,
+body.page-node div.node-os2web-borger-dk-article .borger_dk_body_intro_text .gplus_button,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article .borger_dk_body_intro_text .gplus_button,
+body.page-node div.node-os2web-base-news .borger_dk_body_intro_text .gplus_button,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .borger_dk_body_intro_text .gplus_button {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -143px;
+  width: 23px;
+  height: 23px;
+  display: inline-block;
+  font-size: 0;
+  vertical-align: middle;
+}
+body.page-node article .borger_dk_body_intro_text .gminus_button,
+body.page-taxonomy-term.term-is-not-top article .borger_dk_body_intro_text .gminus_button,
+body.page-node div.node-os2web-borger-dk-article .borger_dk_body_intro_text .gminus_button,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article .borger_dk_body_intro_text .gminus_button,
+body.page-node div.node-os2web-base-news .borger_dk_body_intro_text .gminus_button,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .borger_dk_body_intro_text .gminus_button {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -166px;
+  width: 23px;
+  height: 23px;
+  display: inline-block;
+  font-size: 0;
+  vertical-align: middle;
+}
 body.page-node article #borger_dk-body,
 body.page-taxonomy-term.term-is-not-top article #borger_dk-body,
 body.page-node div.node-os2web-borger-dk-article #borger_dk-body,
@@ -7888,6 +7941,12 @@ body.page-node .field-type-text-long img,
 body.page-taxonomy-term.term-is-not-top .field-type-text-long img {
   max-width: 100%;
   height: auto;
+}
+body.page-node .region-content.col-sm-6 .borger_dk_body_intro_text .intro_text_text,
+body.page-taxonomy-term.term-is-not-top .region-content.col-sm-6 .borger_dk_body_intro_text .intro_text_text,
+body.page-node .region-content.col-md-6 .borger_dk_body_intro_text .intro_text_text,
+body.page-taxonomy-term.term-is-not-top .region-content.col-md-6 .borger_dk_body_intro_text .intro_text_text {
+  width: 50%;
 }
 body.page-node.two-sidebars article .field-name-field-os2web-base-field-image img,
 body.page-taxonomy-term.term-is-not-top.two-sidebars article .field-name-field-os2web-base-field-image img,
