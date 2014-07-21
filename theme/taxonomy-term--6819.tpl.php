@@ -1,25 +1,3 @@
-<article id="taxonomy-term-<?php print $term->tid; ?>" class="<?php print $classes; ?> clearfix">
-  <?php if (!$page): ?>
-    <h2><a href="<?php print $term_url; ?>"><?php print $term_name; ?></a></h2>
-  <?php endif; ?>
-
-  <?php if ($page && !$term_is_top) : ?>
-  <header>
-    <?php print render($content['field_os2web_base_field_image']); ?>
-    <h2><a href="<?php print $term_url; ?>"><?php print $term_name; ?></a></h2>
-  </header>
-  <?php endif; ?>
-
-  <div class="col-md-12 col-sm-12 content">
-    <?php
-      hide($content['os2web_spotbox']);
-      hide($content['field_os2web_base_field_spotbox']);
-      hide($content['field_list_as_spotboks']);
-      hide($content['field_os2web_base_field_selfserv']);
-      print render($content); ?>
-  </div>
-</article>
-
 <?php if($page): ?>
 <?php /* region--navigation.tpl.php */ ?>
 <?php if ($page['navigation']): ?>

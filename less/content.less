@@ -60,7 +60,7 @@ body.page-taxonomy-term.term-is-not-top {
       padding: 15px;
     }
     .inner {
-      padding: 0 15px;
+      padding: 15px 0px;
     }
     header time {
       padding: 15px 30px;
@@ -100,6 +100,28 @@ body.page-taxonomy-term.term-is-not-top {
     }
     .borger_dk_body_intro_text {
       margin-bottom: 20px;
+      .intro_text_text {
+        width: 70%;
+        display: inline-block;
+      }
+      .intro_text_buttons {
+        float: right;
+      }
+      .gplus_gminus {
+        margin-left: 10px;
+      }
+      .gplus_button {
+        .sprite(@gplus);
+        display: inline-block;
+        font-size: 0;
+        vertical-align: middle;
+      }
+      .gminus_button {
+        .sprite(@gminus);
+        display: inline-block;
+        font-size: 0;
+        vertical-align: middle;
+      }
     }
     #borger_dk-body {
       clear: both;
@@ -114,7 +136,7 @@ body.page-taxonomy-term.term-is-not-top {
       }
       h2 {
         display: inline-block;
-        width: 96%;
+        width: 90%;
         border-top: none;
         margin-top: 0;
         text-transform: inherit;
@@ -127,12 +149,14 @@ body.page-taxonomy-term.term-is-not-top {
         .sprite(@gplus);
         font-size: 0;
         vertical-align: middle;
+        float: right;
       }
       a.gminus {
         display: inline-block;
         .sprite(@gminus);
         font-size: 0;
         vertical-align: middle;
+        float: right;
       }
     }
   }
@@ -164,6 +188,14 @@ body.page-taxonomy-term.term-is-not-top {
   .field-type-text-long img {
     max-width: 100%;
     height: auto;
+  }
+  .region-content.col-sm-6,
+  .region-content.col-md-6 {
+    .borger_dk_body_intro_text {
+      .intro_text_text {
+        width: 50%;
+      }
+    }
   }
 }
 

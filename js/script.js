@@ -93,6 +93,19 @@
         }
         return false;
       });
+      $(".gplus_all").click(function() {
+        $("div.mArticle").show();
+        $(".microArticle a.gplus").addClass('gminus');
+        $(".microArticle a.gplus").removeClass('gplus');
+        return false;
+      });
+
+      $(".gminus_all").click(function() {
+        $(".microArticle a.gminus").addClass('gplus');
+        $(".microArticle a.gminus").removeClass('gminus');
+        $("div.mArticle").hide();
+        return false;
+      });
 
   });
 

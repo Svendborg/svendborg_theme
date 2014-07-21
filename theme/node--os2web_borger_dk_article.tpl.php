@@ -1,12 +1,11 @@
 
-<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <?php print render($title_prefix); ?>
 
   <div id='region-content' class="content"<?php print $content_attributes; ?>>
 
   <?php
   if ($node->type == 'os2web_borger_dk_article') {
-    print render($content['field_os2web_borger_dk_image']);
     $content_field = array();
     $fields = $node->os2web_borger_dk_article['field_settings'];
     // First get admin display settings.
@@ -97,94 +96,95 @@
     //}
   }
   ?>
+  <div class="wrap">
+    <?php print render($content['field_os2web_borger_dk_image']);?>
+  </div>
   <header>
   <h2<?php print $title_attributes; ?>>
       <a href="<?php print 'node/' . $node->nid; ?>"><?php print $node->title; ?></a>
     </h2>
   </header>
-  <?php print render($title_suffix); ?>
-
-  <?php
-   print "<div class='borger_dk-region-div3'>
-            <div class='inner'>";
-
-    if (!empty($content_field['field_os2web_borger_dk_header'])) {
-      print "<div class='borger_dk_header_text field-item' id='borger_dk_header_text'>";
-      print render($content_field['field_os2web_borger_dk_header']);
-      print "</div>";
-    }
-    print "</div></div>";
-  ?>
+  <div class="wrap">
+    <?php print render($title_suffix); ?>
   
-  <div class="content clearfix"<?php print $content_attributes; ?>>
-
-  </div>
-  <div class="content clearfix"<?php print $content_attributes; ?>>
-  <?php
-    print "<div class='inner'>";
-    if (!empty($content_field['field_os2web_borger_dk_pre_text'])) {
-      print "<div class='borger_dk-field_os2web-borger-dk-pre_text'>";
-      print render($content_field['field_os2web_borger_dk_pre_text']);
-      print '</div>';
-      print "<div class='panel-separator'></div>";
+    <?php
+      print "<div class='borger_dk-region-div3'>";
+   
+      if (!empty($content_field['field_os2web_borger_dk_header'])) {
+        print "<div class='borger_dk_header_text field-item' id='borger_dk_header_text'>";
+        print render($content_field['field_os2web_borger_dk_header']);
+        print "</div>";
+      }
       print "</div>";
-    }?>
-  <?php
-    if (!empty($content_field['field_os2web_borger_dk_selfservi'])) {
-      print "<div class='borger_dk-region-div2'>
-              <div class='wrap'>
-                <div class='os2web_borger_dk_selfservi'>";
-      print render($content_field['field_os2web_borger_dk_selfservi']);
-      print   '</div>
-              </div>
-            </div>';
-    }
-    print "<div class='wrap'>";
+    ?>
+    <div class="content clearfix"<?php print $content_attributes; ?>>
+    <?php
+      print "<div class=''>";
+      if (!empty($content_field['field_os2web_borger_dk_pre_text'])) {
+        print "<div class='borger_dk-field_os2web-borger-dk-pre_text'>";
+        print render($content_field['field_os2web_borger_dk_pre_text']);
+        print '</div>';
+        print "<div class='panel-separator'></div>";
+        print "</div>";
+      }?>
+    <?php
+      if (!empty($content_field['field_os2web_borger_dk_selfservi'])) {
+        print "<div class='borger_dk-region-div2'>
+                <div class=''>
+                  <div class='os2web_borger_dk_selfservi'>";
+        print render($content_field['field_os2web_borger_dk_selfservi']);
+        print   '</div>
+                </div>
+              </div>';
+      }
 
-    if (!empty($content_field['body'])) {
-      print "<div class='borger_dk-body node-body' id='borger_dk-body'>";
-      print "<div class='borger_dk_body_intro_text'>" . "Læs om " . $node->title . "</div>";
-      print render($content_field['body']);
-      print '</div>';
-      print "<div class='panel-separator'></div>";
-    }
-    if (!empty($content_field['field_os2web_borger_dk_post_text'])) {
-      print "<div class='borger_dk-field_os2web-borger-dk-post_text'>";
-      print render($content_field['field_os2web_borger_dk_post_text']);
-      print '</div>';
-      print "<div class='panel-separator'></div>";
-    }
+      if (!empty($content_field['body'])) {
+        print "<div class='borger_dk-body node-body inner' id='borger_dk-body'>";
+        print "<div class='borger_dk_body_intro_text'><span class='intro_text_text'>" . "Læs om " . $node->title .'</span>';
+        print "<div class='intro_text_buttons'><a href='#' class='gplus_all gplus_gminus'>Alle<span class='gplus_button'>+</span></a>";
+        print "<a href='#' class='gminus_all gplus_gminus'>Alle<span class='gminus_button'>-</span></a></div>";
 
-    if (!empty($content['field_os2web_borger_dk_legislati'])) {
-      print "<div class='borger_dk-field_os2web-borger-dk-legislati'>";
-      print render($content['field_os2web_borger_dk_legislati']);
+        print "</div>";
+        print render($content_field['body']);
+        print '</div>';
+        print "<div class='panel-separator'></div>";
+      }
+      if (!empty($content_field['field_os2web_borger_dk_post_text'])) {
+        print "<div class='borger_dk-field_os2web-borger-dk-post_text'>";
+        print render($content_field['field_os2web_borger_dk_post_text']);
+        print '</div>';
+        print "<div class='panel-separator'></div>";
+      }
+  
+      if (!empty($content['field_os2web_borger_dk_legislati'])) {
+        print "<div class='borger_dk-field_os2web-borger-dk-legislati'>";
+        print render($content['field_os2web_borger_dk_legislati']);
+        print "</div>";
+      }
+
+      print "<div class='borger_dk-region-div4 inner'>";
+
+      if (!empty($content_field['field_os2web_borger_dk_recommend'])) {
+        print   "<div class='borger_dk-field_os2web-borger-dk-recommend'>";
+        print     render($content_field['field_os2web_borger_dk_recommend']);
+        print   "</div>";
+        print   "<div class='panel-separator'></div>";
+  
+      }
+      if (!empty($content_field['field_os2web_borger_dk_shortlist'])) {
+        print   "<div class='borger_dk-field_os2web-borger-dk-shortlist'> ";
+        print     render($content_field['field_os2web_borger_dk_shortlist']);
+        print   "</div>";
+      }
+      if (!empty($content_field['field_os2web_borger_dk_byline'])) {
+        print   "<div class='borger_dk-field_os2web-borger-dk-byline'> ";
+        print    render($content_field['field_os2web_borger_dk_byline']);
+        print   "</div>";
+      }
+
       print "</div>";
-    }
-    print "</div>";
 
-    print "<div class='borger_dk-region-div4'>";
-    print   "<div class= 'inner'>";
-    if (!empty($content_field['field_os2web_borger_dk_recommend'])) {
-      print   "<div class='borger_dk-field_os2web-borger-dk-recommend'>";
-      print     render($content_field['field_os2web_borger_dk_recommend']);
-      print   "</div>";
-      print   "<div class='panel-separator'></div>";
-
-    }
-    if (!empty($content_field['field_os2web_borger_dk_shortlist'])) {
-      print   "<div class='borger_dk-field_os2web-borger-dk-shortlist'> ";
-      print     render($content_field['field_os2web_borger_dk_shortlist']);
-      print   "</div>";
-    }
-    if (!empty($content_field['field_os2web_borger_dk_byline'])) {
-      print   "<div class='borger_dk-field_os2web-borger-dk-byline'> ";
-      print    render($content_field['field_os2web_borger_dk_byline']);
-      print   "</div>";
-    }
-
-    print "</div></div>";
-
-//      print render($content);
+      //      print render($content);
     ?>
     </div>
   </div>
@@ -205,5 +205,5 @@
   <?php endif; ?>
 
   <?php print render($content['comments']); ?>
-
-</div>
+  </div>
+</article>
