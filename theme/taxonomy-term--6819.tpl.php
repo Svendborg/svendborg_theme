@@ -61,7 +61,7 @@
 
         // If you want to access the image, use the URI instead of the filename !
         //$public_filename = file_create_url( $image["uri"] );
-        $style = 'svendborg_content_image'; 
+        $style = 'svendborg_content_image';
         $public_filename = image_style_url($style, $image["uri"]);
         // Either output the IMG tag directly,
         echo '<a href="' . $path . '" title="'.$node->title.'">';
@@ -90,7 +90,7 @@
     <div class="nyheder-content" id="nyheder-content-isotoper">
       <div class="row">
     <?php
-      
+
       $view = views_get_view('svendborg_news_view');
       $view->set_display('block');
       $view->set_arguments(array('nyhed'));
@@ -114,14 +114,14 @@
       $output = _block_get_renderable_array(_block_render_blocks(array($block)));
       print drupal_render($output);
       //print views_embed_view('news_filter', 'panel_pane_1');
-  
+
     ?>
 
       <?php
       $block = block_load('menu_block','4');
       $output = _block_get_renderable_array(_block_render_blocks(array($block)));
       print drupal_render($output);
-  
+
       ?>
     <div class="nyheder-seperator"></div>
     <div id="svendborg_tabs">
@@ -131,13 +131,15 @@
         print drupal_render($output);
       ?>
     </div>
-  
+
     <div class="nyheder-seperator"></div>
     <div class="">
-      <?php if(!empty($content['os2web_spotbox'])) : ?>
-        <div class="os2web_spotboxes">
-          <?php print render($content['os2web_spotbox']); ?>
+      <?php if(!empty($os2web_spotboxes)) : ?>
+      <div class="os2web_spotboxes col-md-12 col-sm-12 clearfix">
+        <div class="row">
+          <?php print render($os2web_spotboxes); ?>
         </div>
+      </div>
       <?php endif; ?>
     </div>
 
