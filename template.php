@@ -161,26 +161,13 @@ function svendborg_theme_preprocess_page(&$variables) {
   }
 
   // Spotbox handling. Find all spotboxes for this node, and add them to
-  // page_bottom.
+  // content_bottom.
   if (($node && $spotboxes = field_get_items('node', $node, 'field_os2web_base_field_spotbox')) ||
-      ($term && $spotboxes = field_get_items('taxonomy_term', $term, 'field_os2web_base_field_spotbox'))) {
-
-    $spotbox_nids = array();
-    foreach ($spotboxes as $spotbox) {
-      $spotbox_nids[$spotbox['nid']] = $spotbox['nid'];
-    }
-    $spotbox_array = os2web_spotbox_render_spotboxes($spotbox_nids, NULL, NULL, NULL, 'svendborg_spotbox');
-
-    foreach ($spotbox_array['node'] as &$spotbox) {
-      if (is_array($spotbox)) {
-        $spotbox['#prefix'] = '<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">';
-        $spotbox['#suffix'] = '</div>';
-      }
-    }
+      ($term && !$term_is_top && $spotboxes = field_get_items('taxonomy_term', $term, 'field_os2web_base_field_spotbox'))) {
 
     $variables['page']['content_bottom'] = array(
       'os2web_spotbox' => array(
-        '#markup' => drupal_render($spotbox_array),
+        '#markup' => drupal_render(_svendborg_theme_get_spotboxes($spotboxes)),
       ),
       '#theme_wrappers' => array('region'),
       '#region' => 'content_bottom',
@@ -207,10 +194,24 @@ function svendborg_theme_preprocess_page(&$variables) {
  */
 function svendborg_theme_preprocess_taxonomy_term(&$variables) {
 
-  $term = $variables;
+  $term = taxonomy_term_load($variables['tid']);
 
   // Get wether this is a top term, and provide a variable for the templates.
-  $variables['term_is_top'] = _svendborg_theme_term_is_top($term['tid']);
+  $term_is_top = _svendborg_theme_term_is_top($term->tid);
+  $variables['term_is_top'] = $term_is_top;
+
+  // Provide the spotboxes to Nyheder page or top terms. These pages does not
+  // use the right sidebar so we need them in taxonomy-term.tpl
+  if (isset($term->tid) && (strtolower($term->name) === 'nyheder' || $term_is_top)) {
+    $spotboxes = field_get_items('taxonomy_term', $term, 'field_os2web_base_field_spotbox');
+    if (strtolower($term->name) === 'nyheder') {
+      $variables['os2web_spotboxes'] = _svendborg_theme_get_spotboxes($spotboxes, 'col-xs-6 col-sm-6 col-md-6 col-lg-6');
+    }
+    else {
+      $variables['os2web_spotboxes'] = _svendborg_theme_get_spotboxes($spotboxes, 'col-xs-6 col-sm-4 col-md-3 col-lg-3');
+    }
+    dpm($variables);
+  }
 }
 
 /**
@@ -355,6 +356,31 @@ function svendborg_theme_qt_quicktabs_tabset($vars) {
     }
   }
   return theme('item_list', $variables);
+}
+
+/**
+ * Helper function to get a rendeable array of spotboxes.
+ *
+ * @param array $spotboxes
+ *   Array of spotboxe nodes with nids.
+ *
+ * @return array
+ *   The renderable array.
+ */
+function _svendborg_theme_get_spotboxes($spotboxes, $classes = 'col-xs-6 col-sm-4 col-md-3 col-lg-3') {
+  $spotbox_nids = array();
+  foreach ($spotboxes as $spotbox) {
+    $spotbox_nids[$spotbox['nid']] = $spotbox['nid'];
+  }
+  $spotbox_array = os2web_spotbox_render_spotboxes($spotbox_nids, NULL, NULL, NULL, 'svendborg_spotbox');
+
+  foreach ($spotbox_array['node'] as &$spotbox) {
+    if (is_array($spotbox)) {
+      $spotbox['#prefix'] = '<div class="' . $classes . '">';
+      $spotbox['#suffix'] = '</div>';
+    }
+  }
+  return $spotbox_array;
 }
 
 /**

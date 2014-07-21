@@ -94,15 +94,15 @@
       $view->execute();
       if (!empty($view->result)) : ?>
     <div class="col-sm-12 col-md-12 bottom-padding">
-      <div class="row">
-        <?php print $view->render(); ?>
-      </div>
+      <?php print $view->render(); ?>
     </div>
     <?php endif; ?>
 
-    <?php if(!empty($content['os2web_spotbox'])) : ?>
-    <div class="os2web_spotboxes">
-      <?php print render($content['os2web_spotbox']); ?>
+    <?php if(!empty($os2web_spotboxes)) : ?>
+    <div class="os2web_spotboxes col-md-12 col-sm-12 clearfix">
+      <div class="row">
+        <?php print render($os2web_spotboxes); ?>
+      </div>
     </div>
     <?php endif; ?>
   </div>
