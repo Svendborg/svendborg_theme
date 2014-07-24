@@ -32,8 +32,6 @@ CKEDITOR.on('dialogDefinition', function( ev ) {
   }
 
   if(dialogName === 'image') {
-    dialogDefinition.removeContents( 'Link' );
-    dialogDefinition.removeContents( 'advanced' );
     infoTab.remove('txtBorder');
   }
 });
