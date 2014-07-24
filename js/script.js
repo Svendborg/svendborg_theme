@@ -2,6 +2,8 @@
 */
 ( function ($) {
   $(document).ready(function(){
+
+    // Navbar scroll
     $(window).bind('scroll', function() {
         var navHeight = $( window ).height();
         if ($(window).scrollTop() > 41 && $(window).width() > 768 ) {
@@ -10,6 +12,13 @@
           $('.header_svendborg header').removeClass('container');
           $('.main-container').css('padding-top','114px');
           $('#fixed-navbar').addClass('row');
+
+          // Frontpage top (navbar) search forum.
+          $(".front .region-navigation.navbar-fixed-top .search_box").addClass('col-md-3 col-sm-4');
+          $(".front .region-navigation.navbar-fixed-top .search_box").removeClass('col-md-1 col-sm-1');
+
+          $(".front .region-navigation.navbar-fixed-top .nav_main_menu").addClass('col-md-9 col-sm-8');
+          $(".front .region-navigation.navbar-fixed-top .nav_main_menu").removeClass('col-md-11 col-sm-11');
         }
         else {
           $('.header_svendborg header').removeClass('navbar-fixed-top');
@@ -17,9 +26,16 @@
           $('.header_svendborg header').addClass('container');
           $('.main-container').css('padding-top','initial');
           $('#fixed-navbar').removeClass('row');
+          // Frontpage top (navbar) search forum.
+          $(".front .region-navigation.container .search_box").addClass('col-md-1 col-sm-1');
+          $(".front .region-navigation.container .search_box").removeClass('col-md-3 col-sm-4');
+
+          $(".front .region-navigation.container .nav_main_menu").addClass('col-md-11 col-sm-11');
+          $(".front .region-navigation.container .nav_main_menu").removeClass('col-md-9 col-sm-3');
         }
     });
 
+    // Nyheder page filter
     $('.node-os2web-base-news').each(function(){
       var $this = $(this);
 
@@ -36,42 +52,40 @@
     var $container = $("#nyheder-content-isotoper .view-content");
     if ($container.length) {
 
-     $container.imagesLoaded(function(){
-      $container.masonry({
-        itemSelector: '.switch-elements',
-        columnWidth: '.switch-elements',
-      });
-      // filter elements
-      $container.isotope({
-        itemSelector: '.switch-elements',
-      });
-      $(".filter-link").click(function() {
-        button = $(this).attr('id');
-        var filterValue = $( this ).attr('data-filter');
-        filterValue = '.'+filterValue;
-        $container.isotope({ filter: filterValue });
-        check_button();
-      });
-      $(".filter-link-all").click(function() {
-  
-        $container.isotope({ filter: '.all' });
-        button = $(this).attr('id');
-        check_button();
-      });
-  
-      function check_button(){
-        $('.filter-link').removeClass(button_class);
-        $(".filter-link-all").removeClass(button_class);
-        $('.filter-link').addClass(button_normal);
-        $(".filter-link-all").addClass(button_normal);
-        $('#'+button).addClass(button_class);
-        $('#'+button).removeClass(button_normal);
-        
-  
-      }
-      check_button();
+      $container.imagesLoaded(function(){
+        $container.masonry({
+          itemSelector: '.switch-elements',
+          columnWidth: '.switch-elements',
+        });
+        // filter elements
+        $container.isotope({
+          itemSelector: '.switch-elements',
+        });
+        $(".filter-link").click(function() {
+          button = $(this).attr('id');
+          var filterValue = $( this ).attr('data-filter');
+          filterValue = '.'+filterValue;
+          $container.isotope({ filter: filterValue });
+          check_button();
+        });
+        $(".filter-link-all").click(function() {
+    
+          $container.isotope({ filter: '.all' });
+          button = $(this).attr('id');
+          check_button();
+        });
 
-    });
+        function check_button(){
+          $('.filter-link').removeClass(button_class);
+          $(".filter-link-all").removeClass(button_class);
+          $('.filter-link').addClass(button_normal);
+          $(".filter-link-all").addClass(button_normal);
+          $('#'+button).addClass(button_class);
+          $('#'+button).removeClass(button_normal);
+        }
+        check_button();
+
+      });
     }
 
     // borger.dk articles
@@ -104,6 +118,13 @@
         $(".microArticle a.gminus").addClass('gplus');
         $(".microArticle a.gminus").removeClass('gminus');
         $("div.mArticle").hide();
+        return false;
+      });
+
+      // front nav header search_form button
+      $(".front .region-navigation.container #search-block-form button").click(function(){
+        $( ".main-container .front-search-box input" ).focus();
+
         return false;
       });
 

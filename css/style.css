@@ -7396,12 +7396,12 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-video iframe {
   margin-left: 5px;
 }
 @media all and (min-width: 970px) {
-  .header_fixed .navbar-default {
-    margin-top: 13px;
+  .header_fixed .header_main_menu {
+    margin-top: 25px;
   }
 }
 @media all and (min-width: 751px) and (max-width: 969px) {
-  .header_fixed .navbar-default {
+  .header_fixed .header_main_menu {
     margin-top: 9px;
   }
 }
@@ -8566,4 +8566,14 @@ h2.menu-footer a.Kommunen {
 .front-news-bottom .front-news-bottom-inner span a {
   font-size: 14px;
   padding: 7px 30px;
+}
+.front .region-navigation.container #search-block-form {
+  margin-top: 2px;
+}
+.front .region-navigation.container #search-block-form input {
+  display: none;
+}
+.front .region-navigation.container #search-block-form .input-group-btn {
+  border: none;
+  text-align: right;
 }
