@@ -210,7 +210,6 @@ function svendborg_theme_preprocess_taxonomy_term(&$variables) {
     else {
       $variables['os2web_spotboxes'] = _svendborg_theme_get_spotboxes($spotboxes, 'col-xs-6 col-sm-4 col-md-3 col-lg-3');
     }
-    dpm($variables);
   }
 }
 
