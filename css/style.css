@@ -7446,6 +7446,9 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-video iframe {
 .header_fixed .input-group-btn .btn {
   padding: 10px;
 }
+.header_fixed .navbar-collapse.in {
+  overflow-y: initial;
+}
 .breadcrumb a,
 .region-sidebar-first .block-menu-block a {
   color: #30353c;
