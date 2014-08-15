@@ -2,7 +2,7 @@
 module.exports = function(grunt) {
   'use strict';
   var LIVERELOAD_PORT = 12345;
-
+  var timestamp = Date.now(); // Used to cachebust the sprite image.
   grunt.initConfig({
     // server used for livereload
     connect: {
@@ -23,6 +23,7 @@ module.exports = function(grunt) {
         },
         files: {
           "./css/style.css": "./less/style.less",
+          "./css/editor.css": "./less/editor.less",
           "./css/ie.css": "./less/ie.less"
         }
       },
@@ -32,7 +33,12 @@ module.exports = function(grunt) {
         src: 'images/sprites/*.png',
         destImg: 'images/sprites.png',
         destCSS: 'less/sprites.less',
-        cssFormat: 'less'
+        cssFormat: 'less',
+        cssOpts: {
+          cssClass: function (item) {
+            return '.' + item.name + timestamp;
+          }
+        }
       }
     },
     // running `grunt watch` will watch for changes

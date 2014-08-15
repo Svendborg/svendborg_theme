@@ -16,7 +16,8 @@
 }
 
 // Default show for a node with 3 columns.
-.page-node {
+body.page-node,
+body.page-taxonomy-term.term-is-not-top {
   h1.page-header {
     display: none;
   }
@@ -25,6 +26,7 @@
   div.node-os2web-base-news {
     background: white;
     border-radius: 0 0 4px 4px;
+    margin-bottom: @grid-gutter-width;
 
     // This is a serious hack to force anchors below the fixed header.
     // See http://css-tricks.com/hash-tag-links-padding/
@@ -42,18 +44,24 @@
       line-height: 1.6em;
     }
 
-    header h2 a{
-      color: @text-color;
-      text-transform: initial;
-      font-family: @font-family-sans-serif-second;
-      font-size: @font-size-h1;
+    header h2 {
+      margin: 0;
+      margin-top: 14px;
+      a{
+        color: @text-color;
+        text-transform: initial;
+        font-family: @font-family-sans-serif-second;
+        font-size: @font-size-h1;
+      }
     }
 
     .wrap,
     header h2 {
       padding: 15px;
     }
-
+    .inner {
+      padding: 15px 0px;
+    }
     header time {
       padding: 15px 30px;
       text-align: right;
@@ -76,19 +84,80 @@
         }
       }
       img{
-        body.two-sidebars& {
-          border-radius: 4px 4px 0 0;
-        }
         width: 100%;
         height: auto;
       }
     }
-
+    .borger_dk_header_text,
     .field-name-field-os2web-base-field-summary .field-item {
       font-family: @font-family-sans-serif-second;
       font-size: @font-size-h2;
       line-height: 1.7em;
       margin-bottom: 20px;
+    }
+    .borger_dk_header_text {
+      margin-bottom: 0px;
+    }
+    .borger_dk_body_intro_text {
+      margin-bottom: 20px;
+      .intro_text_text {
+        width: 70%;
+        display: inline-block;
+      }
+      .intro_text_buttons {
+        float: right;
+      }
+      .gplus_gminus {
+        margin-left: 10px;
+      }
+      .gplus_button {
+        .sprite(@gplus);
+        display: inline-block;
+        font-size: 0;
+        vertical-align: middle;
+      }
+      .gminus_button {
+        .sprite(@gminus);
+        display: inline-block;
+        font-size: 0;
+        vertical-align: middle;
+      }
+    }
+    #borger_dk-body {
+      clear: both;
+      .microArticle {
+        padding: 10px 10px;
+        background-color: #e3e3e3;
+        border-radius: 5px;
+        margin-bottom: 5px;
+      }
+      div.mArticle {
+        padding-top: 10px;
+      }
+      h2 {
+        display: inline-block;
+        width: 90%;
+        border-top: none;
+        margin-top: 0;
+        text-transform: inherit;
+        font-weight: bold;
+        font-size: 16px;
+        background: none;
+      }
+      a.gplus {
+        display: inline-block;
+        .sprite(@gplus);
+        font-size: 0;
+        vertical-align: middle;
+        float: right;
+      }
+      a.gminus {
+        display: inline-block;
+        .sprite(@gminus);
+        font-size: 0;
+        vertical-align: middle;
+        float: right;
+      }
     }
   }
   .nav-tabs {
@@ -114,6 +183,56 @@
         margin-left: 10px;
         color: @brand-blacknblue;
       }
+    }
+  }
+  .field-type-text-long img {
+    max-width: 100%;
+    height: auto;
+  }
+  .region-content.col-sm-6,
+  .region-content.col-md-6 {
+    .borger_dk_body_intro_text {
+      .intro_text_text {
+        width: 50%;
+      }
+    }
+  }
+}
+
+// These rules target the article when we have two sidebars.
+body.page-node,
+body.page-taxonomy-term.term-is-not-top {
+  // Somehow .two-sidebars class are sometimes wrongly set, so we targeted it
+  // also by seeing after the col-md-XX classes on region-content.
+  &.two-sidebars,
+  .region-content.col-sm-6,
+  .region-content.col-md-6 {
+    article,
+    div.node-os2web-borger-dk-article,
+    div.node-os2web-base-news {
+      .field-name-field-os2web-base-field-image img {
+        border-radius: 4px 4px 0 0;
+      }
+    }
+  }
+
+  &.one-sidebar,
+  .region-content.col-sm-6,
+  .region-content.col-md-6 {
+    article,
+    div.node-os2web-borger-dk-article,
+    div.node-os2web-base-news {
+      // .one-sidebar
+    }
+  }
+
+  &.no-sidebars,
+  .region-content.col-sm-12,
+  .region-content.col-md-12 {
+    article,
+    div.node-os2web-borger-dk-article,
+    div.node-os2web-base-news {
+      // .no-sidebars
     }
   }
 }

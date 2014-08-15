@@ -29,6 +29,7 @@
   <footer class="region region_footer lcontainer-fluid">
     <div class="lcontainer-fluid clearfix"  id="footer-menu">
       <div class="container footer-menu">
+        <div class="row">
       <?php
         $tree = menu_tree_all_data('menu-indholdsmenu', $link = NULL, $max_depth = 3);
 
@@ -52,10 +53,12 @@ print "<h2 class='menu-footer " . $menu_item['link']['link_title']. "'>
       <?php //print $content; ?>
       <?php if ($content_attributes): ?></div><?php endif; ?>
       </div>
+      </div>
     </div>
     <!-- footer contacts social-icons -->
     <div class="lcontainer-fluid clearfix" id="footer-contacts">
       <div class="container">
+        <div class="row">
         <div class="col-md-3 col-xs-12 col-sm-6 col-md-push-9 col-sm-push-6 social-icons">
           <a href="https://www.facebook.com/Svendborg" title="Svendborg Kommune Facebook" class="footer_fb" target="_blank">facebook</a>
           <a href="http://www.linkedin.com/company/svendborg-kommune" title="Svendborg Kommune Linkedin" class="footer_linkedin" target="_blank">linkedin</a>
@@ -71,7 +74,7 @@ print "<h2 class='menu-footer " . $menu_item['link']['link_title']. "'>
           <span>Ramsherred 5 ∙ 5700 Svendborg ∙ Telefon 62 23 30 00 ∙ </span>
           <a href="mailto:svendborg@svendborg.dk" target="_top">Send en mail</a>
         </div>
-
+        </div>
       </div>
     </div>
     <!-- footer bg-image -->

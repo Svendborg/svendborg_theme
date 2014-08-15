@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Default theme implementation to display a term.
+ * Svendborg template ot taxonomy pages.
  *
  * Available variables:
  * - $name: (deprecated) The unsanitized name of the term. Use $term_name
@@ -20,6 +20,7 @@
  *   - taxonomy-term: The current template type, i.e., "theming hook".
  *   - vocabulary-[vocabulary-name]: The vocabulary to which the term belongs to.
  *     For example, if the term is a "Tag" it would result in "vocabulary-tag".
+ * - $term_is_top : (svendborg) Boolean wether this term is a top term.
  *
  * Other variables:
  * - $term: Full term object. Contains data that may not be safe.
@@ -41,14 +42,70 @@
  * @ingroup themeable
  */
 ?>
-<div id="taxonomy-term-<?php print $term->tid; ?>" class="<?php print $classes; ?>">
-
+<article id="taxonomy-term-<?php print $term->tid; ?>" class="<?php print $classes; ?> clearfix">
   <?php if (!$page): ?>
     <h2><a href="<?php print $term_url; ?>"><?php print $term_name; ?></a></h2>
   <?php endif; ?>
 
-  <div class="content">
-    <?php print render($content); ?>
-  </div>
+  <?php if ($page && !$term_is_top) : ?>
+  <header>
+    <?php if (isset($content['field_os2web_base_field_image'])): ?>
+      <?php print render($content['field_os2web_base_field_image']); ?>
+    <?php endif; ?>
+    <h2><a href="<?php print $term_url; ?>"><?php print $term_name; ?></a></h2>
+  </header>
+  <?php endif; ?>
 
+  <div class="col-md-12 col-sm-12 content">
+    <?php
+      hide($content['os2web_spotbox']);
+      hide($content['field_os2web_base_field_spotbox']);
+      hide($content['field_list_as_spotboks']);
+      hide($content['field_os2web_base_field_selfserv']);
+      print render($content); ?>
+  </div>
+</article>
+
+<?php if($page): ?>
+<div class="row">
+    <div class="col-md-12 col-sm-12 clearfix">
+    <?php
+      // Get news carousel.
+      $view = views_get_view('os2web_news_lists');
+      $view->set_display('panel_pane_1');
+      $view->set_arguments(array('Branding', 'none', $term_name));
+      $view->set_items_per_page(3);
+      $view->pre_execute();
+      $view->execute();
+      if (!empty($view->result)) : ?>
+      <div class="col-sm-12 col-md-12 extra-bottom-padding">
+        <?php print $view->render(); ?>
+      </div>
+    <?php endif; ?>
+
+    <?php
+      // Get Sub terms.
+      $view = views_get_view('subtermer');
+      $view->set_display('panel_pane_1');
+      $view->pre_execute();
+      if (!$term_is_top) :
+        $view->display_handler->default_display->options['style_options']['row_class'] = 'col-md-6 call-to-action';
+      endif;
+      $view->execute();
+      if (!empty($view->result)) : ?>
+    <div class="col-sm-12 col-md-12 bottom-padding">
+      <?php print $view->render(); ?>
+    </div>
+    <?php endif; ?>
+
+    <?php if(!empty($os2web_spotboxes)) : ?>
+    <div class="os2web_spotboxes col-md-12 col-sm-12 clearfix">
+      <div class="row">
+        <?php print render($os2web_spotboxes); ?>
+      </div>
+    </div>
+    <?php endif; ?>
+  </div>
 </div>
+
+<?php endif; ?>
