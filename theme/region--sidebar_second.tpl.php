@@ -54,7 +54,7 @@
           <ul>
           <?php foreach ($page['page']['related_links'] as $link) : ?>
             <li>
-              <a href="<?php print drupal_get_path_alias('node/' . $link['nid']); ?>"><?php print $link['title']; ?></a>
+              <a href="/<?php print drupal_get_path_alias('node/' . $link['nid']); ?>"><?php print $link['title']; ?></a>
             </li>
           <?php endforeach; ?>
          </ul>
