@@ -64,6 +64,7 @@
         $style = 'svendborg_content_image';
         $public_filename = image_style_url($style, $image["uri"]);
         // Either output the IMG tag directly,
+        $path = drupal_get_path_alias('node/'.$node->nid);
         echo '<a href="' . $path . '" title="'.$node->title.'">';
         print '<div class="row-no-padding col-md-8 col-sm-12 col-xs-12">';
 
@@ -76,7 +77,6 @@
         print '</div>';
 
         print '<div class="col-md-12">';
-        $path = drupal_get_path_alias('node/'.$node->nid);
         print '<a href="' . $path . '" title="'.$node->title.'" class="btn btn-primary">L&aelig;s mere</a>';
         print '</div>
           </div>';
