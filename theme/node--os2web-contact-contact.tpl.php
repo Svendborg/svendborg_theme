@@ -85,7 +85,11 @@
     <div class="panel-heading">
       <h3 class="panel-title">
         <?php print render($title_prefix); ?>
-        <?php print t('Praktisk info'); ?>
+        <?php if($content['field_os2web_contact_field_dept']): ?>
+          <?php print render($content['field_os2web_contact_field_dept']); ?>
+        <?php else: ?>
+          <?php print t('Praktisk info'); ?>
+        <?php endif; ?>
         <?php print render($title_suffix); ?>
       </h3>
     </div>
