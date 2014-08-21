@@ -7395,14 +7395,9 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-video iframe {
 .header_fixed .navbar-default.header_main_menu ul li {
   margin-left: 5px;
 }
-@media all and (min-width: 970px) {
+@media all and (min-width: 751px) {
   .header_fixed .header_main_menu {
     margin-top: 25px;
-  }
-}
-@media all and (min-width: 751px) and (max-width: 969px) {
-  .header_fixed .header_main_menu {
-    margin-top: 9px;
   }
 }
 @media (min-width: 768px) {
@@ -8579,4 +8574,28 @@ h2.menu-footer a.Kommunen {
 .front .region-navigation.container #search-block-form .input-group-btn {
   border: none;
   text-align: right;
+}
+@media (min-width: 768px) {
+  body.front {
+    background-image: url(../images/front_bg_724.jpg);
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center top;
+  }
+  .front .main-container {
+    background-image: none;
+    background-color: transparent;
+    border: none;
+  }
+}
+@media (min-width: 992px) {
+  body.front {
+    background-image: url(../images/front_bg_940.jpg);
+  }
+}
+@media (min-width: 1300px) {
+  body.front {
+    background-image: url(../images/front_bg_1170.jpg);
+  }
 }

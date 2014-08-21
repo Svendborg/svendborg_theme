@@ -55,7 +55,7 @@
   <div class="row">
     <?php if ($content_attributes): ?><div class="header_fixed_inner navbar-default"<?php //print $content_attributes; ?>><?php endif; ?>
     <div id="fixed-navbar">
-    <div class="navbar-header col-md-3 col-sm-4 col-xs-12">
+    <div class="navbar-header col-md-3 col-sm-3 col-xs-12">
       <?php if ($page['logo']): ?>
         <a class="logo navbar-btn pull-left" href="<?php print $page['front_page']; ?>" title="<?php print t('Home'); ?>">
           <img src="<?php print $page['logo']; ?>" alt="<?php print t('Home'); ?>" />
@@ -74,7 +74,7 @@
       <?php endif; ?>
     </div>
     <?php if ($page['primary_nav'] || $page['secondary_nav'] || $content): ?>
-    <div class="col-md-9 col-sm-8 col-xs-12 navbar-collapse collapse navbar-default header_main_menu">
+    <div class="col-md-9 col-sm-9 col-xs-12 navbar-collapse collapse navbar-default header_main_menu">
 
       <nav role="navigation">
         <?php if($is_front) {
