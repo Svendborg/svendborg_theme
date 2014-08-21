@@ -64,6 +64,7 @@ function svendborg_theme_preprocess_page(&$variables) {
         $related_links[$link['nid']] = array(
           'nid' => $link['nid'],
           'title' => $link_node->title,
+          'class' => 'int-link',
         );
       }
     }
@@ -105,6 +106,16 @@ function svendborg_theme_preprocess_page(&$variables) {
 
         }
       }
+    }
+  }
+  // External related links
+  if ($node && $ext_links = field_get_items('node', $node, 'field_os2web_base_field_ext_link')) {
+    foreach ($ext_links as $link) {
+      $related_links[] = array(
+        'url' => $link['url'],
+        'title' => $link['title'],
+        'class' => 'ext-link',
+      );
     }
   }
 
