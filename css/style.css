@@ -6685,6 +6685,64 @@ a:hover {
   width: 24px;
   height: 24px;
 }
+#block-feedback-form {
+  top: 170px;
+  right: 0px;
+  z-index: 900;
+  width: 27px;
+}
+#block-feedback-form .feedback-help {
+  font-size: 14px;
+}
+#block-feedback-form h2 {
+  font-size: 0;
+}
+#block-feedback-form h2 span.feedback-link {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -316px;
+  width: 29px;
+  height: 97px;
+  font-size: 0;
+  float: left;
+  display: block;
+}
+#block-feedback-form h2 span.feedback-link span#feedback-form-toggle {
+  font-size: 0px;
+}
+#block-feedback-form .form-actions {
+  text-align: center;
+}
+#block-feedback-form .field-type-text label {
+  display: inline-block;
+  width: 52px;
+}
+#block-feedback-form .field-type-text input {
+  display: inline-block;
+  width: 78%;
+  border-radius: 0;
+  border: 2px solid #ccc;
+  height: 2.3em;
+}
+#block-feedback-form form {
+  opacity: 1;
+  border: 3px solid #85c500;
+  border-bottom-left-radius: 3px;
+  padding: 20px 20px;
+  width: 300px;
+  margin-left: 27px;
+}
+#block-feedback-form .resizable-textarea textarea {
+  border-radius: 0;
+}
+#block-feedback-form #feedback-status-message {
+  position: absolute;
+  top: -5px;
+  right: 20px;
+  padding: 0px 10px;
+  font-size: 18px;
+  height: 20px;
+  font-weight: bold;
+}
 /**
  * This file is only for really global styles. None specific styles.
  */

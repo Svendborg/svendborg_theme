@@ -226,3 +226,63 @@ a {
 .rss-icon {
   .sprite(@rss);
 }
+
+// feedback form
+#block-feedback-form {
+  top:  170px;
+  right: 0px;
+  z-index: 900;
+  width: 27px;
+  .feedback-help {
+    font-size: 14px;
+  }
+  h2 {
+    font-size: 0;
+    span.feedback-link {
+      .sprite(@feedback-side);
+      font-size: 0;
+      float: left;
+      display: block;
+      span#feedback-form-toggle {
+        font-size: 0px;
+      }
+    }
+  }
+  .form-actions {
+    text-align: center;
+  }
+
+  .field-type-text {
+    label {
+      display: inline-block;
+      width: 52px;
+    }
+    input {
+      display: inline-block;
+      width: 78%;
+      border-radius: 0;
+      border: 2px solid #ccc;
+      height: 2.3em;
+    }
+  }
+  form {
+    opacity: 1;
+    border: 3px solid #85c500;
+    border-bottom-left-radius: 3px;
+    padding: 20px 20px;
+    width: 300px;
+    margin-left: 27px;
+  }
+  .resizable-textarea textarea {
+    border-radius: 0;
+  }
+  #feedback-status-message {
+    position: absolute;
+    top: -5px;
+    right: 20px;
+    padding: 0px 10px;
+    font-size: 18px;
+    height: 20px;
+    font-weight: bold;
+  }
+}
