@@ -285,4 +285,41 @@ a {
     height: 20px;
     font-weight: bold;
   }
+  .feedback-messages {
+    max-height: 150px;
+    overflow-y: scroll;
+  }
+}
+
+// cittaslow
+#block-cittaslow-block {
+  top: 320px;
+  right: 0;
+  z-index: 950;
+  width: 51px;
+  position: fixed;
+  span.cittaslow-link {
+    .sprite(@cittaslow-side);
+    font-size: 0;
+    float: left;
+    display: block;
+    cursor: pointer;
+  }
+  #block-block-5{
+    opacity: 1;
+    border: 3px solid #EE9727;
+    border-bottom-left-radius: 3px;
+    padding: 20px 20px;
+    width: 300px;
+    margin-left: 51px;
+    background-color: #fff;
+    max-width: 300px;
+    margin-top: 51px;
+    button {
+      color:  #fff;
+      &:hover{
+        color: #fff;
+      }
+    }
+  }
 }

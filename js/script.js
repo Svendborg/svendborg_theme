@@ -130,6 +130,105 @@
 
   });
 
+Drupal.behaviors.feedbackForm = {
+  attach: function (context) {
+    $('#block-feedback-form', context).once('feedback', function () {
+      var $block = $(this);
+      $block.find('span.feedback-link')
+        .prepend('<span id="feedback-form-toggle">[ + ]</span> ')
+        .css('cursor', 'pointer')
+        .toggle(function () {
+            Drupal.feedbackFormToggle($block, true);
+          },
+          function() {
+            Drupal.feedbackFormToggle($block, false);
+          }
+        );
+      $block.find('form').hide();
+      $block.show();
+    });
+  }
+};
+
+/**
+ * Re-collapse the feedback form after every successful form submission.
+ */
+Drupal.behaviors.feedbackFormSubmit = {
+  attach: function (context) {
+    var $context = $(context);
+    if (!$context.is('#feedback-status-message')) {
+      return;
+    }
+    // Collapse the form.
+    $('#block-feedback-form .feedback-link').click();
+    // Blend out and remove status message.
+    window.setTimeout(function () {
+      $context.fadeOut('slow', function () {
+        $context.remove();
+      });
+    }, 3000);
+  }
+};
+
+/**
+ * Collapse or uncollapse the feedback form block.
+ */
+Drupal.feedbackFormToggle = function ($block, enable) {
+  if (enable) {
+    $block.animate({width:"327px"});
+    $block.css('z-index','960');
+    $block.find('form').css('display','block');
+    $('#feedback-form-toggle', $block).html('[ + ]');
+    var cittaslow = $('#block-cittaslow-block');
+    if (cittaslow.width() > 51) {
+      Drupal.cittaslowToggle(cittaslow, false);
+    }
+  }
+  else {
+    $block.animate({width:"27px"});
+    $block.css('z-index','900');
+    $('#feedback-form-toggle', $block).html('[ &minus; ]');
+  }
+};
+
+Drupal.behaviors.cittaslow= {
+  attach: function (context) {
+    $('#block-cittaslow-block', context).once(function () {
+      var $block = $(this);
+      $block.find('span.cittaslow-link').toggle(function () {
+          if ($block.width() < 300) {
+            Drupal.cittaslowToggle($block, true);
+          }
+          else {
+            Drupal.cittaslowToggle($block, false);
+          }
+
+          },
+          function() {
+            if ($block.width() < 300) {
+              Drupal.cittaslowToggle($block, true);
+            }
+            else {
+              Drupal.cittaslowToggle($block, false);
+            }
+          }
+        );
+      $block.show();
+    });
+  }
+};
+
+  Drupal.cittaslowToggle = function ($block, enable) {
+
+  if (enable) {
+    $block.animate({width:"351px"});
+
+  }
+  else {
+    $block.animate({width:"51px"});
+  }
+};
+
 })( jQuery );
 
 

@@ -6743,6 +6743,44 @@ a:hover {
   height: 20px;
   font-weight: bold;
 }
+#block-feedback-form .feedback-messages {
+  max-height: 150px;
+  overflow-y: scroll;
+}
+#block-cittaslow-block {
+  top: 320px;
+  right: 0;
+  z-index: 950;
+  width: 51px;
+  position: fixed;
+}
+#block-cittaslow-block span.cittaslow-link {
+  background-image: url(../images/sprites.png);
+  background-position: 0px -681px;
+  width: 51px;
+  height: 140px;
+  font-size: 0;
+  float: left;
+  display: block;
+  cursor: pointer;
+}
+#block-cittaslow-block #block-block-5 {
+  opacity: 1;
+  border: 3px solid #EE9727;
+  border-bottom-left-radius: 3px;
+  padding: 20px 20px;
+  width: 300px;
+  margin-left: 51px;
+  background-color: #fff;
+  max-width: 300px;
+  margin-top: 51px;
+}
+#block-cittaslow-block #block-block-5 button {
+  color: #fff;
+}
+#block-cittaslow-block #block-block-5 button:hover {
+  color: #fff;
+}
 /**
  * This file is only for really global styles. None specific styles.
  */
@@ -7062,6 +7100,41 @@ fieldset[disabled] .btn-inverse:active,
 .btn-inverse[disabled].active,
 fieldset[disabled] .btn-inverse.active {
   background-color: #2e2f2f;
+}
+.btn-orange {
+  color: #ee9727;
+  background-image: -webkit-linear-gradient(top, #f19c2e 0%, #dd830f 100%);
+  background-image: linear-gradient(to bottom, #f19c2e 0%, #dd830f 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff19c2e', endColorstr='#ffdd830f', GradientType=0);
+  border: none;
+}
+.btn-orange:hover,
+.btn-orange:focus,
+.btn-orange:active,
+.btn-orange.active {
+  background-image: -webkit-linear-gradient(top, #dd830f 0%, #f19c2e 100%);
+  background-image: linear-gradient(to bottom, #dd830f 0%, #f19c2e 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffdd830f', endColorstr='#fff19c2e', GradientType=0);
+  color: #ee9727;
+}
+.btn-orange.disabled,
+.btn-orange[disabled],
+fieldset[disabled] .btn-orange,
+.btn-orange.disabled:hover,
+.btn-orange[disabled]:hover,
+fieldset[disabled] .btn-orange:hover,
+.btn-orange.disabled:focus,
+.btn-orange[disabled]:focus,
+fieldset[disabled] .btn-orange:focus,
+.btn-orange.disabled:active,
+.btn-orange[disabled]:active,
+fieldset[disabled] .btn-orange:active,
+.btn-orange.disabled.active,
+.btn-orange[disabled].active,
+fieldset[disabled] .btn-orange.active {
+  background-color: #dd830f;
 }
 .panel,
 .like-panel {
