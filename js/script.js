@@ -128,6 +128,8 @@
         return false;
       });
 
+    $('#feedback-submit').addClass('btn-primary');
+
   });
 
 Drupal.behaviors.feedbackForm = {
