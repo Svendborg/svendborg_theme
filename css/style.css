@@ -6764,7 +6764,7 @@ a:hover {
   display: block;
   cursor: pointer;
 }
-#block-cittaslow-block #block-block-5 {
+#block-cittaslow-block #block-block-cittaslow {
   opacity: 1;
   border: 3px solid #EE9727;
   border-bottom-left-radius: 3px;
@@ -6775,10 +6775,10 @@ a:hover {
   max-width: 300px;
   margin-top: 51px;
 }
-#block-cittaslow-block #block-block-5 button {
+#block-cittaslow-block #block-block-cittaslow button {
   color: #fff;
 }
-#block-cittaslow-block #block-block-5 button:hover {
+#block-cittaslow-block #block-block-cittaslow button:hover {
   color: #fff;
 }
 /**
