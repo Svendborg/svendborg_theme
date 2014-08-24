@@ -33,8 +33,12 @@
       <?php
         $tree = menu_tree_all_data('menu-indholdsmenu', $link = NULL, $max_depth = 3);
 
+        $count = 0;
         foreach ($tree as $key => $menu_item) {
           if (!$menu_item['link']['hidden']) {
+            if ($count > 3) {
+              continue;
+            }
             $path = $alias = drupal_get_path_alias($menu_item['link']['link_path']);
             print "<div class='menu-". $menu_item['link']['mlid']. " footer-indholsdmenu col-xs-12 col-sm-6 col-md-3'>";
 print "<h2 class='menu-footer " . $menu_item['link']['link_title']. "'>
@@ -45,6 +49,7 @@ print "<h2 class='menu-footer " . $menu_item['link']['link_title']. "'>
               print render($tree_display);
             }
             print "</div>";
+            $count += 1;
           }
         }
 
