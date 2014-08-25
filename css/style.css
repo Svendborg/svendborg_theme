@@ -8221,6 +8221,7 @@ body.page-taxonomy-term.term-is-not-top .region-content.col-md-6 div.node-os2web
   padding: 0px 0px;
   margin-bottom: 0px;
   width: 100%;
+  display: inline-table;
   background-image: -webkit-linear-gradient(top, #496e7e 0%, #194254 100%);
   background-image: linear-gradient(to bottom, #496e7e 0%, #194254 100%);
   background-repeat: repeat-x;

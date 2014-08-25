@@ -11,10 +11,23 @@ function svendborg_theme_preprocess_page(&$variables) {
   // Remove all Taxonomy auto listings here.
   $term = NULL;
   if (arg(0) == 'taxonomy' && arg(1) == 'term' && is_numeric(arg(2))) {
-    unset($variables['page']['content']['system_main']['nodes']);
-    unset($variables['page']['content']['system_main']['pager']);
-    unset($variables['page']['content']['system_main']['no_content']);
     $term = taxonomy_term_load(arg(2));
+    $term_name = $term->vocabulary_machine_name;
+    unset($variables['page']['content']['system_main']['no_content']);
+    if ($term_name == "os2web_base_tax_site_structure") {
+      unset($variables['page']['content']['system_main']['nodes']);
+      unset($variables['page']['content']['system_main']['pager']);
+    }
+    else {
+      $view = views_get_view('taxonomy_term');
+      $view->set_display('block_1');
+      $view->set_arguments(array(arg(2)));
+      $view->set_items_per_page(20);
+      $view->pre_execute();
+      $view->execute();
+      $variables['page']['content']['system_main'] = array('#markup' => '<h2>' .$term->name .'</h2>' . $view->render());
+    }
+
     // Variable that defines that this term is the top of the hieraki.
     $term_is_top = _svendborg_theme_term_is_top($term->tid);
     // Get wether this is a top term, and provide a variable for the templates.
