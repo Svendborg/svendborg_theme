@@ -6781,6 +6781,14 @@ a:hover {
 #block-cittaslow-block #block-block-cittaslow button:hover {
   color: #fff;
 }
+.bg-white {
+  background: white;
+  border-radius: 4px 4px;
+  margin-bottom: 20px;
+}
+.view.bg-white {
+  padding: 20px;
+}
 /**
  * This file is only for really global styles. None specific styles.
  */
