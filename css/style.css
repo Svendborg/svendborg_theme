@@ -8308,10 +8308,10 @@ fieldset[disabled] #svendborg_tabs ul.quicktabs-tabs li.active {
   vertical-align: middle;
 }
 #svendborg_tabs ul.quicktabs-tabs li a {
-  padding: 13px 10px;
+  padding: 13px 0px;
   color: #fff;
   display: inline-block;
-  word-break: break-all;
+  word-break: break-word;
 }
 #svendborg_tabs ul.quicktabs-tabs li a:hover {
   text-decoration: none;
