@@ -8040,6 +8040,14 @@ body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news #borger_dk-bod
   vertical-align: middle;
   float: right;
 }
+body.page-node article .media-ustream-video iframe,
+body.page-taxonomy-term.term-is-not-top article .media-ustream-video iframe,
+body.page-node div.node-os2web-borger-dk-article .media-ustream-video iframe,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-borger-dk-article .media-ustream-video iframe,
+body.page-node div.node-os2web-base-news .media-ustream-video iframe,
+body.page-taxonomy-term.term-is-not-top div.node-os2web-base-news .media-ustream-video iframe {
+  max-width: 100%;
+}
 body.page-node .nav-tabs,
 body.page-taxonomy-term.term-is-not-top .nav-tabs {
   margin-bottom: 0;
