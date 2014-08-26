@@ -6685,6 +6685,54 @@ a:hover {
   width: 24px;
   height: 24px;
 }
+.bg-white {
+  background: white;
+  border-radius: 4px 4px;
+  margin-bottom: 20px;
+}
+.view.bg-white {
+  padding: 20px;
+}
+/**
+ * This file is only for really global styles. None specific styles.
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+body.page-node .field-name-field-os2web-base-field-media .field-label,
+body.page-taxonomy-term.term-is-not-top .field-name-field-os2web-base-field-media .field-label {
+  text-transform: uppercase;
+}
+h3,
+h6 {
+  font-weight: bold;
+}
+body {
+  background: url(../images/skateboard.jpg) no-repeat fixed;
+  background-size: cover;
+}
+.main-container {
+  border-bottom: 1px solid white;
+  background-image: rgba(223, 222, 215, 0.9);
+  border-left: 1px solid rgba(255, 255, 255, 0.8);
+  border-right: 1px solid rgba(255, 255, 255, 0.8);
+  background-image: -webkit-linear-gradient(#ffffff, rgba(223, 222, 215, 0.9) 250px, rgba(223, 222, 215, 0.9));
+  background-image: linear-gradient(#ffffff, rgba(223, 222, 215, 0.9) 250px, rgba(223, 222, 215, 0.9));
+  background-repeat: no-repeat;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#e6dfded7', GradientType=0);
+}
+.main-container,
+.header_svendborg .region-navigation.container {
+  border-left: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.6);
+  border-right: none;
+  border-right: 1px solid rgba(255, 255, 255, 0.6);
+  -webkit-background-clip: padding;
+  background-clip: padding-box;
+}
 #block-feedback-form {
   top: 170px;
   right: 0px;
@@ -6773,61 +6821,13 @@ a:hover {
   margin-left: 51px;
   background-color: #fff;
   max-width: 300px;
-  margin-top: 51px;
+  margin-top: 49px;
 }
 #block-cittaslow-block #block-block-cittaslow button {
   color: #fff;
 }
 #block-cittaslow-block #block-block-cittaslow button:hover {
   color: #fff;
-}
-.bg-white {
-  background: white;
-  border-radius: 4px 4px;
-  margin-bottom: 20px;
-}
-.view.bg-white {
-  padding: 20px;
-}
-/**
- * This file is only for really global styles. None specific styles.
- */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-body.page-node .field-name-field-os2web-base-field-media .field-label,
-body.page-taxonomy-term.term-is-not-top .field-name-field-os2web-base-field-media .field-label {
-  text-transform: uppercase;
-}
-h3,
-h6 {
-  font-weight: bold;
-}
-body {
-  background: url(../images/skateboard.jpg) no-repeat fixed;
-  background-size: cover;
-}
-.main-container {
-  border-bottom: 1px solid white;
-  background-image: rgba(223, 222, 215, 0.9);
-  border-left: 1px solid rgba(255, 255, 255, 0.8);
-  border-right: 1px solid rgba(255, 255, 255, 0.8);
-  background-image: -webkit-linear-gradient(#ffffff, rgba(223, 222, 215, 0.9) 250px, rgba(223, 222, 215, 0.9));
-  background-image: linear-gradient(#ffffff, rgba(223, 222, 215, 0.9) 250px, rgba(223, 222, 215, 0.9));
-  background-repeat: no-repeat;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#e6dfded7', GradientType=0);
-}
-.main-container,
-.header_svendborg .region-navigation.container {
-  border-left: none;
-  border-left: 1px solid rgba(255, 255, 255, 0.6);
-  border-right: none;
-  border-right: 1px solid rgba(255, 255, 255, 0.6);
-  -webkit-background-clip: padding;
-  background-clip: padding-box;
 }
 .btn-default {
   color: #ffffff;

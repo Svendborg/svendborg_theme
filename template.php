@@ -14,11 +14,13 @@ function svendborg_theme_preprocess_page(&$variables) {
     $term = taxonomy_term_load(arg(2));
     $term_name = $term->vocabulary_machine_name;
     unset($variables['page']['content']['system_main']['no_content']);
+    // There will not be nodes and other normal term content on terms "os2web_base_tax_site_structure" pages.
     if ($term_name == "os2web_base_tax_site_structure") {
       unset($variables['page']['content']['system_main']['nodes']);
       unset($variables['page']['content']['system_main']['pager']);
     }
     else {
+      // On Other term pages, there will be a view with nodes.
       $view = views_get_view('taxonomy_term');
       $view->set_display('block_1');
       $view->set_arguments(array(arg(2)));
@@ -181,6 +183,9 @@ function svendborg_theme_preprocess_page(&$variables) {
         );
       }
       $variables['page']['sidebar_second']['os2web_news_lists'] = array('#markup' => $view->render());
+    }
+    if($term_is_top) {
+      $variables['page']['sidebar_first'] = array();
     }
   }
 
