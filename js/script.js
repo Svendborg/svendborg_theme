@@ -177,7 +177,7 @@ Drupal.behaviors.feedbackFormSubmit = {
  */
 Drupal.feedbackFormToggle = function ($block, enable) {
   if (enable) {
-    $block.animate({width:"327px"});
+    $block.animate({width:"329px"});
     $block.css('z-index','960');
     $block.find('form').css('display','block');
     $('#feedback-form-toggle', $block).html('[ + ]');
@@ -187,7 +187,7 @@ Drupal.feedbackFormToggle = function ($block, enable) {
     }
   }
   else {
-    $block.animate({width:"27px"});
+    $block.animate({width:"29px"});
     $block.css('z-index','900');
     $('#feedback-form-toggle', $block).html('[ &minus; ]');
   }
