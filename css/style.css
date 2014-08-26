@@ -7414,6 +7414,24 @@ div.node-os2web-spotbox-box .field-name-field-os2web-spotbox-video iframe {
   width: 100%;
   height: auto;
 }
+.bubble {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  min-height: 60px;
+  display: table;
+}
+.bubble span {
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+.item-text {
+  position: relative;
+  text-align: center;
+  min-height: 60px;
+  padding: 10px 0;
+}
 .view-os2web-news-page .media-ustream-video iframe {
   width: 100%;
   height: auto;
@@ -8312,7 +8330,6 @@ fieldset[disabled] #svendborg_tabs ul.quicktabs-tabs li.active {
 #svendborg_tabs ul.quicktabs-tabs li .bubble span {
   text-align: center;
   display: table-cell;
-  white-space: pre-wrap;
   vertical-align: middle;
 }
 #svendborg_tabs ul.quicktabs-tabs li a {
@@ -8682,7 +8699,6 @@ h2.menu-footer a.Kommunen {
 .front-s-news .front-s-news-inner .front-s-news-item .front-s-news-item-text .bubble span {
   text-align: center;
   display: table-cell;
-  white-space: pre-wrap;
   vertical-align: middle;
 }
 .front-s-news .front-s-news-inner .front-s-news-item .front-s-news-item-text .bubble span {

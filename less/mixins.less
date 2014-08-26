@@ -219,9 +219,14 @@ a {
   span {
     text-align: center;
     display: table-cell;
-    white-space: pre-wrap;
     vertical-align: middle;
   }
+}
+
+.item-text(@height) {
+  position: relative;
+  text-align: center;
+  min-height: @height;
 }
 .rss-icon {
   .sprite(@rss);
