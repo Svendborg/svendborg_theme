@@ -10,7 +10,8 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 CKEDITOR.editorConfig = function(config) {
   // [ Left, Center, Right, Justified ]
   config.justifyClasses = [ 'text-left', 'text-center', 'text-right', 'text-justify' ];
-
+  config.wsc_lang = "da_DK";
+  config.scayt_defLan = 'da_DK';
   config.allowedContent = true;
 };
 
